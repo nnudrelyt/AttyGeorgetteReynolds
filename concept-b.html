@@ -1137,6 +1137,153 @@
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    section { padding: 80px 0; }
+    .container { padding: 0 24px; }
+
+    nav {
+      padding: 0 24px;
+      height: 64px;
+    }
+    .nav-links { display: none; }
+    .nav-phone { font-size: 14px; gap: 8px; }
+
+    #hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .hero-left {
+      padding: 124px 24px 72px;
+    }
+    .hero-right {
+      min-height: 0;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+    }
+    .hero-img-area {
+      position: relative;
+      inset: auto;
+      padding: 16px 0;
+    }
+    .hero-float-card {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      max-width: 100%;
+      width: 100%;
+      animation-delay: 0.4s;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .process-top {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .services-top {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .tcard--wide {
+      grid-column: auto;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .tcard--wide .tcard-text { padding-top: 16px; margin-bottom: 24px; }
+    .tcard--wide .tcard-footer {
+      border-top: 1px solid var(--rule);
+      padding-top: 18px;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+    }
+
+    #contact {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .contact-left { padding: 80px 24px; }
+    .contact-right { padding: 72px 24px; }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 64px 0; }
+    .container { padding: 0 20px; }
+
+    nav { padding: 0 20px; height: 60px; }
+    .nav-logo { font-size: 15px; }
+    .nav-phone { font-size: 13px; }
+
+    .hero-left { padding: 108px 20px 56px; }
+    .hero-headline { font-size: 38px; margin-bottom: 22px; }
+    .hero-sub { font-size: 15px; margin-bottom: 36px; }
+    .hero-phone-number { font-size: 36px; }
+    .hero-right { padding: 40px 20px 64px; gap: 28px; }
+    .hero-float-card { padding: 22px 24px; }
+
+    .about-headline { font-size: 30px; }
+    .about-body { font-size: 15px; line-height: 1.8; }
+    .sidebar-quote-card { padding: 28px 24px; }
+    .sqc-text { font-size: 15px; }
+    .stat-tile { padding: 18px 16px; }
+    .stat-num { font-size: 26px; }
+
+    .process-headline { font-size: 30px; }
+    .faq-trigger {
+      padding: 20px 20px;
+      grid-template-columns: 28px 1fr 26px;
+      gap: 12px;
+    }
+    .faq-q-text { font-size: 16px; }
+    .faq-body {
+      padding: 4px 20px 24px calc(28px + 12px + 20px);
+      font-size: 14px;
+    }
+    .process-callout {
+      padding: 24px 20px;
+      gap: 14px;
+    }
+    .callout-text { font-size: 13px; }
+
+    .services-headline { font-size: 30px; }
+    .services-cards { grid-template-columns: 1fr; }
+    .service-card { padding: 32px 24px; }
+    .service-card-title { font-size: 20px; }
+
+    .testimonials-headline { font-size: 30px; }
+    .tcard { padding: 32px 24px; }
+    .tcard::before { font-size: 60px; top: 12px; left: 18px; }
+    .tcard-text { font-size: 16px; padding-top: 14px; }
+
+    .contact-left, .contact-right { padding: 56px 20px; }
+    .contact-headline { font-size: 30px; }
+    .contact-phone-num { font-size: 36px; }
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .form-hed { font-size: 20px; }
+  }
 </style>
 </head>
 <body>
