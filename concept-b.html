@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept B (Revised) — Chicago Real Estate Attorney</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette — cool, soft, neutral */
+    --slate:      #3a4d5c;
+    --slate-mid:  #4e6275;
+    --slate-lt:   #6d8494;
+    --fog:        #f1f3f5;
+    --mist:       #e7eaed;
+    --cloud:      #d8dde2;
+    --blush:      #a8899a;
+    --blush-lt:   #c4aab8;
+    --blush-pale: #ede5ea;
+    --ink:        #1e252c;
+    --muted:      #7a8895;
+    --rule:       #d4d9de;
+    --white:      #fafcfd;
+    --off-white:  #f5f7f9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--fog);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TYPE ── */
+  h1, h2, h3 {
+    font-family: 'Spectral', serif;
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  section { padding: 104px 0; }
+
+  /* ── LABEL ── */
+  .label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  /* ── WIREFRAME TAG ── */
+  .wf-note {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blush);
+    background: rgba(168,137,154,0.08);
+    border: 1px solid rgba(168,137,154,0.25);
+    padding: 2px 9px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,252,253,0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 48px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-logo span {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-phone:hover { color: var(--blush); }
+
+  .nav-phone-pip {
+    width: 7px; height: 7px;
+    background: var(--blush-lt);
+    border-radius: 50%;
+    animation: softpulse 2.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes softpulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.75); }
+  }
+
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--white);
+    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-left {
+    padding: 148px 72px 96px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* soft decorative circle behind headline */
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: 120px; left: -60px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(168,137,154,0.07) 0%, transparent 68%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .hero-headline {
+    font-family: 'Spectral', serif;
+    font-size: clamp(46px, 5.2vw, 72px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--blush);
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 420px;
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.33s forwards;
+  }
+
+  .hero-phone-block {
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.48s forwards;
+  }
+
+  .hero-phone-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blush-lt);
+    margin-bottom: 10px;
+  }
+
+  .hero-phone-number {
+    display: block;
+    font-family: 'Spectral', serif;
+    font-size: clamp(32px, 3.8vw, 50px);
+    font-weight: 400;
+    color: var(--slate);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .hero-phone-number:hover { color: var(--blush); }
+
+  .hero-phone-note {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--blush-lt);
+    opacity: 0.5;
+    margin: 36px 0;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.62s forwards;
+  }
+
+  .hero-scroll-hint {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.72s forwards;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+
+  .hero-scroll-hint:hover { color: var(--ink); }
+  .hero-scroll-hint::after { content: '↓'; font-size: 13px; }
+
+  /* ── HERO RIGHT ── */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--mist);
+  }
+
+  .hero-img-area {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero-img-circle {
+    width: 64px; height: 64px;
+    border: 1px solid var(--cloud);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-circle svg {
+    width: 26px; height: 26px;
+    stroke: var(--cloud);
+    fill: none;
+    stroke-width: 1;
+  }
+
+  .hero-img-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cloud);
+  }
+
+  /* floating quote card */
+  .hero-float-card {
+    position: absolute;
+    bottom: 52px;
+    left: -32px;
+    background: var(--white);
+    padding: 24px 28px;
+    border-radius: 14px;
+    max-width: 290px;
+    box-shadow: 0 16px 48px rgba(58,77,92,0.12), 0 2px 8px rgba(58,77,92,0.06);
+    opacity: 0;
+    animation: floatIn 0.8s ease 0.9s forwards;
+  }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .float-card-bar {
+    width: 28px; height: 2px;
+    background: var(--blush-lt);
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .float-card-quote {
+    font-family: 'Spectral', serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .float-card-attr {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--fog);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-headline {
+    font-size: clamp(34px, 3.8vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+  }
+
+  .about-headline em {
+    font-style: italic;
+    color: var(--blush);
+  }
+
+  .about-body {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.88;
+    margin-bottom: 22px;
+  }
+
+  .about-sig {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sig-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--mist);
+    border: 1.5px solid var(--cloud);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sig-avatar svg {
+    width: 24px; height: 24px;
+    stroke: var(--cloud);
+    fill: none;
+    stroke-width: 1;
+  }
+
+  .sig-name {
+    font-family: 'Spectral', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .sig-title {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* sidebar */
+  .about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sidebar-quote-card {
+    background: var(--slate);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+
+  .sqc-bar {
+    width: 24px; height: 2px;
+    background: var(--blush-lt);
+    opacity: 0.6;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  .sqc-text {
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(241,243,245,0.85);
+    line-height: 1.65;
+  }
+
+  .sidebar-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-tile {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 20px 18px;
+  }
+
+  .stat-num {
+    font-family: 'Spectral', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--slate);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-top: 5px;
+  }
+
+
+  /* ── PROCESS ── */
+  #process {
+    background: var(--white);
+  }
+
+  .process-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+
+  .process-headline {
+    font-size: clamp(34px, 3.8vw, 50px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .process-headline em {
+    font-style: italic;
+    color: var(--blush);
+  }
+
+  .process-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  /* soft accordion */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .faq-item {
+    background: var(--fog);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+
+  .faq-item.open {
+    box-shadow: 0 6px 24px rgba(58,77,92,0.07);
+  }
+
+  .faq-trigger {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 36px 1fr 32px;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 14px;
+  }
+
+  .faq-item.open .faq-trigger {
+    border-radius: 14px 14px 0 0;
+    background: var(--white);
+  }
+
+  .faq-q-num {
+    font-family: 'Spectral', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--blush-lt);
+    line-height: 1;
+    padding-top: 3px;
+  }
+
+  .faq-q-text {
+    font-family: 'Spectral', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .faq-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--muted);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    justify-self: end;
+  }
+
+  .faq-item.open .faq-icon {
+    background: var(--blush);
+    border-color: var(--blush);
+    color: white;
+  }
+
+  .faq-body-wrap {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.38s ease;
+  }
+
+  .faq-item.open .faq-body-wrap {
+    max-height: 280px;
+  }
+
+  .faq-body {
+    padding: 4px 28px 28px calc(36px + 16px + 28px);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+    background: var(--white);
+  }
+
+  .faq-body strong { color: var(--ink); font-weight: 500; }
+
+  /* callout */
+  .process-callout {
+    margin-top: 28px;
+    background: var(--blush-pale);
+    border: 1px solid rgba(168,137,154,0.2);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .callout-dot {
+    width: 8px; height: 8px;
+    background: var(--blush);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .callout-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+
+  .callout-text strong { font-weight: 500; color: var(--slate); }
+
+
+  /* ── SERVICES ── */
+  #services {
+    background: var(--fog);
+  }
+
+  .services-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+
+  .services-headline {
+    font-size: clamp(34px, 3.8vw, 50px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .services-headline em { font-style: italic; color: var(--blush); }
+
+  .services-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  .services-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 36px 32px;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 8px 32px rgba(58,77,92,0.08);
+    transform: translateY(-2px);
+  }
+
+  .service-card-num {
+    font-family: 'Spectral', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--blush-lt);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .service-card-pip {
+    width: 20px; height: 2px;
+    background: var(--blush-lt);
+    border-radius: 2px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+  }
+
+  .service-card-title {
+    font-family: 'Spectral', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .service-card-body {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+
+  /* ── TESTIMONIALS ── */
+  #testimonials {
+    background: var(--mist);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #testimonials::before {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(168,137,154,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 60px;
+  }
+
+  .testimonials-headline {
+    font-size: clamp(34px, 3.8vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .testimonials-headline em { font-style: italic; color: var(--blush); }
+
+  .testimonials-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .tcard {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 36px 32px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .tcard:hover {
+    box-shadow: 0 8px 32px rgba(58,77,92,0.07);
+  }
+
+  /* large open-quote mark */
+  .tcard::before {
+    content: '\201C';
+    font-family: 'Spectral', serif;
+    font-size: 72px;
+    color: var(--blush-lt);
+    opacity: 0.2;
+    position: absolute;
+    top: 14px; left: 22px;
+    line-height: 1;
+  }
+
+  .tcard-text {
+    font-family: 'Spectral', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    padding-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tcard-footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+  }
+
+  .tcard-dot {
+    width: 8px; height: 8px;
+    background: var(--blush-lt);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tcard-name {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+
+  .tcard-context {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* wide card spans 2 cols */
+  .tcard--wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .tcard--wide .tcard-text { margin-bottom: 0; padding-top: 0; }
+  .tcard--wide .tcard-footer { border-top: none; padding-top: 0; flex-direction: column; align-items: flex-end; text-align: right; }
+
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--white);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+  }
+
+  .contact-left {
+    background: var(--slate);
+    padding: 96px 64px 96px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-left::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(168,137,154,0.15) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  .contact-label { color: var(--blush-lt); }
+
+  .contact-headline {
+    font-family: 'Spectral', serif;
+    font-size: clamp(34px, 3.8vw, 50px);
+    font-weight: 400;
+    color: var(--fog);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+  }
+
+  .contact-headline em {
+    font-style: italic;
+    color: var(--blush-lt);
+  }
+
+  .contact-body {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(241,243,245,0.58);
+    line-height: 1.85;
+    margin-bottom: 52px;
+    max-width: 360px;
+  }
+
+  .contact-phone-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(196,170,184,0.55);
+    margin-bottom: 10px;
+  }
+
+  .contact-phone-num {
+    display: block;
+    font-family: 'Spectral', serif;
+    font-size: clamp(32px, 3.8vw, 50px);
+    font-weight: 400;
+    color: var(--fog);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .contact-phone-num:hover { color: var(--blush-lt); }
+
+  .contact-phone-note {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(196,170,184,0.5);
+    margin-top: 10px;
+  }
+
+  .contact-divider {
+    width: 32px; height: 1px;
+    background: rgba(196,170,184,0.25);
+    margin: 40px 0;
+  }
+
+  .contact-addr-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(196,170,184,0.4);
+    margin-bottom: 10px;
+  }
+
+  .contact-addr {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(241,243,245,0.45);
+    line-height: 1.75;
+  }
+
+  /* form side */
+  .contact-right {
+    padding: 96px 48px 96px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--fog);
+  }
+
+  .form-hed {
+    font-family: 'Spectral', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .form-sub {
+    font-size: 13px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 36px;
+    line-height: 1.6;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-field { margin-bottom: 22px; }
+
+  .form-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .form-input {
+    display: block;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-input:focus {
+    border-color: var(--blush-lt);
+    box-shadow: 0 0 0 3px rgba(168,137,154,0.1);
+  }
+
+  .form-input::placeholder { color: var(--cloud); }
+
+  .form-input--textarea {
+    resize: none;
+    min-height: 96px;
+  }
+
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--slate);
+    color: var(--fog);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 4px;
+  }
+
+  .form-submit:hover {
+    background: var(--ink);
+    box-shadow: 0 4px 16px rgba(30,37,44,0.18);
+  }
+
+  .form-submit::after { content: '→'; font-size: 14px; }
+
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 40px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Spectral', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(241,243,245,0.45);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(241,243,245,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(241,243,245,0.55); }
+
+  .footer-legal {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: rgba(241,243,245,0.18);
+  }
+
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">
+    [Attorney Name]
+    <span>Chicago Real Estate Law</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">The Process</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Clients</a></li>
+  </ul>
+  <a href="tel:+13125550000" class="nav-phone">
+    <span class="nav-phone-pip"></span>
+    (312) 555-0000
+  </a>
+</nav>
+
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="wf-note">Wireframe · Hero</span>
+    <p class="hero-eyebrow">Chicago Real Estate Attorney · Available by Phone</p>
+    <h1 class="hero-headline">Before you close,<br><em>let's talk.</em></h1>
+    <p class="hero-sub">Buying or selling a home comes with more legal complexity than most people expect. [Attorney Name] is a Chicago real estate attorney who makes the process feel manageable — answering questions directly, explaining every document clearly, and staying in your corner from contract to closing.</p>
+
+    <div class="hero-phone-block">
+      <p class="hero-phone-tag">Start with a call</p>
+      <a href="tel:+13125550000" class="hero-phone-number">(312) 555-0000</a>
+      <p class="hero-phone-note">Calls returned same day &middot; Most conversations take about 15 minutes</p>
+    </div>
+
+    <div class="hero-divider"></div>
+    <a href="#process" class="hero-scroll-hint">See how it works</a>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-area">
+      <div class="hero-img-circle">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+      <span class="hero-img-label">Attorney Portrait</span>
+    </div>
+    <div class="hero-float-card">
+      <div class="float-card-bar"></div>
+      <p class="float-card-quote">"She called me back the same afternoon and walked me through everything thoughtfully. For the first time, I truly understood what I was signing."</p>
+      <p class="float-card-attr">— First-time buyer, Lincoln Park</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <span class="wf-note">Wireframe · About</span>
+    <div class="about-grid">
+      <div class="about-main">
+        <span class="label">About</span>
+        <h2 class="about-headline">Counsel that's always<br><em>within reach.</em></h2>
+        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach — somewhere in the background, not entirely clear on what they were doing for you. [Attorney Name] built her practice around something different.</p>
+        <p class="about-body">She believes you should always be able to reach your attorney, receive a thoughtful answer, and feel genuinely confident about the decisions you're making. That means explaining every document before you sign it, flagging issues when she sees them, and giving you her direct number from day one — not a portal, not a receptionist.</p>
+        <p class="about-body">[Attorney Name] has practiced real estate law in Chicago for more than 15 years, working exclusively on residential transactions. Whether you're a first-time buyer, a seasoned seller, or somewhere in between, her approach is always the same: make sure you leave knowing exactly what happened and why.</p>
+        <div class="about-sig">
+          <div class="sig-avatar">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <div>
+            <div class="sig-name">[Attorney Name], J.D.</div>
+            <div class="sig-title">Illinois Bar · Chicago Real Estate Law · 15+ Years</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-sidebar">
+        <div class="sidebar-quote-card">
+          <div class="sqc-bar"></div>
+          <p class="sqc-text">"My clients should never have to wonder what is happening in their transaction — or feel uncertain about whether they can reach me."</p>
+        </div>
+        <div class="sidebar-stats">
+          <div class="stat-tile">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Years in Chicago real estate law</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Residential closings</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Real estate — her only focus</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-num">Same<br>day</div>
+            <div class="stat-label">Call return, always</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="container">
+    <span class="wf-note">Wireframe · Process / SEO anchor</span>
+    <div class="process-top">
+      <div>
+        <span class="label">The Process</span>
+        <h2 class="process-headline">Good questions<br>deserve <em>real answers.</em></h2>
+      </div>
+      <p class="process-intro">Most clients arrive with the same questions — and they are all worth asking. Here's what [Attorney Name] hears most often, with the kind of clear, honest answers you should have before your transaction begins.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.1</span>
+          <span class="faq-q-text">When should I get an attorney involved?</span>
+          <span class="faq-icon">−</span>
+        </div>
+        <div class="faq-body-wrap">
+          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet — that's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. But if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.2</span>
+          <span class="faq-q-text">What does a real estate attorney actually do at closing?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
+          <p class="faq-body">A lot more than most people realize. I review and prepare closing documents, verify the title is clear, confirm the numbers match what was agreed, walk you through every page you sign, and make sure nothing unexpected came up between contract and close. <strong>Illinois law requires an attorney at every real estate closing</strong> — the question is whether yours is genuinely working for you. I always am.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.3</span>
+          <span class="faq-q-text">What will you look for when you review my contract?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
+          <p class="faq-body">Everything — but especially the things buyers and sellers typically overlook: contingency language, inspection deadlines, HOA and condo association terms, what's included in the sale, and any clauses that shift risk in ways you may not expect. I explain every section in plain language and write modifications where the contract doesn't adequately protect your interests. If something's off, you'll hear about it directly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.4</span>
+          <span class="faq-q-text">How do I reach you when something comes up?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
+          <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day — even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-callout">
+      <div class="callout-dot"></div>
+      <p class="callout-text"><strong>Illinois is an attorney state for real estate closings.</strong> That means you're already paying for legal representation — the question is whether that attorney is working for you or simply facilitating paperwork. [Attorney Name] represents buyers and sellers exclusively, and never both sides of the same transaction.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <span class="wf-note">Wireframe · Services</span>
+    <div class="services-top">
+      <div>
+        <span class="label">How I Can Help</span>
+        <h2 class="services-headline">Where I'm able<br>to <em>help.</em></h2>
+      </div>
+      <p class="services-intro">Every matter below is handled personally — you will always know where your transaction stands, and you will always be able to reach [Attorney Name] directly.</p>
+    </div>
+
+    <div class="services-cards">
+      <div class="service-card">
+        <span class="service-card-num">01</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Residential Purchase &amp; Sale</div>
+        <p class="service-card-body">Full representation for buyers and sellers in single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs — from contract review through closing.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">02</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Contract Review &amp; Negotiation</div>
+        <p class="service-card-body">Thorough review of purchase contracts, attorney modification letters, rider agreements, and association documents — with plain-language explanations and negotiation of terms that genuinely protect you.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">03</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Title &amp; Closing Services</div>
+        <p class="service-card-body">Review of title commitments, identification of defects or encumbrances, survey analysis, and preparation of all closing documents. By the time you sit down at the table, there are no surprises.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">04</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Investment Property Transactions</div>
+        <p class="service-card-body">Legal representation for buyers and sellers of investment and multi-unit properties, including lease review, tenant rights considerations, and thorough due diligence throughout the process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="container">
+    <span class="wf-note">Wireframe · Testimonials</span>
+    <div class="testimonials-header">
+      <span class="label">What Clients Say</span>
+      <h2 class="testimonials-headline">A few words<br>from <em>clients.</em></h2>
+      <p class="testimonials-sub">The measure of this work is how clients feel on the other side of it — whether they felt informed, supported, and confident throughout.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="tcard tcard--wide">
+        <p class="tcard-text">"I had a question the night before closing and almost didn't call because it felt too late. She picked up, talked me through it in ten minutes, and I went to closing the next morning feeling completely at ease."</p>
+        <div class="tcard-footer">
+          <div class="tcard-dot"></div>
+          <div>
+            <div class="tcard-name">Rachel &amp; Tom P.</div>
+            <div class="tcard-context">Buyers — Bucktown</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <p class="tcard-text">"I've bought three properties in Chicago. This was the first time I actually understood what was happening at every step. She caught two issues in my contract I never would have noticed."</p>
+        <div class="tcard-footer">
+          <div class="tcard-dot"></div>
+          <div>
+            <div class="tcard-name">David K.</div>
+            <div class="tcard-context">Buyer — Gold Coast Condo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <p class="tcard-text">"As a first-time buyer I was intimidated by everything. She made me feel like there were no stupid questions — and there really weren't. She'd heard them all before and had a clear answer every time."</p>
+        <div class="tcard-footer">
+          <div class="tcard-dot"></div>
+          <div>
+            <div class="tcard-name">Maya S.</div>
+            <div class="tcard-context">First-Time Buyer — Logan Square</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-left">
+    <span class="wf-note" style="background:rgba(196,170,184,0.12);border-color:rgba(196,170,184,0.25);">Wireframe · Contact</span>
+    <span class="label contact-label">Get in Touch</span>
+    <h2 class="contact-headline">Every transaction<br>starts with a <em>conversation.</em></h2>
+    <p class="contact-body">Tell me about your transaction and I'll tell you exactly how I can help. There is no commitment and no pressure — just a clear, honest conversation with someone who has been through this process many times and is glad to guide you through it.</p>
+
+    <p class="contact-phone-tag">Call directly</p>
+    <a href="tel:+13125550000" class="contact-phone-num">(312) 555-0000</a>
+    <p class="contact-phone-note">Calls returned same day &middot; Prefers phone to email</p>
+
+    <div class="contact-divider"></div>
+
+    <p class="contact-addr-tag">Office</p>
+    <p class="contact-addr">[Street Address]<br>Chicago, IL [ZIP]</p>
+  </div>
+
+  <div class="contact-right">
+    <span class="wf-note">Wireframe · Contact Form</span>
+    <h3 class="form-hed">Or send a message</h3>
+    <p class="form-sub">Prefer to write first? I'll follow up by phone — usually within a few hours.</p>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label class="form-label">First Name</label>
+        <input class="form-input" type="text" placeholder="First name">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Last Name</label>
+        <input class="form-input" type="text" placeholder="Last name">
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Best Phone Number</label>
+      <input class="form-input" type="tel" placeholder="I'll call you back here">
+    </div>
+    <div class="form-field">
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" placeholder="your@email.com">
+    </div>
+    <div class="form-field">
+      <label class="form-label">Tell me about your transaction</label>
+      <textarea class="form-input form-input--textarea" placeholder="Buying, selling, or just have a question? A sentence or two is plenty."></textarea>
+    </div>
+    <button class="form-submit">Send Message</button>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-name">[Attorney Name] · Chicago Real Estate Law</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-legal">© 2026 · Attorney Advertising</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(trigger) {
+    const item = trigger.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-icon').textContent = '+';
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      trigger.querySelector('.faq-icon').textContent = '−';
+    }
+  }
+</script>
+
+</body>
+</html>
