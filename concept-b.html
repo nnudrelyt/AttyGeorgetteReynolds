@@ -169,13 +169,14 @@
     padding: 0;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 50% 50%;
     overflow: hidden;
     position: relative;
   }
 
   .hero-left {
-    padding: 148px 72px 96px 48px;
+    order: 2;
+    padding: 148px 48px 96px 72px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -187,7 +188,7 @@
   .hero-left::before {
     content: '';
     position: absolute;
-    top: 120px; left: -60px;
+    top: 120px; right: -60px;
     width: 380px; height: 380px;
     background: radial-gradient(circle, rgba(168,137,154,0.07) 0%, transparent 68%);
     pointer-events: none;
@@ -300,6 +301,7 @@
 
   /* ── HERO RIGHT ── */
   .hero-right {
+    order: 1;
     position: relative;
     overflow: hidden;
     background: var(--mist);
@@ -342,7 +344,7 @@
   .hero-float-card {
     position: absolute;
     bottom: 52px;
-    left: -32px;
+    right: -32px;
     background: var(--white);
     padding: 24px 28px;
     border-radius: 14px;
@@ -1155,9 +1157,11 @@
       min-height: 0;
     }
     .hero-left {
+      order: 0;
       padding: 124px 24px 72px;
     }
     .hero-right {
+      order: 0;
       min-height: 0;
       padding: 48px 24px 80px;
       display: flex;
@@ -1283,6 +1287,58 @@
       gap: 0;
     }
     .form-hed { font-size: 20px; }
+  }
+
+  @media (min-width: 1440px) {
+    section { padding: 144px 0; }
+    .container { max-width: 1320px; padding: 0 64px; }
+
+    nav { padding: 0 64px; height: 76px; }
+    .nav-logo { font-size: 18px; }
+    .nav-links { gap: 44px; }
+    .nav-links a { font-size: 12px; }
+    .nav-phone { font-size: 18px; }
+
+    .hero-left { padding: 180px 64px 120px 96px; }
+    .hero-sub { font-size: 17px; max-width: 480px; }
+    .hero-phone-note { font-size: 13px; }
+    .hero-float-card { max-width: 320px; padding: 28px 32px; }
+    .float-card-quote { font-size: 15px; }
+
+    .about-grid { gap: 112px; }
+    .about-body { font-size: 17px; }
+    .sidebar-quote-card { padding: 40px 36px; }
+    .sqc-text { font-size: 18px; }
+    .stat-tile { padding: 26px 22px; }
+    .stat-num { font-size: 34px; }
+
+    .process-top { gap: 112px; margin-bottom: 72px; }
+    .process-intro { font-size: 17px; }
+    .faq-trigger { padding: 28px 36px; }
+    .faq-q-text { font-size: 20px; }
+    .faq-body { padding: 4px 36px 32px calc(36px + 16px + 36px); font-size: 16px; }
+    .process-callout { padding: 32px 40px; margin-top: 36px; }
+    .callout-text { font-size: 15px; }
+
+    .services-top { gap: 112px; margin-bottom: 72px; }
+    .services-intro { font-size: 17px; }
+    .service-card { padding: 44px 40px; }
+    .service-card-title { font-size: 24px; }
+    .service-card-body { font-size: 15px; }
+
+    .testimonials-header { margin-bottom: 76px; }
+    .testimonials-sub { font-size: 17px; }
+    .tcard { padding: 44px 40px; }
+    .tcard-text { font-size: 19px; }
+
+    .contact-left { padding: 128px 80px 128px 64px; }
+    .contact-right { padding: 128px 64px 128px 80px; }
+    .contact-body { font-size: 16px; max-width: 400px; }
+    .contact-phone-num { font-size: 56px; }
+    .contact-addr { font-size: 15px; }
+    .form-hed { font-size: 24px; }
+    .form-sub { font-size: 14px; }
+    .form-input { font-size: 15px; padding: 14px 18px; }
   }
 </style>
 </head>
