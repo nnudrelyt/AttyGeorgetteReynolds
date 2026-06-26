@@ -3,27 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Concept B (Revised) — Chicago Real Estate Attorney</title>
+<title>Georgette Reynolds — Chicago Real Estate Attorney</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Palette — cool, soft, neutral */
-    --slate:      #3a4d5c;
-    --slate-mid:  #4e6275;
-    --slate-lt:   #6d8494;
-    --fog:        #f1f3f5;
-    --mist:       #e7eaed;
-    --cloud:      #d8dde2;
-    --blush:      #a8899a;
-    --blush-lt:   #c4aab8;
-    --blush-pale: #ede5ea;
-    --ink:        #1e252c;
-    --muted:      #7a8895;
-    --rule:       #d4d9de;
-    --white:      #fafcfd;
-    --off-white:  #f5f7f9;
+    /* Palette — Concept B "Cool" (synced from Figma: Forrest / Sage / Slate) */
+    --forrest:    #193525;
+    --sage:       #80886c;
+    --sage-lt:    #b9c3ab;
+    --slate:      #282828;
+    --gray-mid:   #a09f9f;
+    --gray-lt:    #e6e7e8;
+    --white:      #ffffff;
+
+    /* semantic aliases — names retained from the original stylesheet */
+    --slate-mid:  #3d3d3a;
+    --slate-lt:   #6f7468;
+    --fog:        #ffffff;
+    --mist:       #f3f4f2;
+    --cloud:      #c9cbc4;
+    --blush:      #2f4a39;   /* mid-forest accent — italics, eyebrows on light */
+    --blush-lt:   #80886c;   /* sage accent — pips, dividers */
+    --blush-pale: #eef0ec;   /* soft green callout */
+    --ink:        #232524;
+    --muted:      #6f7468;
+    --rule:       #e4e5e1;
+    --off-white:  #f7f8f6;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -74,8 +81,8 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--blush);
-    background: rgba(168,137,154,0.08);
-    border: 1px solid rgba(168,137,154,0.25);
+    background: rgba(46,74,44,0.08);
+    border: 1px solid rgba(46,74,44,0.25);
     padding: 2px 9px;
     border-radius: 20px;
     margin-bottom: 16px;
@@ -190,7 +197,7 @@
     position: absolute;
     top: 120px; right: -60px;
     width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(168,137,154,0.07) 0%, transparent 68%);
+    background: radial-gradient(circle, rgba(46,74,44,0.07) 0%, transparent 68%);
     pointer-events: none;
     border-radius: 50%;
   }
@@ -649,7 +656,7 @@
   .process-callout {
     margin-top: 28px;
     background: var(--blush-pale);
-    border: 1px solid rgba(168,137,154,0.2);
+    border: 1px solid rgba(46,74,44,0.2);
     border-radius: 14px;
     padding: 28px 32px;
     display: flex;
@@ -769,7 +776,7 @@
     position: absolute;
     bottom: -80px; right: -80px;
     width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(168,137,154,0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(46,74,44,0.08) 0%, transparent 70%);
     pointer-events: none;
     border-radius: 50%;
   }
@@ -893,7 +900,7 @@
   }
 
   .contact-left {
-    background: var(--slate);
+    background: #1E3A56;
     padding: 96px 64px 96px 48px;
     display: flex;
     flex-direction: column;
@@ -907,7 +914,7 @@
     position: absolute;
     bottom: -60px; right: -60px;
     width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(168,137,154,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(46,74,44,0.15) 0%, transparent 70%);
     pointer-events: none;
     border-radius: 50%;
   }
@@ -1053,7 +1060,7 @@
 
   .form-input:focus {
     border-color: var(--blush-lt);
-    box-shadow: 0 0 0 3px rgba(168,137,154,0.1);
+    box-shadow: 0 0 0 3px rgba(46,74,44,0.1);
   }
 
   .form-input::placeholder { color: var(--cloud); }
@@ -1340,6 +1347,72 @@
     .form-sub { font-size: 14px; }
     .form-input { font-size: 15px; padding: 14px 18px; }
   }
+
+  /* ══ FIGMA SYNC — Concept B "Cool" (Forrest / Sage / Slate) ══ */
+
+  /* How I Work — subtle light band between About and FAQ */
+  #approach { background: var(--off-white); }
+
+  /* Hero — portrait photo left, sage message panel right */
+  .hero-right {
+    background: var(--gray-lt) url('assets/agr-headshot.png') center top / cover no-repeat;
+  }
+  .hero-img-area { display: none; }
+  .hero-left { background: var(--sage); }
+  .hero-left::before {
+    background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 68%);
+  }
+  .hero-eyebrow { color: rgba(255,255,255,0.85); }
+  .hero-headline, .hero-headline em { color: #ffffff; }
+  .hero-sub { color: rgba(255,255,255,0.82); }
+  .hero-phone-tag { color: rgba(255,255,255,0.70); }
+  .hero-phone-number { color: #ffffff; }
+  .hero-phone-number:hover { color: rgba(255,255,255,0.78); }
+  .hero-phone-note { color: rgba(255,255,255,0.66); }
+  .hero-divider { background: rgba(255,255,255,0.35); }
+  .hero-scroll-hint { color: rgba(255,255,255,0.78); }
+  .hero-scroll-hint:hover { color: #ffffff; }
+  .float-card-bar { background: var(--sage); }
+
+  /* Process — light-gray relief (Light Gray #e6e7e8, matches Figma) */
+  #process { background: var(--gray-lt); }
+
+  /* Services — Forrest green section, light cards */
+  #services { background: var(--forrest); }
+  #services .label { color: var(--sage-lt); }
+  #services .services-headline { color: #ffffff; }
+  #services .services-headline em { color: var(--sage-lt); }
+  #services .services-intro { color: rgba(255,255,255,0.72); }
+  .service-card { background: var(--gray-lt); border-color: transparent; }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.22); }
+
+  /* Testimonials — Sage section, light cards */
+  #testimonials { background: var(--sage); }
+  #testimonials::before {
+    background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  }
+  #testimonials .label { color: rgba(255,255,255,0.85); }
+  .testimonials-headline, .testimonials-headline em { color: #ffffff; }
+  .testimonials-sub { color: rgba(255,255,255,0.82); }
+  .tcard { background: var(--gray-lt); border-color: transparent; }
+  .tcard::before { color: var(--sage); }
+
+  /* Contact — Forrest panel, charcoal button */
+  .contact-left { background: var(--forrest); }
+  .contact-left::after {
+    background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  }
+  .contact-label { color: rgba(255,255,255,0.80); }
+  .contact-headline em { color: rgba(255,255,255,0.90); }
+  .contact-phone-tag { color: rgba(255,255,255,0.66); }
+  .contact-phone-num:hover { color: rgba(255,255,255,0.80); }
+  .contact-phone-note { color: rgba(255,255,255,0.55); }
+  .contact-divider { background: rgba(255,255,255,0.22); }
+  .contact-addr-tag { color: rgba(255,255,255,0.50); }
+  .contact-right { background: var(--white); }
+
+  /* Footer — Slate charcoal */
+  footer { background: var(--slate); }
 </style>
 </head>
 <body>
@@ -1347,18 +1420,18 @@
 <!-- ── NAV ── -->
 <nav>
   <a href="#" class="nav-logo">
-    [Attorney Name]
+    Georgette Reynolds
     <span>Chicago Real Estate Law</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#process">The Process</a></li>
+    <li><a href="#approach">How I Work</a></li>
+    <li><a href="#process">FAQ</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#testimonials">Clients</a></li>
   </ul>
-  <a href="tel:+13125550000" class="nav-phone">
+  <a href="tel:+13125729189" class="nav-phone">
     <span class="nav-phone-pip"></span>
-    (312) 555-0000
+    (312) 572-9189
   </a>
 </nav>
 
@@ -1366,13 +1439,13 @@
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Chicago Real Estate Attorney · Available by Phone</p>
+    <p class="hero-eyebrow">Chicago Real Estate Attorney</p>
     <h1 class="hero-headline">Before you close,<br><em>let's talk.</em></h1>
-    <p class="hero-sub">Buying or selling a home comes with more legal complexity than most people expect. [Attorney Name] is a Chicago real estate attorney who makes the process feel manageable — answering questions directly, explaining every document clearly, and staying in your corner from contract to closing.</p>
+    <p class="hero-sub">Every real estate deal carries more legal complexity than most people expect. Georgette Reynolds is a Chicago real estate attorney representing buyers, sellers, investors, and developers — residential and commercial — answering questions directly, explaining every document clearly, and staying in your corner from contract to closing.</p>
 
     <div class="hero-phone-block">
       <p class="hero-phone-tag">Start with a call</p>
-      <a href="tel:+13125550000" class="hero-phone-number">(312) 555-0000</a>
+      <a href="tel:+13125729189" class="hero-phone-number">(312) 572-9189</a>
       <p class="hero-phone-note">Calls returned same day &middot; Most conversations take about 15 minutes</p>
     </div>
 
@@ -1405,10 +1478,10 @@
     <div class="about-grid">
       <div class="about-main">
         <span class="label">About</span>
-        <h2 class="about-headline">Counsel that's always<br><em>within reach.</em></h2>
-        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach — somewhere in the background, not entirely clear on what they were doing for you. [Attorney Name] built her practice around something different.</p>
-        <p class="about-body">She believes you should always be able to reach your attorney, receive a thoughtful answer, and feel genuinely confident about the decisions you're making. That means explaining every document before you sign it, flagging issues when she sees them, and giving you her direct number from day one — not a portal, not a receptionist.</p>
-        <p class="about-body">[Attorney Name] has practiced real estate law in Chicago for more than 15 years, working exclusively on residential transactions. Whether you're a first-time buyer, a seasoned seller, or somewhere in between, her approach is always the same: make sure you leave knowing exactly what happened and why.</p>
+        <h2 class="about-headline">Real estate counsel<br>that's always <em>within reach.</em></h2>
+        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach — somewhere in the background, not entirely clear on what they were doing for you. Georgette Reynolds built her practice around something different.</p>
+        <p class="about-body">With a J.D./LLM in real estate law and more than 25 years of practice — including teaching the subject as an adjunct professor — she explains every document before you sign it, flags issues when she sees them, and gives you her direct number from day one: not a portal, not a receptionist. Above all, she's a problem solver, finding a workable path forward when a deal hits a snag.</p>
+        <p class="about-body">Georgette represents buyers, sellers, investors, and developers across residential and commercial transactions. And she brings a genuinely constructive outlook to every file — in her experience, a positive attitude tends to lead to positive outcomes for everyone at the table.</p>
         <div class="about-sig">
           <div class="sig-avatar">
             <svg viewBox="0 0 24 24">
@@ -1417,8 +1490,8 @@
             </svg>
           </div>
           <div>
-            <div class="sig-name">[Attorney Name], J.D.</div>
-            <div class="sig-title">Illinois Bar · Chicago Real Estate Law · 15+ Years</div>
+            <div class="sig-name">Georgette Reynolds, J.D./LLM</div>
+            <div class="sig-title">Illinois Bar · Chicago Real Estate Law · 25+ Years</div>
           </div>
         </div>
       </div>
@@ -1430,22 +1503,63 @@
         </div>
         <div class="sidebar-stats">
           <div class="stat-tile">
-            <div class="stat-num">15+</div>
-            <div class="stat-label">Years in Chicago real estate law</div>
+            <div class="stat-num">25+</div>
+            <div class="stat-label">Years practicing real estate law</div>
           </div>
           <div class="stat-tile">
-            <div class="stat-num">500+</div>
-            <div class="stat-label">Residential closings</div>
+            <div class="stat-num">J.D.<br>LLM</div>
+            <div class="stat-label">Advanced degree in real estate law</div>
           </div>
           <div class="stat-tile">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Real estate — her only focus</div>
+            <div class="stat-num">Adjunct</div>
+            <div class="stat-label">Professor of real estate law</div>
           </div>
           <div class="stat-tile">
             <div class="stat-num">Same<br>day</div>
             <div class="stat-label">Call return, always</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── HOW I WORK ── -->
+<section id="approach">
+  <div class="container">
+    <div class="services-top">
+      <div>
+        <span class="label">How I Work</span>
+        <h2 class="services-headline">Four ways I move<br>your deal <em>forward.</em></h2>
+      </div>
+      <p class="services-intro">Every transaction is different, but the work comes down to four roles — planning the path, keeping people moving, solving problems when they arise, and managing risk before it threatens the deal.</p>
+    </div>
+
+    <div class="services-cards">
+      <div class="service-card">
+        <span class="service-card-num">01</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Planning</div>
+        <p class="service-card-body">Getting clear on your goal from the start and charting the path that gets you to a successful close.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">02</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Facilitating</div>
+        <p class="service-card-body">Coordinating the agents, lenders, and other parties in your transaction so the deal keeps moving.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">03</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Advising &amp; Problem-Solving</div>
+        <p class="service-card-body">Thinking ahead and developing workable alternatives when Plan A stalls — always with a constructive, solutions-first outlook.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card-num">04</span>
+        <div class="service-card-pip"></div>
+        <div class="service-card-title">Managing Risk</div>
+        <p class="service-card-body">Identifying areas of risk and concern early, and putting effective methods in place to resolve them before they become problems.</p>
       </div>
     </div>
   </div>
@@ -1460,7 +1574,7 @@
         <span class="label">The Process</span>
         <h2 class="process-headline">Good questions<br>deserve <em>real answers.</em></h2>
       </div>
-      <p class="process-intro">Most clients arrive with the same questions — and they are all worth asking. Here's what [Attorney Name] hears most often, with the kind of clear, honest answers you should have before your transaction begins.</p>
+      <p class="process-intro">Most clients arrive with the same questions — and they are all worth asking. Here's what Georgette hears most often, with the kind of clear, honest answers you should have before your transaction begins.</p>
     </div>
 
     <div class="faq-list">
@@ -1478,22 +1592,22 @@
       <div class="faq-item">
         <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.2</span>
-          <span class="faq-q-text">What does a real estate attorney actually do at closing?</span>
+          <span class="faq-q-text">Who owns the property — and are there liens or approvals to clear?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-body-wrap">
-          <p class="faq-body">A lot more than most people realize. I review and prepare closing documents, verify the title is clear, confirm the numbers match what was agreed, walk you through every page you sign, and make sure nothing unexpected came up between contract and close. <strong>Illinois law requires an attorney at every real estate closing</strong> — the question is whether yours is genuinely working for you. I always am.</p>
+          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity — and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.3</span>
-          <span class="faq-q-text">What will you look for when you review my contract?</span>
+          <span class="faq-q-text">What about tenants, improvements, or zoning?</span>
           <span class="faq-icon">+</span>
         </div>
         <div class="faq-body-wrap">
-          <p class="faq-body">Everything — but especially the things buyers and sellers typically overlook: contingency language, inspection deadlines, HOA and condo association terms, what's included in the sale, and any clauses that shift risk in ways you may not expect. I explain every section in plain language and write modifications where the contract doesn't adequately protect your interests. If something's off, you'll hear about it directly.</p>
+          <p class="faq-body">If there are tenants, there are documents a buyer will need — I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
         </div>
       </div>
 
@@ -1511,7 +1625,7 @@
 
     <div class="process-callout">
       <div class="callout-dot"></div>
-      <p class="callout-text"><strong>Illinois is an attorney state for real estate closings.</strong> That means you're already paying for legal representation — the question is whether that attorney is working for you or simply facilitating paperwork. [Attorney Name] represents buyers and sellers exclusively, and never both sides of the same transaction.</p>
+      <p class="callout-text"><strong>Illinois is an attorney state for real estate closings.</strong> That means you're already paying for legal representation — the question is whether that attorney is working for you or simply facilitating paperwork. Georgette represents one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
     </div>
   </div>
 </section>
@@ -1525,7 +1639,7 @@
         <span class="label">How I Can Help</span>
         <h2 class="services-headline">Where I'm able<br>to <em>help.</em></h2>
       </div>
-      <p class="services-intro">Every matter below is handled personally — you will always know where your transaction stands, and you will always be able to reach [Attorney Name] directly.</p>
+      <p class="services-intro">Every matter below is handled personally — for buyers, sellers, investors, and developers alike. You will always know where your transaction stands, and you will always be able to reach Georgette directly.</p>
     </div>
 
     <div class="services-cards">
@@ -1533,25 +1647,25 @@
         <span class="service-card-num">01</span>
         <div class="service-card-pip"></div>
         <div class="service-card-title">Residential Purchase &amp; Sale</div>
-        <p class="service-card-body">Full representation for buyers and sellers in single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs — from contract review through closing.</p>
+        <p class="service-card-body">Full representation for buyers and sellers of single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs — from contract through closing.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">02</span>
         <div class="service-card-pip"></div>
-        <div class="service-card-title">Contract Review &amp; Negotiation</div>
-        <p class="service-card-body">Thorough review of purchase contracts, attorney modification letters, rider agreements, and association documents — with plain-language explanations and negotiation of terms that genuinely protect you.</p>
+        <div class="service-card-title">Commercial Transactions</div>
+        <p class="service-card-body">Acquisition, disposition, and refinance of commercial property — guiding owners and businesses through deals where the details carry real financial weight.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">03</span>
         <div class="service-card-pip"></div>
-        <div class="service-card-title">Title &amp; Closing Services</div>
-        <p class="service-card-body">Review of title commitments, identification of defects or encumbrances, survey analysis, and preparation of all closing documents. By the time you sit down at the table, there are no surprises.</p>
+        <div class="service-card-title">Investors &amp; Developers</div>
+        <p class="service-card-body">Representation for investors, developers, and flippers — including multi-unit and portfolio transactions, with the due diligence these deals demand.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">04</span>
         <div class="service-card-pip"></div>
-        <div class="service-card-title">Investment Property Transactions</div>
-        <p class="service-card-body">Legal representation for buyers and sellers of investment and multi-unit properties, including lease review, tenant rights considerations, and thorough due diligence throughout the process.</p>
+        <div class="service-card-title">Contracts, Leases &amp; Closing</div>
+        <p class="service-card-body">Negotiation of purchase contracts and commercial leases, title and document review, and preparation for closing — so you reach the table with no surprises.</p>
       </div>
     </div>
   </div>
@@ -1559,6 +1673,7 @@
 
 
 <!-- ── TESTIMONIALS ── -->
+<!-- NEEDS: real client testimonials from Georgette — copy below is placeholder -->
 <section id="testimonials">
   <div class="container">
     <div class="testimonials-header">
@@ -1613,13 +1728,16 @@
     <p class="contact-body">Tell me about your transaction and I'll tell you exactly how I can help. There is no commitment and no pressure — just a clear, honest conversation with someone who has been through this process many times and is glad to guide you through it.</p>
 
     <p class="contact-phone-tag">Call directly</p>
-    <a href="tel:+13125550000" class="contact-phone-num">(312) 555-0000</a>
+    <a href="tel:+13125729189" class="contact-phone-num">(312) 572-9189</a>
     <p class="contact-phone-note">Calls returned same day &middot; Prefers phone to email</p>
 
     <div class="contact-divider"></div>
 
-    <p class="contact-addr-tag">Office</p>
-    <p class="contact-addr">[Street Address]<br>Chicago, IL [ZIP]</p>
+    <p class="contact-addr-tag">Email</p>
+    <p class="contact-addr"><a href="mailto:attyreynolds@gmail.com" style="color:inherit;text-decoration:none;">attyreynolds@gmail.com</a></p>
+
+    <p class="contact-addr-tag" style="margin-top:28px;">Office</p>
+    <p class="contact-addr">1507 E. 53rd Street #609<br>Chicago, IL 60615</p>
   </div>
 
   <div class="contact-right">
@@ -1657,7 +1775,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-name">[Attorney Name] · Chicago Real Estate Law</div>
+      <div class="footer-name">Georgette Reynolds, Attorney at Law, LLC · Chicago Real Estate Law</div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#process">Process</a></li>
