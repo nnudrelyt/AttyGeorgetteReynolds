@@ -1,0 +1,5 @@
+.vercel
+.claude
+_verify.html
+_mock-*.html
+.DS_Store
