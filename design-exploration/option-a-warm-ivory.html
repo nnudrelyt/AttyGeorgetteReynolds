@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E7; --ink:#241F1A; --muted:#6E6557; --forest:#20402D; --brass:#A9854F;
+    --line:#E3DBCB; --card:#FCFAF4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+  .eyebrow{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+  h1,h2{font-family:'Spectral',serif;font-weight:400;line-height:1.04;letter-spacing:-.015em}
+  em{font-style:italic;color:var(--forest)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 64px;border-bottom:1px solid var(--line)}
+  .logo{font-family:'Spectral',serif;font-size:21px;letter-spacing:.02em}
+  .logo small{display:block;font-family:'Jost';font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:4px;font-weight:400}
+  .navlinks{display:flex;gap:40px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .navphone{font-family:'Spectral',serif;font-size:19px;color:var(--forest)}
+
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:660px}
+  .hero-l{padding:90px 64px 90px 64px;display:flex;flex-direction:column;justify-content:center}
+  .hero-l .eyebrow{margin-bottom:30px}
+  .hero h1{font-size:clamp(56px,6.6vw,96px);margin-bottom:34px}
+  .hero-sub{font-size:19px;line-height:1.75;color:var(--muted);max-width:460px;margin-bottom:46px}
+  .brass-rule{width:54px;height:2px;background:var(--brass);margin-bottom:30px}
+  .phone-tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .phone-num{font-family:'Spectral',serif;font-size:40px;color:var(--ink)}
+  .phone-note{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px}
+  .hero-r{position:relative;overflow:hidden}
+  .hero-r img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+  .band{padding:108px 64px}
+  .band-head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:56px}
+  .band h2{font-size:clamp(36px,4vw,54px);max-width:620px}
+  .band-intro{font-size:17px;line-height:1.7;color:var(--muted);max-width:360px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .tile .ph{height:230px;background:#2c3a30;display:flex;align-items:flex-end;padding:18px;color:#dfe6dd;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+  .tile.t2 .ph{background:#5a4a36}.tile.t3 .ph{background:#7a3f2c}
+  .tile-cap{padding:22px 22px 26px}
+  .tile-cap h3{font-family:'Spectral',serif;font-weight:400;font-size:21px;margin-bottom:8px}
+  .tile-cap p{font-size:14px;line-height:1.65;color:var(--muted)}
+</style></head>
+<body>
+  <nav>
+    <div class="logo">Georgette Reynolds<small>Chicago Real Estate Law</small></div>
+    <div class="navlinks"><span>About</span><span>Approach</span><span>Services</span><span>Contact</span></div>
+    <div class="navphone">(312) 572-9189</div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-l">
+      <span class="eyebrow">Chicago Real Estate Attorney</span>
+      <h1>Before you<br>close, <em>let's talk.</em></h1>
+      <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn — residential and commercial — from contract to closing.</p>
+      <div class="brass-rule"></div>
+      <p class="phone-tag">Start with a call</p>
+      <div class="phone-num">(312) 572-9189</div>
+      <p class="phone-note">Calls returned same day · most take about 15 minutes</p>
+    </div>
+    <div class="hero-r"><img src="../assets/agr-headshot.png" alt="Georgette Reynolds"></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head">
+      <h2>A practice built on <em>staying close</em> to every deal.</h2>
+      <p class="band-intro">Real estate is full of moving parts. The work is spotting the risks early, keeping everyone moving, and getting you to the table with no surprises.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile t1"><div class="ph">Residential</div><div class="tile-cap"><h3>Buying &amp; selling homes</h3><p>Single-family, condo, townhome, and multi-unit — walked through every step.</p></div></div>
+      <div class="tile t2"><div class="ph">Commercial</div><div class="tile-cap"><h3>Deals with weight</h3><p>Acquisition, disposition, and refinance where the details carry real cost.</p></div></div>
+      <div class="tile t3"><div class="ph">Investors</div><div class="tile-cap"><h3>Building portfolios</h3><p>Move fast, clear the legal hurdles, and keep building.</p></div></div>
+    </div>
+  </section>
+</body></html>

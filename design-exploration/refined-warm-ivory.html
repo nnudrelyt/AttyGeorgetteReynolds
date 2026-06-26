@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E7; --bg2:#FBF8F1; --ink:#221E18; --muted:#6E6557;
+    --forest:#20402D; --forest-d:#193122; --brass:#A9854F; --line:#E4DCCC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+  .eyebrow{font-size:13px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--brass)}
+  h1,h2{font-family:'Spectral',serif;font-weight:400;line-height:1.03;letter-spacing:-.015em}
+  em{font-style:italic;color:var(--forest)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:30px 64px;border-bottom:1px solid var(--line)}
+  .logo{font-family:'Spectral',serif;font-size:22px;letter-spacing:.02em}
+  .logo small{display:block;font-family:'Jost';font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:400}
+  .navlinks{display:flex;gap:42px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .navphone{font-family:'Spectral',serif;font-size:20px;color:var(--forest)}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
+  .hero-l{padding:96px 56px 96px 64px;display:flex;flex-direction:column;justify-content:center}
+  .hero-l .eyebrow{margin-bottom:32px}
+  .hero h1{font-size:clamp(60px,7vw,104px);margin-bottom:36px}
+  .hero-sub{font-size:19px;line-height:1.75;color:var(--muted);max-width:470px;margin-bottom:44px}
+  .brass-rule{width:56px;height:2px;background:var(--brass);margin-bottom:30px}
+  .phone-tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .phone-num{font-family:'Spectral',serif;font-size:42px;color:var(--ink)}
+  .phone-note{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px}
+  .hero-r{position:relative;overflow:hidden;background:#2c3a30}
+  .hero-r img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .cred{position:absolute;left:-1px;bottom:40px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--brass);padding:20px 26px;max-width:300px}
+  .cred .nm{font-family:'Spectral',serif;font-size:19px}
+  .cred .mt{font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:6px;line-height:1.5}
+
+  .difference{background:var(--forest);color:#F2EEDF;padding:120px 64px;text-align:center}
+  .difference .eyebrow{color:#D8B57E;margin-bottom:26px}
+  .difference h2{font-size:clamp(40px,4.6vw,64px);max-width:880px;margin:0 auto 30px}
+  .difference h2 em{color:#D8B57E}
+  .difference p{font-size:19px;line-height:1.8;color:rgba(242,238,223,.78);max-width:620px;margin:0 auto}
+
+  .svc{padding:112px 64px}
+  .svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:60px}
+  .svc h2{font-size:clamp(38px,4.2vw,58px);max-width:560px}
+  .svc-intro{font-size:17px;line-height:1.7;color:var(--muted);max-width:380px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:40px 38px}
+  .card .h{width:34px;height:2px;background:var(--brass);margin-bottom:24px}
+  .card h3{font-family:'Spectral',serif;font-weight:400;font-size:25px;margin-bottom:14px}
+  .card p{font-size:15px;line-height:1.75;color:var(--muted)}
+  .card .angle{font-family:'Spectral',serif;font-style:italic;font-size:15px;color:var(--forest);margin-top:16px}
+</style></head>
+<body>
+  <nav>
+    <div class="logo">Georgette Reynolds<small>Chicago Real Estate Law</small></div>
+    <div class="navlinks"><span>About</span><span>Approach</span><span>Services</span><span>Referrals</span><span>Contact</span></div>
+    <div class="navphone">(312) 572-9189</div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-l">
+      <span class="eyebrow">Chicago Real Estate Attorney</span>
+      <h1>Before you<br>close, <em>let's talk.</em></h1>
+      <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn — residential and commercial, from contract to closing.</p>
+      <div class="brass-rule"></div>
+      <p class="phone-tag">Start with a call</p>
+      <div class="phone-num">(312) 572-9189</div>
+      <p class="phone-note">Calls returned same day · most take about 15 minutes</p>
+    </div>
+    <div class="hero-r">
+      <img src="../assets/agr-headshot.png" alt="Georgette Reynolds">
+      <div class="cred"><div class="nm">Georgette Reynolds, J.D./LLM</div><div class="mt">Illinois Bar · Adjunct Professor of Real Estate Law · 25+ Years</div></div>
+    </div>
+  </section>
+
+  <section class="difference">
+    <span class="eyebrow">The difference</span>
+    <h2>An attorney who <em>teaches.</em></h2>
+    <p>Georgette explains what each document does, why it matters, and what to watch for — so you finish your transaction understanding what happened and why, not just relieved that it's over.</p>
+  </section>
+
+  <section class="svc">
+    <div class="svc-head">
+      <h2>Where I'm able to <em>help.</em></h2>
+      <p class="svc-intro">Every matter is handled personally — for buyers, sellers, investors, and developers alike.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="h"></div><h3>Residential Purchase &amp; Sale</h3><p>Buyers and sellers of homes, condos, townhomes, and multi-unit property across Chicago.</p><div class="angle">Walked through every step.</div></div>
+      <div class="card"><div class="h"></div><h3>Commercial Transactions</h3><p>Acquisition, disposition, and refinance where the details carry real financial weight.</p><div class="angle">The diligence high-stakes deals demand.</div></div>
+      <div class="card"><div class="h"></div><h3>Investors &amp; Developers</h3><p>Multi-unit and portfolio transactions with the due diligence these deals require.</p><div class="angle">Move fast, keep building.</div></div>
+      <div class="card"><div class="h"></div><h3>Contracts, Leases &amp; Closing</h3><p>Negotiation, title and document review, and preparation for a clean closing.</p><div class="angle">Every term explained before you sign.</div></div>
+    </div>
+  </section>
+</body></html>
