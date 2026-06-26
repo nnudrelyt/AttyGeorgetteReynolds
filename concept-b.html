@@ -8,205 +8,201 @@
 <link rel="icon" href="assets/g-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Warm Ivory system */
+    /* Warm Ivory system + sage / warm-gray hints */
     --ivory:#F6F1E7;      /* page canvas */
-    --bg2:#FBF8F1;        /* cards / relief */
-    --ink:#221E18;        /* primary text */
-    --muted:#5f5749;      /* secondary text (AA on ivory) */
-    --forest:#20402D;     /* dark surfaces / accent */
+    --bg2:#FCF9F2;        /* raised cards */
+    --stone:#EAE5D9;      /* warm-gray relief band */
+    --ink:#1F1B15;        /* primary text (darker for legibility) */
+    --muted:#4c4537;      /* secondary text — AA on ivory & stone */
+    --forest:#20402D;     /* brand dark / promise */
     --forest-d:#18301f;   /* deepest forest (footer) */
-    --cream:#F2EEDF;      /* text on forest */
-    --brass:#A9854F;      /* decorative hairlines / rules */
-    --brass-ink:#785526;  /* brass as TEXT on light (AA) */
-    --brass-lt:#D8B57E;   /* brass text on forest */
-    --line:#E4DCCC;       /* hairlines on light */
+    --cream:#F3EFE2;      /* text on forest */
+    --sage:#7f8769;       /* sage hint — quote card fill */
+    --sage-deep:#4f5740;  /* sage as text on light (AA) */
+    --brass:#A9854F;      /* decorative hairlines */
+    --brass-ink:#6f4e22;  /* brass as text on light (AA) */
+    --brass-lt:#DcB985;   /* brass text on forest */
+    --gray:#928c7e;       /* warm-gray accent (meta text) */
+    --line:#E0D8C7;
     --r-sm:6px; --r-md:10px; --r-lg:14px;
-    --shadow-card:0 14px 40px rgba(42,34,22,0.08);
+    --shadow-card:0 14px 40px rgba(42,34,22,0.09);
   }
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
 
   /* ── a11y primitives ── */
   :focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:3px}
   .difference :focus-visible,.contact-left :focus-visible,footer :focus-visible{outline-color:var(--cream)}
-  .skip-link{position:absolute;left:12px;top:-64px;z-index:200;background:var(--forest);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;letter-spacing:.04em;text-decoration:none;transition:top .2s ease}
+  .skip-link{position:absolute;left:12px;top:-64px;z-index:200;background:var(--forest);color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;text-decoration:none;transition:top .2s ease}
   .skip-link:focus{top:12px}
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
   /* ── type ── */
-  h1,h2,h3{font-family:'Spectral',serif;font-weight:400;line-height:1.05;letter-spacing:-.015em}
-  em{font-style:italic;color:var(--forest)}
-  .eyebrow{font-size:13px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-ink);display:block;margin-bottom:24px}
+  h1,h2,h3{font-family:'Spectral',serif;font-weight:500;line-height:1.08;letter-spacing:-.01em}
+  em{font-style:italic;color:var(--forest);font-weight:500}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-ink);display:block;margin-bottom:22px}
   .brass-rule{width:56px;height:2px;background:var(--brass);border:0}
 
   /* ── layout ── */
   .container{max-width:1200px;margin:0 auto;padding:0 64px}
-  section{padding:clamp(88px,11vw,148px) 0}
+  section{padding:clamp(84px,10vw,140px) 0}
 
   /* ── nav ── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,241,231,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,241,231,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
   .nav-logo{color:var(--ink);text-decoration:none;display:inline-flex;flex-direction:column;gap:5px}
-  .nav-logo-tag{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .nav-logo-tag{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .logo-wordmark,.logo-gmark{display:block;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;-webkit-mask-size:contain;mask-size:contain}
   .logo-wordmark{width:176px;height:36px;-webkit-mask-image:url('assets/wordmark.svg');mask-image:url('assets/wordmark.svg')}
   .logo-gmark{width:32px;height:30px;-webkit-mask-image:url('assets/g-mark.svg');mask-image:url('assets/g-mark.svg')}
   .nav-logo .logo-gmark{display:none}
-  .nav-links{display:flex;gap:40px;list-style:none}
-  .nav-links a{font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-links{display:flex;gap:38px;list-style:none}
+  .nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
-  .nav-phone{font-family:'Spectral',serif;font-size:20px;color:var(--forest);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s}
+  .nav-phone{font-family:'Spectral',serif;font-size:20px;font-weight:500;color:var(--forest);text-decoration:none;display:flex;align-items:center;gap:10px;transition:color .2s}
   .nav-phone:hover{color:var(--brass-ink)}
   .nav-phone-pip{width:7px;height:7px;border-radius:50%;background:var(--brass);flex-shrink:0}
 
   /* ── hero ── */
   #hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:76px}
   .hero-l{padding:clamp(56px,7vw,104px) clamp(40px,4.5vw,64px);display:flex;flex-direction:column;justify-content:center}
-  .hero-headline{font-size:clamp(54px,6.8vw,104px);margin-bottom:34px}
-  .hero-sub{font-size:clamp(17px,1.4vw,20px);line-height:1.75;color:var(--muted);max-width:480px;margin-bottom:46px}
+  .hero-headline{font-size:clamp(54px,6.8vw,104px);font-weight:500;margin-bottom:34px}
+  .hero-sub{font-size:clamp(18px,1.45vw,21px);line-height:1.7;color:var(--muted);max-width:500px;margin-bottom:46px}
   .hero-l .brass-rule{margin-bottom:30px}
-  .hero-phone-tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-  .hero-phone-num{font-family:'Spectral',serif;font-size:clamp(34px,3.4vw,46px);color:var(--ink);text-decoration:none;display:block;line-height:1;transition:color .2s}
+  .hero-phone-tag{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .hero-phone-num{font-family:'Spectral',serif;font-size:clamp(36px,3.4vw,48px);font-weight:500;color:var(--ink);text-decoration:none;display:block;line-height:1;transition:color .2s}
   .hero-phone-num:hover{color:var(--forest)}
-  .hero-phone-note{font-size:14px;font-style:italic;color:var(--muted);margin-top:12px}
+  .hero-phone-note{font-size:15px;font-style:italic;color:var(--muted);margin-top:12px}
   .hero-r{position:relative;overflow:hidden;background:#2c3a30}
   .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-  .hero-cred{position:absolute;left:0;bottom:44px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--brass);padding:20px 28px;max-width:320px}
-  .hero-cred .nm{font-family:'Spectral',serif;font-size:19px;color:var(--ink)}
-  .hero-cred .mt{font-size:12px;letter-spacing:.03em;color:var(--muted);margin-top:7px;line-height:1.55}
-
-  /* ── about ── */
-  #about{background:var(--ivory)}
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(48px,7vw,104px);align-items:start}
-  .about-headline{font-size:clamp(36px,4.2vw,58px);margin-bottom:36px}
-  .about-body{font-size:clamp(16px,1.25vw,18px);color:var(--ink);line-height:1.85;margin-bottom:22px}
-  .about-sig{display:flex;align-items:center;gap:18px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
-  .sig-mark{width:48px;height:44px;background-color:var(--forest);-webkit-mask:url('assets/g-mark.svg') center/contain no-repeat;mask:url('assets/g-mark.svg') center/contain no-repeat;flex-shrink:0;opacity:.9}
-  .sig-name{font-family:'Spectral',serif;font-size:18px;color:var(--ink)}
-  .sig-title{font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:4px}
-  .about-side{display:flex;flex-direction:column;gap:18px}
-  .quote-card{background:var(--forest);border-radius:var(--r-lg);padding:34px 32px}
-  .quote-card .qbar{width:28px;height:2px;background:var(--brass-lt);margin-bottom:18px}
-  .quote-card p{font-family:'Spectral',serif;font-size:18px;font-style:italic;color:var(--cream);line-height:1.6}
-  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .stat{background:var(--forest);border-radius:var(--r-md);padding:24px 22px}
-  .stat-num{font-family:'Spectral',serif;font-size:30px;color:var(--cream);line-height:1.05}
-  .stat-label{font-size:12px;color:rgba(242,238,223,.72);line-height:1.5;margin-top:7px}
+  .hero-cred{position:absolute;left:0;bottom:44px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--brass);padding:20px 28px;max-width:330px}
+  .hero-cred .nm{font-family:'Spectral',serif;font-size:20px;font-weight:500;color:var(--ink)}
+  .hero-cred .mt{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.55}
 
   /* ── the difference (forest band) ── */
   .difference{background:var(--forest);text-align:center}
-  .difference .eyebrow{color:var(--brass-lt);margin:0 auto 26px}
-  .difference h2{font-size:clamp(40px,4.8vw,66px);color:var(--cream);max-width:900px;margin:0 auto 30px}
+  .difference .eyebrow{color:var(--brass-lt);margin:0 auto 24px}
+  .difference h2{font-size:clamp(40px,4.8vw,66px);font-weight:500;color:var(--cream);max-width:920px;margin:0 auto 30px}
   .difference h2 em{color:var(--brass-lt)}
-  .difference p{font-size:clamp(17px,1.5vw,20px);line-height:1.8;color:rgba(242,238,223,.82);max-width:660px;margin:0 auto}
+  .difference p{font-size:clamp(18px,1.55vw,22px);line-height:1.7;color:rgba(243,239,226,.92);max-width:700px;margin:0 auto}
+
+  /* ── about ── */
+  #about{background:var(--ivory)}
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(48px,7vw,100px);align-items:start}
+  .about-headline{font-size:clamp(38px,4.2vw,58px);font-weight:500;margin-bottom:34px}
+  .about-body{font-size:clamp(17px,1.3vw,19px);color:var(--ink);line-height:1.85;margin-bottom:22px}
+  .about-side{display:flex;flex-direction:column;gap:18px}
+  .about-sig{display:flex;align-items:center;gap:18px;margin-top:36px;padding-top:30px;border-top:1px solid var(--line)}
+  .sig-mark{width:46px;height:42px;background-color:var(--forest);-webkit-mask:url('assets/g-mark.svg') center/contain no-repeat;mask:url('assets/g-mark.svg') center/contain no-repeat;flex-shrink:0;opacity:.92}
+  .sig-name{font-family:'Spectral',serif;font-size:19px;font-weight:500;color:var(--ink)}
+  .sig-title{font-size:13px;color:var(--muted);margin-top:4px}
+  .quote-card{background:var(--sage);border-radius:var(--r-lg);padding:34px 32px}
+  .quote-card .qbar{width:30px;height:2px;background:var(--forest);margin-bottom:18px;opacity:.65}
+  .quote-card p{font-family:'Spectral',serif;font-size:19px;font-style:italic;font-weight:500;color:#1c2417;line-height:1.55}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .stat{background:var(--forest);border-radius:var(--r-md);padding:24px 22px}
+  .stat-num{font-family:'Spectral',serif;font-size:30px;font-weight:500;color:var(--cream);line-height:1.05}
+  .stat-label{font-size:13px;color:rgba(243,239,226,.82);line-height:1.5;margin-top:7px}
 
   /* ── section header (shared) ── */
-  .sec-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,5vw,80px);align-items:end;margin-bottom:clamp(44px,5vw,64px)}
-  .sec-head h2{font-size:clamp(36px,4.2vw,58px);max-width:620px}
-  .sec-intro{font-size:clamp(15px,1.2vw,17px);color:var(--muted);line-height:1.75;max-width:400px}
+  .sec-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,5vw,80px);align-items:end;margin-bottom:clamp(44px,5vw,62px)}
+  .sec-head h2{font-size:clamp(36px,4.2vw,56px);font-weight:500;max-width:640px}
+  .sec-intro{font-size:clamp(16px,1.2vw,18px);color:var(--muted);line-height:1.7;max-width:410px}
 
-  /* ── cards (how-i-work, services) ── */
+  /* ── cards ── */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(32px,3vw,42px) clamp(28px,2.6vw,40px);transition:box-shadow .25s,transform .25s}
   .card:hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
   .card .chair{width:34px;height:2px;background:var(--brass);margin-bottom:24px}
-  .card h3{font-family:'Spectral',serif;font-size:clamp(22px,1.9vw,26px);color:var(--ink);margin-bottom:14px;line-height:1.2}
-  .card p{font-size:15px;color:var(--muted);line-height:1.75}
-  .card .angle{font-family:'Spectral',serif;font-style:italic;font-size:15px;color:var(--forest);margin-top:16px}
+  .card h3{font-family:'Spectral',serif;font-size:clamp(23px,1.9vw,27px);font-weight:500;color:var(--ink);margin-bottom:14px;line-height:1.2}
+  .card p{font-size:16px;color:var(--muted);line-height:1.75}
+  .card .angle{font-family:'Spectral',serif;font-style:italic;font-weight:500;font-size:16px;color:var(--sage-deep);margin-top:16px}
 
-  #services{background:var(--bg2)}
-  #services .card{background:var(--ivory)}
-
-  /* ── referrals ── */
-  #referral{background:var(--ivory)}
-  .ref-cta{margin-top:44px}
-  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:17px 34px;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
-  .btn:hover{background:var(--forest-d);box-shadow:var(--shadow-card)}
-  .btn::after{content:'→';font-size:15px}
+  #approach{background:var(--stone)}      /* warm-gray relief */
+  #services{background:var(--ivory)}
 
   /* ── FAQ ── */
   #process{background:var(--ivory)}
-  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:920px}
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:940px}
   .faq-item{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:box-shadow .2s}
   .faq-item.open{box-shadow:var(--shadow-card)}
-  .faq-trigger{width:100%;background:none;border:none;font:inherit;color:inherit;text-align:left;padding:26px 30px;display:grid;grid-template-columns:42px 1fr 32px;gap:16px;align-items:center;cursor:pointer;border-radius:var(--r-lg)}
+  .faq-trigger{width:100%;background:none;border:none;font:inherit;color:inherit;text-align:left;padding:26px 30px;display:grid;grid-template-columns:44px 1fr 32px;gap:16px;align-items:center;cursor:pointer;border-radius:var(--r-lg)}
   .faq-item.open .faq-trigger{border-radius:var(--r-lg) var(--r-lg) 0 0;background:var(--bg2)}
-  .faq-q-num{font-family:'Spectral',serif;font-size:14px;font-style:italic;color:var(--brass-ink);padding-top:3px}
-  .faq-q-text{font-family:'Spectral',serif;font-size:clamp(18px,1.6vw,21px);color:var(--ink);line-height:1.3}
+  .faq-q-num{font-family:'Spectral',serif;font-size:15px;font-style:italic;font-weight:500;color:var(--brass-ink);padding-top:3px}
+  .faq-q-text{font-family:'Spectral',serif;font-size:clamp(19px,1.6vw,22px);font-weight:500;color:var(--ink);line-height:1.3}
   .faq-icon{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);flex-shrink:0;justify-self:end;transition:all .2s}
-  .faq-icon::after{content:'+';line-height:1;font-size:16px}
+  .faq-icon::after{content:'+';line-height:1;font-size:17px}
   .faq-trigger[aria-expanded="true"] .faq-icon{background:var(--forest);border-color:var(--forest);color:var(--cream)}
   .faq-trigger[aria-expanded="true"] .faq-icon::after{content:'−'}
   .faq-wrap{max-height:0;overflow:hidden;transition:max-height .38s ease}
-  .faq-item.open .faq-wrap{max-height:360px}
-  .faq-body{padding:4px 30px 30px calc(42px + 16px + 30px);font-size:16px;color:var(--muted);line-height:1.8;background:var(--bg2)}
+  .faq-item.open .faq-wrap{max-height:420px}
+  .faq-body{padding:4px 30px 30px calc(44px + 16px + 30px);font-size:17px;color:var(--muted);line-height:1.8;background:var(--bg2)}
   .faq-body strong{color:var(--ink);font-weight:500}
-  .callout{margin-top:30px;max-width:920px;background:#EEEFE6;border:1px solid var(--line);border-left:3px solid var(--forest);border-radius:0 var(--r-md) var(--r-md) 0;padding:28px 32px;display:flex;gap:18px;align-items:flex-start}
-  .callout-dot{width:8px;height:8px;border-radius:50%;background:var(--forest);flex-shrink:0;margin-top:9px}
-  .callout p{font-size:15px;color:var(--ink);line-height:1.8}
-  .callout strong{font-weight:500}
 
   /* ── testimonials ── */
-  #testimonials{background:var(--bg2)}
-  .tst-head{text-align:center;max-width:580px;margin:0 auto clamp(44px,5vw,64px)}
+  #testimonials{background:var(--stone)}
+  .tst-head{text-align:center;max-width:600px;margin:0 auto clamp(44px,5vw,62px)}
   .tst-head .eyebrow{margin:0 auto 22px}
-  .tst-head h2{font-size:clamp(36px,4.2vw,58px)}
-  .tst-sub{font-size:16px;color:var(--muted);line-height:1.75;margin-top:18px}
+  .tst-head h2{font-size:clamp(36px,4.2vw,56px);font-weight:500}
+  .tst-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-top:18px}
   .tst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .tcard{background:var(--ivory);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(32px,3vw,42px);position:relative}
-  .tcard::before{content:'\201C';font-family:'Spectral',serif;font-size:70px;color:var(--brass);opacity:.28;position:absolute;top:16px;left:24px;line-height:1}
-  .tcard-text{font-family:'Spectral',serif;font-size:17px;font-style:italic;color:var(--ink);line-height:1.7;margin-bottom:26px;padding-top:18px;position:relative;z-index:1}
+  .tcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(32px,3vw,42px);position:relative}
+  .tcard::before{content:'\201C';font-family:'Spectral',serif;font-size:72px;font-weight:600;color:var(--brass);opacity:.3;position:absolute;top:16px;left:24px;line-height:1}
+  .tcard-text{font-family:'Spectral',serif;font-size:18px;font-style:italic;font-weight:500;color:var(--ink);line-height:1.65;margin-bottom:26px;padding-top:18px;position:relative;z-index:1}
   .tcard-foot{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:18px}
-  .tcard-dot{width:8px;height:8px;border-radius:50%;background:var(--brass);flex-shrink:0}
-  .tcard-name{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink)}
-  .tcard-ctx{font-size:11px;color:var(--muted);margin-top:2px}
-  .tcard-pending{display:block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .tcard-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0}
+  .tcard-name{font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--ink)}
+  .tcard-ctx{font-size:12px;color:var(--muted);margin-top:2px}
+  .tcard-pending{display:block;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:5px}
   .tcard--wide{grid-column:1 / -1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
   .tcard--wide .tcard-text{margin-bottom:0;padding-top:0}
   .tcard--wide .tcard-foot{border:none;padding:0;flex-direction:column;align-items:flex-end;text-align:right}
 
   /* ── contact ── */
   #contact{display:grid;grid-template-columns:1fr 1fr;min-height:640px;padding:0}
-  .contact-left{background:var(--forest);padding:clamp(64px,7vw,120px) clamp(40px,4.5vw,72px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+  .contact-left{background:var(--forest);padding:clamp(64px,7vw,120px) clamp(40px,4.5vw,72px);display:flex;flex-direction:column;justify-content:center}
   .contact-left .eyebrow{color:var(--brass-lt)}
-  .contact-headline{font-size:clamp(36px,4.2vw,56px);color:var(--cream);margin-bottom:22px}
+  .contact-headline{font-size:clamp(36px,4.2vw,56px);font-weight:500;color:var(--cream);margin-bottom:22px}
   .contact-headline em{color:var(--brass-lt)}
-  .contact-body{font-size:16px;color:rgba(242,238,223,.84);line-height:1.85;margin-bottom:48px;max-width:380px}
-  .c-tag{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,238,223,.66);margin-bottom:10px}
-  .c-phone{font-family:'Spectral',serif;font-size:clamp(32px,3.2vw,44px);color:var(--cream);text-decoration:none;display:block;line-height:1;transition:color .2s}
+  .contact-body{font-size:17px;color:rgba(243,239,226,.9);line-height:1.8;margin-bottom:46px;max-width:400px}
+  .c-tag{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,239,226,.72);margin-bottom:10px}
+  .c-phone{font-family:'Spectral',serif;font-size:clamp(32px,3.2vw,44px);font-weight:500;color:var(--cream);text-decoration:none;display:block;line-height:1;transition:color .2s}
   .c-phone:hover{color:var(--brass-lt)}
-  .c-note{font-size:13px;font-style:italic;color:rgba(242,238,223,.7);margin-top:10px}
-  .c-div{width:40px;height:1px;background:rgba(242,238,223,.28);margin:36px 0}
-  .c-line{font-size:15px;color:rgba(242,238,223,.84);line-height:1.7}
+  .c-note{font-size:14px;font-style:italic;color:rgba(243,239,226,.78);margin-top:10px}
+  .c-div{width:40px;height:1px;background:rgba(243,239,226,.3);margin:34px 0}
+  .c-line{font-size:16px;color:rgba(243,239,226,.9);line-height:1.7}
   .c-line a{color:inherit;text-decoration:none}
   .c-block{margin-bottom:24px}
   .contact-right{background:var(--bg2);padding:clamp(64px,7vw,120px) clamp(40px,4.5vw,72px);display:flex;flex-direction:column;justify-content:center}
-  .form-hed{font-family:'Spectral',serif;font-size:24px;color:var(--ink);margin-bottom:6px}
-  .form-sub{font-size:14px;font-style:italic;color:var(--muted);margin-bottom:34px;line-height:1.6}
+  .form-hed{font-family:'Spectral',serif;font-size:25px;font-weight:500;color:var(--ink);margin-bottom:6px}
+  .form-sub{font-size:15px;font-style:italic;color:var(--muted);margin-bottom:32px;line-height:1.6}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .field{margin-bottom:20px}
-  .field label{display:block;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .field input,.field textarea{display:block;width:100%;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:13px 16px;font-family:'Jost',sans-serif;font-size:15px;font-weight:300;color:var(--ink);transition:border-color .2s,box-shadow .2s}
-  .field input::placeholder,.field textarea::placeholder{color:#b3a894}
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,64,45,.12)}
-  .field textarea{resize:none;min-height:104px}
+  .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .field input,.field textarea{display:block;width:100%;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:'Jost',sans-serif;font-size:16px;font-weight:400;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+  .field input::placeholder,.field textarea::placeholder{color:#a89c86}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,64,45,.13)}
+  .field textarea{resize:none;min-height:108px}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 34px;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
+  .btn:hover{background:var(--forest-d);box-shadow:var(--shadow-card)}
+  .btn::after{content:'→';font-size:15px}
 
   /* ── footer ── */
   footer{background:var(--forest-d);padding:56px 0}
   .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
   .footer-brand{display:inline-flex;flex-direction:column;gap:10px}
   .footer-brand .logo-wordmark{width:160px;height:32px;color:var(--cream)}
-  .footer-firm{font-size:12px;letter-spacing:.04em;color:rgba(242,238,223,.66)}
-  .footer-tagline{font-family:'Spectral',serif;font-style:italic;font-size:14px;color:rgba(242,238,223,.7)}
+  .footer-firm{font-size:13px;color:rgba(243,239,226,.72)}
+  .footer-tagline{font-family:'Spectral',serif;font-style:italic;font-weight:500;font-size:15px;color:rgba(243,239,226,.78)}
   .footer-links{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
-  .footer-links a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,238,223,.66);text-decoration:none;transition:color .2s}
+  .footer-links a{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,226,.74);text-decoration:none;transition:color .2s}
   .footer-links a:hover{color:var(--cream)}
-  .footer-legal{font-size:11px;color:rgba(242,238,223,.5);margin-top:18px;width:100%}
+  .footer-legal{font-size:12px;color:rgba(243,239,226,.56);margin-top:18px;width:100%}
 
   /* ── responsive ── */
   @media (max-width:980px){
@@ -245,10 +241,9 @@
     <span class="nav-logo-tag">Chicago Real Estate Law</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
     <li><a href="#teach">Approach</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#referral">Referrals</a></li>
     <li><a href="#process">FAQ</a></li>
   </ul>
   <a href="tel:+13125729189" class="nav-phone"><span class="nav-phone-pip" aria-hidden="true"></span>(312) 572-9189</a>
@@ -275,6 +270,15 @@
       <div class="nm">Georgette Reynolds, J.D./LLM</div>
       <div class="mt">Illinois Bar · Adjunct Professor of Real Estate Law · 25+ Years</div>
     </div>
+  </div>
+</section>
+
+<!-- ── THE DIFFERENCE (brand promise — sets the tone) ── -->
+<section id="teach" class="difference">
+  <div class="container">
+    <span class="eyebrow">The Difference</span>
+    <h2>An attorney who <em>teaches.</em></h2>
+    <p>Georgette spent years teaching real estate law as an adjunct professor — and she brings that same instinct to every client. She explains what each document does, why it matters, and what to watch for, so you finish your transaction understanding what happened and why — not just relieved that it's over.</p>
   </div>
 </section>
 
@@ -309,15 +313,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── THE DIFFERENCE ── -->
-<section id="teach" class="difference">
-  <div class="container">
-    <span class="eyebrow">The Difference</span>
-    <h2>An attorney who <em>teaches.</em></h2>
-    <p>Georgette spent years teaching real estate law as an adjunct professor — and she brings that same instinct to every client. She explains what each document does, why it matters, and what to watch for, so you finish your transaction understanding what happened and why — not just relieved that it's over.</p>
   </div>
 </section>
 
@@ -359,35 +354,15 @@
   </div>
 </section>
 
-<!-- ── REFERRAL PARTNERS ── -->
-<section id="referral">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow">For Agents, Brokers &amp; Lenders</span>
-        <h2>A partner who makes you <em>look good.</em></h2>
-      </div>
-      <p class="sec-intro">When you refer a client, your reputation rides along with them. Georgette keeps your deal moving instead of stalling it — responsive within the day, constructive when issues surface, and clear with your client so they stay calm through closing.</p>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="chair"></div><h3>Responsive</h3><p>Same-day calls; your client is never left waiting, and neither are you.</p></div>
-      <div class="card"><div class="chair"></div><h3>Constructive</h3><p>Solves problems and finds the path forward instead of killing deals over them.</p></div>
-      <div class="card"><div class="chair"></div><h3>Clear</h3><p>Explains the process to your client so they stay confident through to the table.</p></div>
-      <div class="card"><div class="chair"></div><h3>Aligned</h3><p>Represents one side only; your client's interest is never in question.</p></div>
-    </div>
-    <div class="ref-cta"><a href="#contact" class="btn">Become a referral partner</a></div>
-  </div>
-</section>
-
 <!-- ── FAQ ── -->
 <section id="process">
   <div class="container">
     <div class="sec-head">
       <div>
-        <span class="eyebrow">The Process</span>
+        <span class="eyebrow">Common Questions</span>
         <h2>Good questions deserve <em>real answers.</em></h2>
       </div>
-      <p class="sec-intro">Most clients arrive with the same questions — and they are all worth asking. Here's what Georgette hears most often, with clear, honest answers you should have before your transaction begins.</p>
+      <p class="sec-intro">A few of the things buyers, sellers, and investors ask most often — with the clear, honest answers you should have before your transaction begins.</p>
     </div>
     <div class="faq-list">
       <div class="faq-item open">
@@ -397,43 +372,59 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-1" role="region" aria-label="When should I get an attorney involved?">
-          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet — that's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. But if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p>
+          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet — that's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. And if you're earlier in the process and just want to understand what to expect, please call — that conversation is always free.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-2" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.2</span>
-          <span class="faq-q-text">Who owns the property — and are there liens or approvals to clear?</span>
+          <span class="faq-q-text">What does a real estate attorney actually do?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-wrap" id="faq-2" role="region" aria-label="Who owns the property — and are there liens or approvals to clear?">
-          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity — and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
+        <div class="faq-wrap" id="faq-2" role="region" aria-label="What does a real estate attorney actually do?">
+          <p class="faq-body">A great deal that happens behind the scenes. I review and prepare the contract and closing documents, confirm the title is clear, make sure the numbers match what was agreed, and walk you through every page before you sign. My four jobs on every deal are to <strong>plan</strong> toward your goal, <strong>facilitate</strong> the other parties, <strong>advise</strong> when something needs a Plan B, and <strong>manage risk</strong> before it becomes a problem — so you reach the table with no surprises.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-3" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.3</span>
-          <span class="faq-q-text">What about tenants, improvements, or zoning?</span>
+          <span class="faq-q-text">If Illinois requires an attorney anyway, does it matter who I choose?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-wrap" id="faq-3" role="region" aria-label="What about tenants, improvements, or zoning?">
-          <p class="faq-body">If there are tenants, there are documents a buyer will need — I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
+        <div class="faq-wrap" id="faq-3" role="region" aria-label="If Illinois requires an attorney anyway, does it matter who I choose?">
+          <p class="faq-body">It matters a great deal. <strong>Illinois is an attorney state for real estate closings</strong>, so you're already paying for legal representation — the question is whether that attorney is genuinely working for you or simply moving paperwork. I represent one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.4</span>
+          <span class="faq-q-text">Who owns the property — and are there liens or approvals to clear?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-wrap" id="faq-4" role="region" aria-label="Who owns the property — and are there liens or approvals to clear?">
+          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity — and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-5" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.5</span>
+          <span class="faq-q-text">What about tenants, improvements, or zoning?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-wrap" id="faq-5" role="region" aria-label="What about tenants, improvements, or zoning?">
+          <p class="faq-body">If there are tenants, there are documents a buyer will need — I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-6" onclick="toggleFaq(this)">
+          <span class="faq-q-num">Q.6</span>
           <span class="faq-q-text">How do I reach you when something comes up?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-wrap" id="faq-4" role="region" aria-label="How do I reach you when something comes up?">
+        <div class="faq-wrap" id="faq-6" role="region" aria-label="How do I reach you when something comes up?">
           <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day — even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
         </div>
       </div>
-    </div>
-    <div class="callout">
-      <div class="callout-dot"></div>
-      <p><strong>Illinois is an attorney state for real estate closings.</strong> That means you're already paying for legal representation — the question is whether that attorney is working for you or simply facilitating paperwork. Georgette represents one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
     </div>
   </div>
 </section>
@@ -503,10 +494,9 @@
         <span class="footer-tagline">Real estate law, made clear.</span>
       </div>
       <ul class="footer-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#teach">Approach</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#referral">Referrals</a></li>
         <li><a href="#process">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
