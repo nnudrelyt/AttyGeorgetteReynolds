@@ -89,6 +89,13 @@
   .difference h2{font-size:clamp(40px,4.8vw,66px);font-weight:500;color:var(--cream);max-width:920px;margin:0 auto 30px}
   .difference h2 em{color:var(--brass-lt)}
   .difference p{font-size:clamp(18px,1.55vw,22px);line-height:1.7;color:rgba(243,239,226,.92);max-width:920px;margin:0 auto}
+  .diff-quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,4vw,64px);max-width:920px;margin:clamp(48px,5vw,68px) auto 0;text-align:left}
+  .diff-q{position:relative;padding-left:32px}
+  .diff-q::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:50px;color:var(--brass-lt);opacity:.7;position:absolute;left:-2px;top:-12px;line-height:1}
+  .diff-q p{font-family:'Spectral',serif;font-size:clamp(17px,1.4vw,20px);font-weight:500;color:var(--cream);line-height:1.55;margin-bottom:14px}
+  .diff-q cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:rgba(243,239,226,.8);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .diff-pending{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-lt);opacity:.85}
+  @media (max-width:760px){.diff-quotes{grid-template-columns:1fr;gap:30px}}
 
   /* ── about ── */
   #about{background:var(--ivory)}
@@ -195,17 +202,6 @@
   .btn:hover{background:var(--forest-d);box-shadow:var(--shadow-card)}
   .btn::after{content:'→';font-size:15px}
 
-  /* ── proof strip ── */
-  .proof{background:var(--stone);padding:clamp(56px,6vw,84px) 0}
-  .proof-eyebrow{text-align:center;margin-bottom:clamp(32px,3.5vw,44px)}
-  .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px)}
-  .proof-q{position:relative;padding-left:34px}
-  .proof-q::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:52px;color:var(--brass);opacity:.55;position:absolute;left:-2px;top:-10px;line-height:1}
-  .proof-q p{font-family:'Spectral',serif;font-size:clamp(19px,1.55vw,23px);font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:16px}
-  .proof-q cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .proof-pending{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
-  @media (max-width:760px){.proof-grid{grid-template-columns:1fr;gap:34px}}
-
   /* ── footer ── */
   footer{background:var(--forest-d);padding:56px 0}
   .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
@@ -293,8 +289,18 @@
 <section id="teach" class="difference">
   <div class="container">
     <span class="eyebrow">The Difference</span>
-    <h2>An attorney who <em>teaches.</em></h2>
-    <p>Georgette spent years teaching real estate law as an adjunct professor — and she brings that same instinct to every client. She explains what each document does, why it matters, and what to watch for, so you finish your transaction understanding what happened and why — not just relieved that it's over.</p>
+    <h2>An attorney who's <em>in your corner.</em></h2>
+    <p>Georgette stays close to every deal from the first call to the closing table — on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
+    <div class="diff-quotes">
+      <blockquote class="diff-q">
+        <p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p>
+        <cite>Buyer · Bucktown <span class="diff-pending">Pending approval</span></cite>
+      </blockquote>
+      <blockquote class="diff-q">
+        <p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p>
+        <cite>Repeat buyer · Gold Coast <span class="diff-pending">Pending approval</span></cite>
+      </blockquote>
+    </div>
   </div>
 </section>
 
@@ -434,25 +440,6 @@
           <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day — even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROOF STRIP ── -->
-<!-- COMPLIANCE: Attorney advertising. Quotes are PLACEHOLDERS marked "Pending approval" —
-     replace with real, client-approved quotes before public launch. -->
-<section id="proof" class="proof">
-  <div class="container">
-    <span class="eyebrow proof-eyebrow">In their words</span>
-    <div class="proof-grid">
-      <blockquote class="proof-q">
-        <p>She picked up the night before closing and walked me through everything in ten minutes. I went in completely at ease.</p>
-        <cite>Buyer · Bucktown <span class="proof-pending">Pending approval</span></cite>
-      </blockquote>
-      <blockquote class="proof-q">
-        <p>The first time I actually understood what was happening at every step — and she caught two issues I'd have missed.</p>
-        <cite>Repeat buyer · Gold Coast <span class="proof-pending">Pending approval</span></cite>
-      </blockquote>
     </div>
   </div>
 </section>
