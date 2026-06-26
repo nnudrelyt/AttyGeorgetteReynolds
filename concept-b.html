@@ -109,16 +109,16 @@
   .stat-label{font-size:13px;color:rgba(243,239,226,.82);line-height:1.5;margin-top:7px}
 
   /* ── testimonial scroll (under About; same ivory bg = one component) ── */
-  .tscroll{margin-top:clamp(56px,6vw,88px)}
-  .tscroll-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
-  .tscroll-track::-webkit-scrollbar{height:6px}
-  .tscroll-track::-webkit-scrollbar-track{background:transparent}
-  .tscroll-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-  .tscroll-card{flex:0 0 clamp(290px,30vw,378px);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;position:relative}
-  .tscroll-card::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:46px;color:var(--brass);opacity:.5;position:absolute;top:14px;left:18px;line-height:1}
-  .tscroll-card p{font-family:'Spectral',serif;font-size:18px;font-weight:500;color:var(--ink);line-height:1.5;margin:16px 0 16px;padding-top:14px}
-  .tscroll-card cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .tscroll-card cite span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+  .tmarquee{margin-top:clamp(56px,6vw,88px);overflow:hidden}
+  .tmarquee-track{display:flex;gap:24px;width:max-content;padding:4px 0;animation:tmarquee 64s linear infinite}
+  .tmarquee:hover .tmarquee-track{animation-play-state:paused}
+  @keyframes tmarquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  .tcard2{flex:0 0 clamp(290px,26vw,380px);background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;position:relative}
+  .tcard2::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:46px;color:var(--brass);opacity:.5;position:absolute;top:14px;left:18px;line-height:1}
+  .tcard2 p{font-family:'Spectral',serif;font-size:18px;font-weight:500;color:var(--ink);line-height:1.5;margin:16px 0;padding-top:14px}
+  .tcard2 cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .tcard2 cite span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+  @media (prefers-reduced-motion:reduce){.tmarquee{overflow-x:auto}.tmarquee-track{animation:none}}
 
   /* ── section header (shared) ── */
   .sec-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,5vw,80px);align-items:end;margin-bottom:clamp(44px,5vw,62px)}
@@ -324,15 +324,21 @@
       </div>
     </div>
 
-    <!-- CLIENT TESTIMONIAL SCROLL (placeholders — pending approval; replace before launch) -->
-    <div class="tscroll" aria-label="What clients say">
-      <div class="tscroll-track">
-        <blockquote class="tscroll-card"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
-        <blockquote class="tscroll-card"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
-        <blockquote class="tscroll-card"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
-        <blockquote class="tscroll-card"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
-        <blockquote class="tscroll-card"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
-      </div>
+  </div>
+
+  <!-- CLIENT TESTIMONIAL MARQUEE — full-bleed auto-scroll (placeholders, pending approval; replace before launch) -->
+  <div class="tmarquee" aria-label="What clients say">
+    <div class="tmarquee-track">
+      <blockquote class="tcard2"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
     </div>
   </div>
 </section>
