@@ -1413,6 +1413,25 @@
 
   /* Footer — Slate charcoal */
   footer { background: var(--slate); }
+
+  /* ── Client refinements (2026-06-26) ── */
+  /* Stat tiles → Forrest green, white text */
+  .stat-tile { background: var(--forrest); border-color: transparent; }
+  .stat-num { color: #ffffff; }
+  .stat-label { color: rgba(255,255,255,0.72); }
+
+  /* About quote card → remove italic + top bar */
+  .sqc-text { font-style: normal; }
+  .sqc-bar { display: none; }
+
+  /* Remove numerals + divider bars from all service/role cards */
+  .service-card-num { display: none; }
+  .service-card-pip { display: none; }
+
+  /* How I Work cards → Sage green, white text */
+  #approach .service-card { background: var(--sage); }
+  #approach .service-card-title { color: #ffffff; }
+  #approach .service-card-body { color: rgba(255,255,255,0.85); }
 </style>
 </head>
 <body>
