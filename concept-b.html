@@ -86,16 +86,9 @@
   /* ── the difference (forest band) ── */
   .difference{background:var(--forest);text-align:center}
   .difference .eyebrow{color:var(--brass-lt);margin:0 auto 24px}
-  .difference h2{font-size:clamp(40px,4.8vw,66px);font-weight:500;color:var(--cream);max-width:920px;margin:0 auto 30px}
+  .difference h2{font-size:clamp(36px,4.4vw,62px);font-weight:500;color:var(--cream);max-width:none;margin:0 auto 30px}
   .difference h2 em{color:var(--brass-lt)}
   .difference p{font-size:clamp(18px,1.55vw,22px);line-height:1.7;color:rgba(243,239,226,.92);max-width:920px;margin:0 auto}
-  .diff-quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,4vw,64px);max-width:920px;margin:clamp(48px,5vw,68px) auto 0;text-align:left}
-  .diff-q{position:relative;padding-left:32px}
-  .diff-q::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:50px;color:var(--brass-lt);opacity:.7;position:absolute;left:-2px;top:-12px;line-height:1}
-  .diff-q p{font-family:'Spectral',serif;font-size:clamp(17px,1.4vw,20px);font-weight:500;color:var(--cream);line-height:1.55;margin-bottom:14px}
-  .diff-q cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:rgba(243,239,226,.8);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .diff-pending{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-lt);opacity:.85}
-  @media (max-width:760px){.diff-quotes{grid-template-columns:1fr;gap:30px}}
 
   /* ── about ── */
   #about{background:var(--ivory)}
@@ -114,6 +107,18 @@
   .stat{background:var(--forest);border-radius:var(--r-md);padding:24px 22px}
   .stat-num{font-family:'Spectral',serif;font-size:30px;font-weight:500;color:var(--cream);line-height:1.05}
   .stat-label{font-size:13px;color:rgba(243,239,226,.82);line-height:1.5;margin-top:7px}
+
+  /* ── testimonial scroll (under About; same ivory bg = one component) ── */
+  .tscroll{margin-top:clamp(56px,6vw,88px)}
+  .tscroll-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--brass) transparent}
+  .tscroll-track::-webkit-scrollbar{height:6px}
+  .tscroll-track::-webkit-scrollbar-track{background:transparent}
+  .tscroll-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+  .tscroll-card{flex:0 0 clamp(290px,30vw,378px);scroll-snap-align:start;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;position:relative}
+  .tscroll-card::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:46px;color:var(--brass);opacity:.5;position:absolute;top:14px;left:18px;line-height:1}
+  .tscroll-card p{font-family:'Spectral',serif;font-size:18px;font-weight:500;color:var(--ink);line-height:1.5;margin:16px 0 16px;padding-top:14px}
+  .tscroll-card cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .tscroll-card cite span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
 
   /* ── section header (shared) ── */
   .sec-head{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(40px,5vw,80px);align-items:end;margin-bottom:clamp(44px,5vw,62px)}
@@ -291,16 +296,6 @@
     <span class="eyebrow">The Difference</span>
     <h2>An attorney who's <em>in your corner.</em></h2>
     <p>Georgette stays close to every deal from the first call to the closing table — on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
-    <div class="diff-quotes">
-      <blockquote class="diff-q">
-        <p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p>
-        <cite>Buyer · Bucktown <span class="diff-pending">Pending approval</span></cite>
-      </blockquote>
-      <blockquote class="diff-q">
-        <p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p>
-        <cite>Repeat buyer · Gold Coast <span class="diff-pending">Pending approval</span></cite>
-      </blockquote>
-    </div>
   </div>
 </section>
 
@@ -326,6 +321,17 @@
           <div class="stat"><div class="stat-num">Adjunct</div><div class="stat-label">Professor of real estate law</div></div>
           <div class="stat"><div class="stat-num">Same day</div><div class="stat-label">Calls returned, always</div></div>
         </div>
+      </div>
+    </div>
+
+    <!-- CLIENT TESTIMONIAL SCROLL (placeholders — pending approval; replace before launch) -->
+    <div class="tscroll" aria-label="What clients say">
+      <div class="tscroll-track">
+        <blockquote class="tscroll-card"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
+        <blockquote class="tscroll-card"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
+        <blockquote class="tscroll-card"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
+        <blockquote class="tscroll-card"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
+        <blockquote class="tscroll-card"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
       </div>
     </div>
   </div>
