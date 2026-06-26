@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Georgette Reynolds — Chicago Real Estate Attorney</title>
-<meta name="description" content="Georgette Reynolds is a Chicago real estate attorney for buyers, sellers, investors, and developers. Real estate law, made clear — direct, responsive representation from contract to closing.">
-<link rel="icon" href="assets/g-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -33,60 +31,10 @@
     --muted:      #6f7468;
     --rule:       #e4e5e1;
     --off-white:  #f7f8f6;
-
-    /* text-bearing tokens (use ON colored grounds for WCAG-AA contrast;
-       raw --sage / --muted above stay for DECORATIVE fills only) */
-    --on-sage:    #16291c;   /* deep forest text on sage  ≈ 6.3:1 */
-    --muted-deep: #54584b;   /* muted text on light-gray  ≈ 5.1:1 */
-
-    /* radius + elevation scale */
-    --r-sm: 12px;
-    --r-md: 14px;
-    --r-lg: 16px;
-    --shadow-card: 0 8px 32px rgba(58,77,92,0.08);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
-  /* ── ACCESSIBILITY PRIMITIVES ── */
-  :focus-visible {
-    outline: 2px solid var(--forrest);
-    outline-offset: 3px;
-    border-radius: 3px;
-  }
-  /* light ring on dark grounds */
-  #services :focus-visible,
-  .contact-left :focus-visible,
-  footer :focus-visible { outline-color: var(--off-white); }
-  /* deep-forest ring on sage grounds */
-  .hero-left :focus-visible,
-  #approach :focus-visible,
-  #testimonials :focus-visible { outline-color: var(--on-sage); }
-
-  .skip-link {
-    position: absolute; left: 12px; top: -64px;
-    z-index: 200;
-    background: var(--forrest); color: #fff;
-    padding: 10px 18px; border-radius: 8px;
-    font-family: 'Jost', sans-serif; font-size: 13px; letter-spacing: 0.04em;
-    text-decoration: none; transition: top 0.2s ease;
-  }
-  .skip-link:focus { top: 12px; }
-
-  .sr-only {
-    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
 
   body {
     background: var(--fog);
@@ -116,9 +64,9 @@
   /* ── LABEL ── */
   .label {
     font-family: 'Jost', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--blush);
     margin-bottom: 16px;
@@ -157,39 +105,24 @@
   }
 
   .nav-logo {
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    font-weight: 300;
     color: var(--ink);
     text-decoration: none;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 5px;
+    letter-spacing: 0.04em;
   }
 
-  .nav-logo-tag {
+  .nav-logo span {
+    display: block;
     font-family: 'Jost', sans-serif;
     font-size: 9px;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
+    margin-top: 2px;
   }
-
-  /* brand logo — CSS-masked single-color SVG, recolored via `color` */
-  .logo-wordmark, .logo-gmark {
-    display: block;
-    background-color: currentColor;
-    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
-    -webkit-mask-position: left center; mask-position: left center;
-    -webkit-mask-size: contain; mask-size: contain;
-  }
-  .logo-wordmark {
-    width: 168px; height: 34px;
-    -webkit-mask-image: url('assets/wordmark.svg'); mask-image: url('assets/wordmark.svg');
-  }
-  .logo-gmark {
-    width: 30px; height: 28px;
-    -webkit-mask-image: url('assets/g-mark.svg'); mask-image: url('assets/g-mark.svg');
-  }
-  .nav-logo .logo-gmark { display: none; }
 
   .nav-links {
     display: flex;
@@ -270,9 +203,9 @@
   }
 
   .hero-eyebrow {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--blush);
     margin-bottom: 24px;
@@ -622,7 +555,7 @@
   .process-intro {
     font-size: 15px;
     font-weight: 300;
-    color: var(--muted-deep);
+    color: var(--muted);
     line-height: 1.85;
   }
 
@@ -646,12 +579,6 @@
   }
 
   .faq-trigger {
-    width: 100%;
-    background: none;
-    border: none;
-    font: inherit;
-    color: inherit;
-    text-align: left;
     padding: 24px 28px;
     display: grid;
     grid-template-columns: 36px 1fr 32px;
@@ -659,7 +586,7 @@
     align-items: center;
     cursor: pointer;
     transition: background 0.2s;
-    border-radius: var(--r-md);
+    border-radius: 14px;
   }
 
   .faq-item.open .faq-trigger {
@@ -671,7 +598,7 @@
     font-family: 'Spectral', serif;
     font-size: 13px;
     font-style: italic;
-    color: var(--muted-deep);
+    color: var(--blush-lt);
     line-height: 1;
     padding-top: 3px;
   }
@@ -692,19 +619,16 @@
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    color: var(--muted-deep);
+    color: var(--muted);
     transition: all 0.2s;
     flex-shrink: 0;
     justify-self: end;
   }
 
-  .faq-icon::after { content: '+'; line-height: 1; }
-  .faq-trigger[aria-expanded="true"] .faq-icon::after { content: '−'; }
-
   .faq-item.open .faq-icon {
     background: var(--blush);
     border-color: var(--blush);
-    color: #fff;
+    color: white;
   }
 
   .faq-body-wrap {
@@ -721,8 +645,8 @@
     padding: 4px 28px 28px calc(36px + 16px + 28px);
     font-size: 15px;
     font-weight: 300;
-    color: var(--muted-deep);
-    line-height: 1.8;
+    color: var(--muted);
+    line-height: 1.85;
     background: var(--white);
   }
 
@@ -783,7 +707,7 @@
   .services-intro {
     font-size: 15px;
     font-weight: 300;
-    color: var(--muted-deep);
+    color: var(--muted);
     line-height: 1.85;
   }
 
@@ -1199,21 +1123,21 @@
   }
 
   .footer-links a {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(241,243,245,0.62);
+    color: rgba(241,243,245,0.25);
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .footer-links a:hover { color: rgba(241,243,245,0.92); }
+  .footer-links a:hover { color: rgba(241,243,245,0.55); }
 
   .footer-legal {
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.04em;
-    color: rgba(241,243,245,0.55);
+    color: rgba(241,243,245,0.18);
   }
 
 
@@ -1318,8 +1242,7 @@
     .container { padding: 0 20px; }
 
     nav { padding: 0 20px; height: 60px; }
-    .nav-logo .logo-wordmark, .nav-logo .nav-logo-tag { display: none; }
-    .nav-logo .logo-gmark { display: block; }
+    .nav-logo { font-size: 15px; }
     .nav-phone { font-size: 13px; }
 
     .hero-left { padding: 108px 20px 56px; }
@@ -1431,29 +1354,24 @@
   #approach { background: var(--off-white); }
 
   /* Hero — portrait photo left, sage message panel right */
-  .hero-right { background: var(--gray-lt); }
-  .hero-photo {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: center top;
-    display: block;
+  .hero-right {
+    background: var(--gray-lt) url('assets/agr-headshot.png') center top / cover no-repeat;
   }
   .hero-img-area { display: none; }
   .hero-left { background: var(--sage); }
   .hero-left::before {
-    background: radial-gradient(circle, rgba(22,41,28,0.07) 0%, transparent 68%);
+    background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 68%);
   }
-  /* dark-on-sage text for AA contrast (sage fill unchanged) */
-  .hero-eyebrow { color: var(--on-sage); }
-  .hero-headline, .hero-headline em { color: var(--on-sage); }
-  .hero-sub { color: var(--on-sage); }
-  .hero-phone-tag { color: rgba(22,41,28,0.80); }
-  .hero-phone-number { color: var(--on-sage); }
-  .hero-phone-number:hover { color: rgba(22,41,28,0.70); }
-  .hero-phone-note { color: rgba(22,41,28,0.80); }
-  .hero-divider { background: rgba(22,41,28,0.45); }
-  .hero-scroll-hint { color: var(--on-sage); }
-  .hero-scroll-hint:hover { color: rgba(22,41,28,0.72); }
+  .hero-eyebrow { color: rgba(255,255,255,0.85); }
+  .hero-headline, .hero-headline em { color: #ffffff; }
+  .hero-sub { color: rgba(255,255,255,0.82); }
+  .hero-phone-tag { color: rgba(255,255,255,0.70); }
+  .hero-phone-number { color: #ffffff; }
+  .hero-phone-number:hover { color: rgba(255,255,255,0.78); }
+  .hero-phone-note { color: rgba(255,255,255,0.66); }
+  .hero-divider { background: rgba(255,255,255,0.35); }
+  .hero-scroll-hint { color: rgba(255,255,255,0.78); }
+  .hero-scroll-hint:hover { color: #ffffff; }
   .float-card-bar { background: var(--sage); }
 
   /* Process — light-gray relief (Light Gray #e6e7e8, matches Figma) */
@@ -1473,9 +1391,9 @@
   #testimonials::before {
     background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
   }
-  #testimonials .label { color: var(--on-sage); }
-  .testimonials-headline, .testimonials-headline em { color: var(--on-sage); }
-  .testimonials-sub { color: rgba(22,41,28,0.82); }
+  #testimonials .label { color: rgba(255,255,255,0.85); }
+  .testimonials-headline, .testimonials-headline em { color: #ffffff; }
+  .testimonials-sub { color: rgba(255,255,255,0.82); }
   .tcard { background: var(--gray-lt); border-color: transparent; }
   .tcard::before { color: var(--sage); }
 
@@ -1484,15 +1402,13 @@
   .contact-left::after {
     background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
   }
-  .contact-label { color: rgba(255,255,255,0.82); }
-  .contact-body { color: rgba(255,255,255,0.86); }
-  .contact-headline em { color: rgba(255,255,255,0.92); }
-  .contact-phone-tag { color: rgba(255,255,255,0.74); }
-  .contact-phone-num:hover { color: rgba(255,255,255,0.82); }
-  .contact-phone-note { color: rgba(255,255,255,0.78); }
-  .contact-divider { background: rgba(255,255,255,0.24); }
-  .contact-addr-tag { color: rgba(255,255,255,0.74); }
-  .contact-addr { color: rgba(255,255,255,0.82); }
+  .contact-label { color: rgba(255,255,255,0.80); }
+  .contact-headline em { color: rgba(255,255,255,0.90); }
+  .contact-phone-tag { color: rgba(255,255,255,0.66); }
+  .contact-phone-num:hover { color: rgba(255,255,255,0.80); }
+  .contact-phone-note { color: rgba(255,255,255,0.55); }
+  .contact-divider { background: rgba(255,255,255,0.22); }
+  .contact-addr-tag { color: rgba(255,255,255,0.50); }
   .contact-right { background: var(--white); }
 
   /* Footer — Slate charcoal */
@@ -1512,114 +1428,35 @@
   .service-card-num { display: none; }
   .service-card-pip { display: none; }
 
-  /* How I Work cards → Sage green, dark forest text (AA contrast) */
+  /* How I Work cards → Sage green, white text */
   #approach .service-card { background: var(--sage); }
-  #approach .service-card-title { color: var(--on-sage); }
-  #approach .service-card-body { color: rgba(22,41,28,0.82); }
-
-  /* ══ Strategy integration (2026-06-26) ══ */
-
-  /* Service-card audience "angle" line */
-  .service-card-angle {
-    font-family: 'Spectral', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--sage-lt);          /* ≈6.5:1 on forrest */
-    line-height: 1.5;
-    margin-top: 14px;
-  }
-
-  /* Educator — continuation of About's voice, white + top hairline */
-  #teach { background: var(--white); border-top: 1px solid var(--rule); }
-  .teach-grid {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .teach-body {
-    font-size: 16px; font-weight: 300; color: var(--ink);
-    line-height: 1.8; margin-bottom: 22px;
-  }
-  .teach-body:last-child { margin-bottom: 0; }
-  @media (min-width:1440px){ .teach-grid{ gap:112px } .teach-body{ font-size:17px } }
-  @media (max-width:900px){ .teach-grid{ grid-template-columns:1fr; gap:40px } }
-
-  /* Referral Partners — light relief band between forrest + sage */
-  #referral { background: var(--off-white); }
-  .referral-list {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-  }
-  @media (max-width:600px){ .referral-list{ grid-template-columns:1fr } }
-  .referral-item {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: var(--r-lg);
-    padding: 28px;
-  }
-  .referral-item-title {
-    font-family: 'Spectral', serif; font-size: 18px; font-weight: 400;
-    color: var(--ink); margin-bottom: 8px;
-  }
-  .referral-item-body { font-size: 14px; font-weight: 300; color: var(--muted-deep); line-height: 1.7; }
-  .referral-cta { margin-top: 40px; }
-
-  /* Primary button (extracted from .form-submit for reuse) */
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--slate); color: var(--fog);
-    border: none; border-radius: 8px;
-    font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 15px 32px; cursor: pointer; text-decoration: none;
-    transition: background 0.2s, box-shadow 0.2s;
-  }
-  .btn-primary:hover { background: var(--ink); box-shadow: 0 4px 16px rgba(30,37,44,0.18); }
-  .btn-primary::after { content: '→'; font-size: 14px; }
-
-  /* Testimonials — "pending approval" compliance tag */
-  .tcard-pending {
-    display: block; margin-top: 5px;
-    font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted-deep);
-  }
-
-  /* Footer brand wordmark (light, on slate) */
-  .footer-brand { display: inline-flex; flex-direction: column; gap: 8px; }
-  .footer-brand .logo-wordmark { width: 150px; height: 30px; color: rgba(241,243,245,0.86); }
-  .footer-firm { font-size: 11px; letter-spacing: 0.04em; color: rgba(241,243,245,0.62); }
-  .footer-tagline {
-    font-family: 'Spectral', serif; font-style: italic; font-size: 13px;
-    color: rgba(241,243,245,0.62);
-  }
+  #approach .service-card-title { color: #ffffff; }
+  #approach .service-card-body { color: rgba(255,255,255,0.85); }
 </style>
 </head>
 <body>
-<a href="#hero" class="skip-link">Skip to content</a>
 
 <!-- ── NAV ── -->
-<nav aria-label="Primary">
-  <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="logo-wordmark"></span>
-    <span class="logo-gmark"></span>
-    <span class="nav-logo-tag">Chicago Real Estate Law</span>
+<nav>
+  <a href="#" class="nav-logo">
+    Georgette Reynolds
+    <span>Chicago Real Estate Law</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#teach">Approach</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#referral">Referrals</a></li>
+    <li><a href="#approach">How I Work</a></li>
     <li><a href="#process">FAQ</a></li>
+    <li><a href="#services">Services</a></li>
   </ul>
   <a href="tel:+13125729189" class="nav-phone">
-    <span class="nav-phone-pip" aria-hidden="true"></span>
+    <span class="nav-phone-pip"></span>
     (312) 572-9189
   </a>
 </nav>
 
 
 <!-- ── HERO ── -->
-<section id="hero" tabindex="-1">
+<section id="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Chicago Real Estate Attorney</p>
     <h1 class="hero-headline">Before you close,<br><em>let's talk.</em></h1>
@@ -1636,13 +1473,15 @@
   </div>
 
   <div class="hero-right">
-    <!-- PLACEHOLDER portrait — replace with Georgette's approved headshot before launch -->
-    <picture>
-      <source srcset="assets/agr-headshot.webp" type="image/webp">
-      <img class="hero-photo" src="assets/agr-headshot.png"
-           alt="Georgette Reynolds, Chicago real estate attorney"
-           width="817" height="1008" loading="eager" fetchpriority="high" decoding="async">
-    </picture>
+    <div class="hero-img-area">
+      <div class="hero-img-circle">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+      <span class="hero-img-label">Attorney Portrait</span>
+    </div>
     <div class="hero-float-card">
       <div class="float-card-bar"></div>
       <p class="float-card-quote">"She called me back the same afternoon and walked me through everything thoughtfully. For the first time, I truly understood what I was signing."</p>
@@ -1705,26 +1544,6 @@
 </section>
 
 
-<!-- ── EDUCATOR ── -->
-<section id="teach">
-  <div class="container">
-    <div class="teach-grid">
-      <div>
-        <span class="label">The Difference</span>
-        <h2 class="about-headline">An attorney who <em>teaches.</em></h2>
-        <p class="teach-body">Georgette spent years teaching real estate law as an adjunct professor — and she brings that same instinct to every client. She doesn't just hand you documents to sign; she explains what each one does, why it matters, and what to watch for.</p>
-        <p class="teach-body">You'll finish your transaction understanding what happened and why — not just relieved that it's over. For most clients, that clarity is the difference between a stressful close and a confident one.</p>
-      </div>
-      <div class="about-sidebar">
-        <div class="sidebar-quote-card">
-          <p class="sqc-text">"My job is to make sure you understand every decision before you make it — that's what turns a stressful transaction into a confident one."</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- ── HOW I WORK ── -->
 <section id="approach">
   <div class="container">
@@ -1779,45 +1598,45 @@
 
     <div class="faq-list">
       <div class="faq-item open">
-        <button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-1-body" onclick="toggleFaq(this)">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.1</span>
           <span class="faq-q-text">When should I get an attorney involved?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body-wrap" id="faq-1-body" role="region" aria-label="When should I get an attorney involved?">
+          <span class="faq-icon">−</span>
+        </div>
+        <div class="faq-body-wrap">
           <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet — that's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. But if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-2-body" onclick="toggleFaq(this)">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.2</span>
           <span class="faq-q-text">Who owns the property — and are there liens or approvals to clear?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body-wrap" id="faq-2-body" role="region" aria-label="Who owns the property — and are there liens or approvals to clear?">
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
           <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity — and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-3-body" onclick="toggleFaq(this)">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.3</span>
           <span class="faq-q-text">What about tenants, improvements, or zoning?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body-wrap" id="faq-3-body" role="region" aria-label="What about tenants, improvements, or zoning?">
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
           <p class="faq-body">If there are tenants, there are documents a buyer will need — I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4-body" onclick="toggleFaq(this)">
+        <div class="faq-trigger" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.4</span>
           <span class="faq-q-text">How do I reach you when something comes up?</span>
-          <span class="faq-icon" aria-hidden="true"></span>
-        </button>
-        <div class="faq-body-wrap" id="faq-4-body" role="region" aria-label="How do I reach you when something comes up?">
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-body-wrap">
           <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day — even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
         </div>
       </div>
@@ -1848,81 +1667,37 @@
         <div class="service-card-pip"></div>
         <div class="service-card-title">Residential Purchase &amp; Sale</div>
         <p class="service-card-body">Full representation for buyers and sellers of single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs — from contract through closing.</p>
-        <p class="service-card-angle">Walked through every step, so nothing catches you off guard.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">02</span>
         <div class="service-card-pip"></div>
         <div class="service-card-title">Commercial Transactions</div>
         <p class="service-card-body">Acquisition, disposition, and refinance of commercial property — guiding owners and businesses through deals where the details carry real financial weight.</p>
-        <p class="service-card-angle">The detail and diligence that high-stakes deals demand.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">03</span>
         <div class="service-card-pip"></div>
         <div class="service-card-title">Investors &amp; Developers</div>
         <p class="service-card-body">Representation for investors, developers, and flippers — including multi-unit and portfolio transactions, with the due diligence these deals demand.</p>
-        <p class="service-card-angle">Move fast, clear the legal hurdles, keep building.</p>
       </div>
       <div class="service-card">
         <span class="service-card-num">04</span>
         <div class="service-card-pip"></div>
         <div class="service-card-title">Contracts, Leases &amp; Closing</div>
         <p class="service-card-body">Negotiation of purchase contracts and commercial leases, title and document review, and preparation for closing — so you reach the table with no surprises.</p>
-        <p class="service-card-angle">Every term explained before you ever sign it.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ── REFERRAL PARTNERS ── -->
-<section id="referral">
-  <div class="container">
-    <div class="services-top">
-      <div>
-        <span class="label">For Agents, Brokers &amp; Lenders</span>
-        <h2 class="services-headline">A partner who makes<br>you look good.</h2>
-      </div>
-      <p class="services-intro">When you refer a client, your reputation rides along with them. Georgette is the attorney who keeps your deal moving instead of stalling it — responsive within the day, constructive when issues surface, and clear with your client so they stay calm through closing. If you'd like a real estate attorney you can hand clients to with confidence, let's connect.</p>
-    </div>
-
-    <div class="referral-list">
-      <div class="referral-item">
-        <div class="referral-item-title">Responsive</div>
-        <p class="referral-item-body">Same-day calls; your client is never left waiting, and neither are you.</p>
-      </div>
-      <div class="referral-item">
-        <div class="referral-item-title">Constructive</div>
-        <p class="referral-item-body">Solves problems and finds the path forward instead of killing deals over them.</p>
-      </div>
-      <div class="referral-item">
-        <div class="referral-item-title">Clear</div>
-        <p class="referral-item-body">Explains the process to your client so they stay confident through to the table.</p>
-      </div>
-      <div class="referral-item">
-        <div class="referral-item-title">Aligned</div>
-        <p class="referral-item-body">Represents one side only; your client's interest is never in question.</p>
-      </div>
-    </div>
-
-    <div class="referral-cta">
-      <a href="#contact" class="btn-primary">Become a referral partner</a>
     </div>
   </div>
 </section>
 
 
 <!-- ── TESTIMONIALS ── -->
-<!-- COMPLIANCE: Attorney advertising. Under Illinois rules, client testimonials must be genuine
-     and client-approved. The quotes below are PLACEHOLDERS, de-attributed and marked "Pending
-     approval" — replace with real, approved quotes (or keep this as "What clients value" without
-     named attribution) before public launch. -->
+<!-- NEEDS: real client testimonials from Georgette — copy below is placeholder -->
 <section id="testimonials">
   <div class="container">
     <div class="testimonials-header">
-      <span class="label">Client Experience</span>
-      <h2 class="testimonials-headline">What clients<br><em>value.</em></h2>
+      <span class="label">What Clients Say</span>
+      <h2 class="testimonials-headline">A few words<br>from <em>clients.</em></h2>
       <p class="testimonials-sub">The measure of this work is how clients feel on the other side of it — whether they felt informed, supported, and confident throughout.</p>
     </div>
 
@@ -1932,9 +1707,8 @@
         <div class="tcard-footer">
           <div class="tcard-dot"></div>
           <div>
-            <div class="tcard-name">Buyers</div>
-            <div class="tcard-context">Bucktown</div>
-            <span class="tcard-pending">Pending approval</span>
+            <div class="tcard-name">Rachel &amp; Tom P.</div>
+            <div class="tcard-context">Buyers — Bucktown</div>
           </div>
         </div>
       </div>
@@ -1944,9 +1718,8 @@
         <div class="tcard-footer">
           <div class="tcard-dot"></div>
           <div>
-            <div class="tcard-name">Repeat Buyer</div>
-            <div class="tcard-context">Gold Coast</div>
-            <span class="tcard-pending">Pending approval</span>
+            <div class="tcard-name">David K.</div>
+            <div class="tcard-context">Buyer — Gold Coast Condo</div>
           </div>
         </div>
       </div>
@@ -1956,9 +1729,8 @@
         <div class="tcard-footer">
           <div class="tcard-dot"></div>
           <div>
-            <div class="tcard-name">First-Time Buyer</div>
-            <div class="tcard-context">Logan Square</div>
-            <span class="tcard-pending">Pending approval</span>
+            <div class="tcard-name">Maya S.</div>
+            <div class="tcard-context">First-Time Buyer — Logan Square</div>
           </div>
         </div>
       </div>
@@ -2022,37 +1794,29 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-wordmark" role="img" aria-label="Georgette Reynolds"></span>
-        <span class="footer-firm">Attorney at Law, LLC · Chicago Real Estate Law</span>
-        <span class="footer-tagline">Real estate law, made clear.</span>
-      </div>
+      <div class="footer-name">Georgette Reynolds, Attorney at Law, LLC · Chicago Real Estate Law</div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#teach">Approach</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#referral">Referrals</a></li>
-        <li><a href="#process">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="footer-legal">© 2026 Georgette Reynolds, Attorney at Law, LLC · Attorney Advertising</div>
+      <div class="footer-legal">© 2026 · Attorney Advertising</div>
     </div>
   </div>
 </footer>
 
 <script>
-  // <button> triggers give Enter/Space + focus for free; we just sync state.
   function toggleFaq(trigger) {
     const item = trigger.parentElement;
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(i => {
       i.classList.remove('open');
-      const t = i.querySelector('.faq-trigger');
-      if (t) t.setAttribute('aria-expanded', 'false');
+      i.querySelector('.faq-icon').textContent = '+';
     });
     if (!isOpen) {
       item.classList.add('open');
-      trigger.setAttribute('aria-expanded', 'true');
+      trigger.querySelector('.faq-icon').textContent = '−';
     }
   }
 </script>
