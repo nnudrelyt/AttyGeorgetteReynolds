@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Georgette Reynolds — Chicago Real Estate Attorney</title>
-<meta name="description" content="Georgette Reynolds is a Chicago real estate attorney for buyers, sellers, investors, and developers. Real estate law, made clear — direct, responsive representation from contract to closing.">
+<meta name="description" content="Georgette Reynolds is a Chicago real estate attorney for buyers, sellers, investors, and developers. Real estate law, made clear: direct, responsive representation from contract to closing.">
 <link rel="icon" href="assets/g-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,21 +12,22 @@
 <style>
   :root{
     /* Warm Ivory system + sage / warm-gray hints */
-    --ivory:#F6F1E7;      /* page canvas */
-    --bg2:#FCF9F2;        /* raised cards */
-    --stone:#EAE5D9;      /* warm-gray relief band */
-    --ink:#1F1B15;        /* primary text (darker for legibility) */
-    --muted:#4c4537;      /* secondary text — AA on ivory & stone */
-    --forest:#20402D;     /* brand dark / promise */
-    --forest-d:#18301f;   /* deepest forest (footer) */
-    --cream:#F3EFE2;      /* text on forest */
-    --sage:#7f8769;       /* sage hint — quote card fill */
-    --sage-deep:#4f5740;  /* sage as text on light (AA) */
-    --brass:#A9854F;      /* decorative hairlines */
-    --brass-ink:#6f4e22;  /* brass as text on light (AA) */
-    --brass-lt:#DcB985;   /* brass text on forest */
-    --gray:#928c7e;       /* warm-gray accent (meta text) */
-    --line:#E0D8C7;
+    /* ── Forest Calm palette (from Figma) ── */
+    --ivory:#fafcfd;      /* page canvas — off-white */
+    --bg2:#ffffff;        /* raised cards — pure white */
+    --stone:#e6e7e8;      /* light gray — "How I Work" section bg */
+    --ink:#282828;        /* primary text — Slate */
+    --muted:#5b5c57;      /* secondary text — AA on off-white & light gray */
+    --forest:#193525;     /* Forrest — deep green (Services, Contact, stats, footer) */
+    --forest-d:#11231a;   /* deepest green */
+    --cream:#fafcfd;      /* text on dark surfaces */
+    --sage:#80886c;       /* Sage — hero panel, testimonials bg, quote fill */
+    --sage-deep:#525a40;  /* deep sage — text on light (AA) */
+    --brass:#b49e73;      /* muted brass — the single subtle accent (eyebrow tick) */
+    --brass-ink:#6a5b2c;  /* deep brass — eyebrow text on light (AA on off-white & light-gray) */
+    --brass-lt:#cdbf95;   /* light brass/tan — eyebrow text on dark (AA) */
+    --gray:#6f7066;       /* neutral meta text */
+    --line:#dcdcd4;       /* hairline borders */
     --r-sm:6px; --r-md:10px; --r-lg:14px;
     --shadow-card:0 14px 40px rgba(42,34,22,0.09);
   }
@@ -79,7 +80,7 @@
   .hero-phone-note{font-size:15px;color:var(--muted);margin-top:12px}
   .hero-r{position:relative;overflow:hidden;background:#2c3a30}
   .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-  .hero-cred{position:absolute;left:0;bottom:44px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--brass);padding:20px 28px;max-width:330px}
+  .hero-cred{position:absolute;left:0;bottom:44px;background:var(--bg2);border:1px solid var(--line);border-top:2px solid var(--brass);padding:20px 28px;max-width:330px}
   .hero-cred .nm{font-family:'Spectral',serif;font-size:20px;font-weight:500;color:var(--ink)}
   .hero-cred .mt{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.55}
 
@@ -127,12 +128,18 @@
 
   /* ── cards ── */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(32px,3vw,42px) clamp(28px,2.6vw,40px);transition:box-shadow .25s,transform .25s}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r-lg);padding:0;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
   .card:hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
   .card .chair{width:34px;height:2px;background:var(--brass);margin-bottom:24px}
   .card h3{font-family:'Spectral',serif;font-size:clamp(23px,1.9vw,27px);font-weight:500;color:var(--ink);margin-bottom:14px;line-height:1.2}
   .card p{font-size:16px;color:var(--muted);line-height:1.75}
   .card .angle{font-family:'Spectral',serif;font-weight:500;font-size:16px;color:var(--sage-deep);margin-top:16px}
+  /* service cards: flush-top photo + padded body (image leads; warm-tinted to cohere) */
+  .card-media{position:relative;aspect-ratio:5/2;overflow:hidden;background:var(--forest)}
+  .card-media img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9);transition:transform .55s cubic-bezier(.2,.65,.2,1)}
+  .card-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(32,64,45,0) 55%,rgba(24,48,31,.20))}
+  .card:hover .card-media img{transform:scale(1.045)}
+  .card-body{padding:clamp(26px,2.5vw,34px) clamp(26px,2.4vw,38px) clamp(30px,2.8vw,40px)}
 
   #approach{background:var(--forest)}
   #approach .eyebrow{color:var(--brass-lt)}
@@ -200,7 +207,7 @@
   .field{margin-bottom:20px}
   .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
   .field input,.field textarea{display:block;width:100%;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:'Jost',sans-serif;font-size:16px;font-weight:400;color:var(--ink);transition:border-color .2s,box-shadow .2s}
-  .field input::placeholder,.field textarea::placeholder{color:#a89c86}
+  .field input::placeholder,.field textarea::placeholder{color:#665b44}
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,64,45,.13)}
   .field textarea{resize:none;min-height:108px}
   .btn{display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 34px;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
@@ -319,14 +326,17 @@
   .difference .eyebrow::before{background:var(--brass-lt)}
 
   /* ── 4 · tighter display tracking reads more modern at large sizes ── */
-  .hero-headline{font-size:clamp(54px,6.8vw,110px);letter-spacing:-.022em}
+  .hero-headline{font-size:clamp(54px,6.8vw,96px);letter-spacing:-.022em}
   .difference h2,.about-headline,.sec-head h2,.contact-headline{letter-spacing:-.018em}
 
-  /* ── 5 · ghost numerals behind How-I-Work cards (editorial structure) ── */
-  #approach .cards{counter-reset:hiw}
-  #approach .card{counter-increment:hiw;position:relative;overflow:hidden}
-  #approach .card::after{content:counter(hiw,decimal-leading-zero);position:absolute;top:-10px;right:16px;
-    font-family:'Spectral',serif;font-weight:600;font-size:104px;line-height:1;color:var(--forest);opacity:.06;pointer-events:none}
+  /* ── 5 · How I Work: open numbered steps on forest (distinct from the Services card grid) ── */
+  #approach .steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(26px,2.6vw,44px);counter-reset:none}
+  #approach .step{position:relative;padding-top:26px;border-top:1px solid rgba(220,185,133,.30)}
+  #approach .step-num{display:block;font-family:'Spectral',serif;font-weight:600;font-size:clamp(34px,3vw,46px);line-height:1;color:var(--brass-lt);opacity:.9;margin-bottom:20px;letter-spacing:-.01em}
+  #approach .step h3{font-family:'Spectral',serif;font-size:clamp(21px,1.8vw,26px);font-weight:500;color:var(--cream);margin-bottom:12px;line-height:1.2}
+  #approach .step p{font-size:16px;color:rgba(243,239,226,.82);line-height:1.7}
+  @media (max-width:980px){#approach .steps{grid-template-columns:1fr 1fr;gap:34px 28px}}
+  @media (max-width:560px){#approach .steps{grid-template-columns:1fr;gap:30px}}
 
   /* ── 3 · faint G-mark watermark motif on the dark panels ── */
   #teach,.contact-left{position:relative;overflow:hidden}
@@ -347,6 +357,119 @@
   .footer-creds li{position:relative;font-size:12px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:rgba(243,239,226,.66);padding-left:18px}
   .footer-creds li::before{content:'';position:absolute;left:0;top:7px;width:8px;height:8px;border:1.5px solid var(--brass-lt);border-radius:50%;opacity:.7}
   @media (max-width:980px){.footer-cta{flex-direction:column;align-items:stretch;gap:14px;padding:36px 0;margin-bottom:36px}.footer-cta-text{width:100%}}
+
+  /* ════════════════════════════════════════════════════════════
+     FOREST CALM — Figma palette applied per section
+     (off-white · sage · Forrest · light-gray · slate; brass = single accent)
+     ════════════════════════════════════════════════════════════ */
+
+  /* ticks: keep the short eyebrow tick (single subtle brass accent); drop longer rules */
+  .brass-rule,.qbar,.chair{display:none}
+  .eyebrow{color:var(--brass-ink)}            /* eyebrow text on light = deep brass */
+
+  /* generous hero rhythm (kept from prior pass) */
+  #hero{min-height:680px}
+  #hero .hero-l{padding:clamp(64px,8vw,116px) clamp(46px,5vw,76px)}
+  #hero .hero-headline{margin-bottom:40px}
+  #hero .hero-sub{margin-bottom:50px}
+
+  /* ── HERO → Forrest panel (deep green), cream display ── */
+  #hero .hero-l{background:var(--forest)}
+  #hero .hero-headline,#hero .hero-phone-num,#hero .sig-name{color:var(--cream)}
+  #hero .hero-headline em{font-style:normal;font-weight:inherit;color:var(--cream)}  /* no italics, no faux-bold — matches headline */
+  #hero .hero-sub{color:rgba(250,252,253,.9)}
+  #hero .eyebrow{color:var(--brass-lt)}
+  #hero .eyebrow::before{background:var(--brass-lt)}
+  #hero .hero-phone-tag,#hero .sig-title{color:rgba(250,252,253,.74)}
+  #hero .sig-mark{background-color:var(--cream)}
+  #hero .about-sig{border-top-color:rgba(250,252,253,.2)}
+
+  /* ── THE DIFFERENCE → Sage band, cream display (swapped with hero) ── */
+  .difference{background:var(--sage)}
+  .difference .eyebrow{color:#0c1610}
+  .difference .eyebrow::before{background:#0c1610}
+  .difference h2,.difference h2 em{color:var(--cream)}
+  .difference p{color:rgba(250,252,253,.96)}
+
+  /* drop the G-mark watermarks (map now carries the texture) */
+  #teach::before,.contact-left::before{display:none}
+
+  /* ── nav contact button → Forrest (gold dropped) ── */
+  .nav-cta{background:var(--forest);color:var(--cream)}
+  .nav-cta:hover{background:var(--forest-d);color:var(--cream)}
+
+  /* ── HOW I WORK (open steps) → light-gray bg, ink text ── */
+  #approach{background:var(--stone)}
+  #approach .sec-head h2{color:var(--ink)}
+  #approach .sec-intro{color:var(--muted)}
+  #approach .eyebrow{color:var(--brass-ink)}
+  #approach .eyebrow::before{background:var(--brass)}
+  #approach .step{border-top-color:var(--line)}
+  #approach .step-num{color:var(--sage-deep)}
+  #approach .step h3{color:var(--ink)}
+  #approach .step p{color:var(--muted)}
+
+  /* ── SERVICES → Forrest bg, white photo cards (kept) ── */
+  #services{background:var(--forest)}
+  #services .sec-head h2{color:var(--cream)}
+  #services .sec-intro{color:rgba(250,252,253,.84)}
+  #services .eyebrow{color:var(--brass-lt)}
+  #services .eyebrow::before{background:var(--brass-lt)}
+
+  /* ── TESTIMONIALS → Sage bg, white cards ── */
+  #testimonials{background:var(--sage)}
+  #testimonials .tst-head h2{color:var(--ink)}
+  #testimonials .tst-sub,#testimonials .eyebrow{color:var(--forest-d)}
+  #testimonials .eyebrow::before{background:var(--forest-d)}
+
+  /* ── About quote card → dark green (matches stats), cream text ── */
+  .quote-card{background:var(--forest)}
+  .quote-card p{color:var(--cream)}
+  .quote-card .qbar{background:var(--brass-lt)}
+
+  /* ── section headers: one consistent color + weight (no split emphasis) ── */
+  .hero-headline em,.difference h2 em,.about-headline em,.sec-head h2 em,.contact-headline em{
+    color:inherit!important;font-weight:inherit!important;font-style:normal!important}
+
+  /* ── Neighborhoods band + Chicago line-map ── */
+  #neighborhoods{background:var(--ivory)}
+  .nb-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:center}
+  .nb-head{font-family:'Spectral',serif;font-size:clamp(32px,3.6vw,48px);font-weight:500;color:var(--ink);line-height:1.1;letter-spacing:-.01em;margin-bottom:20px}
+  .nb-sub{font-size:clamp(16px,1.2vw,18px);color:var(--muted);line-height:1.7;max-width:440px;margin-bottom:30px}
+  .nb-list{display:flex;flex-wrap:wrap;row-gap:13px;list-style:none}
+  .nb-list li{font-family:'Spectral',serif;font-size:18px;color:var(--ink);width:50%;display:flex;align-items:center;gap:11px}
+  .nb-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--forest);flex-shrink:0}
+  .nb-list li.office{color:var(--brass-ink);font-weight:500}
+  .nb-list li.office::before{background:var(--brass);box-shadow:0 0 0 3px rgba(180,158,115,.22)}
+  .cmap{display:block;width:100%;height:auto;max-width:470px;margin:0 auto}
+  .cmap-water{fill:var(--sage);opacity:.15}
+  .cmap-shore{fill:none;stroke:var(--sage-deep);stroke-width:1.6;opacity:.45}
+  .cmap-grid{fill:none;stroke:var(--ink);stroke-width:.75;opacity:.10}
+  .cmap-river{fill:none;stroke:var(--forest);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
+  .cmap-dot{fill:var(--forest)}
+  .cmap-dot-ring{fill:none;stroke:var(--forest);stroke-width:1;opacity:.35}
+  .cmap-office{fill:var(--brass)}
+  .cmap-office-ring{fill:none;stroke:var(--brass);stroke-width:1.4;opacity:.65}
+  /* on-dark variant (for the Contact-backdrop option) */
+  .cmap--ondark .cmap-water{fill:#ffffff;opacity:.04}
+  .cmap--ondark .cmap-shore{stroke:var(--cream);opacity:.16}
+  .cmap--ondark .cmap-grid{stroke:var(--cream);opacity:.07}
+  .cmap--ondark .cmap-river{stroke:var(--brass-lt);opacity:.5}
+  .cmap--ondark .cmap-dot{fill:var(--brass-lt)}
+  .cmap--ondark .cmap-dot-ring{stroke:var(--brass-lt)}
+  .cmap--ondark .cmap-office{fill:#ffffff}
+  .cmap--ondark .cmap-office-ring{stroke:#ffffff}
+  /* Contact backdrop placement */
+  .contact-map{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.5;overflow:hidden;
+    -webkit-mask:radial-gradient(125% 105% at 82% 58%, #000 28%, rgba(0,0,0,.32) 100%);mask:radial-gradient(125% 105% at 82% 58%, #000 28%, rgba(0,0,0,.32) 100%)}
+  .contact-map .cmap{width:100%;height:100%;max-width:none;margin:0}
+
+  /* ── Footer → slim dark bar, copyright only ── */
+  footer{background:#1c1c1c;padding:26px 0}
+  footer .footer-legal{margin:0;width:auto;font-size:13px;color:rgba(250,252,253,.56);text-align:center;letter-spacing:.03em;line-height:1.5}
+  .contact-left{position:relative}
+  .contact-left > *{position:relative;z-index:1}
+  @media(max-width:980px){.nb-grid{grid-template-columns:1fr;gap:44px}.cmap{max-width:360px}.contact-map{display:none}}
 </style>
 </head>
 <body>
@@ -372,11 +495,10 @@
   <div class="hero-l">
     <span class="eyebrow">Chicago Real Estate Attorney</span>
     <h1 class="hero-headline">Before you<br>close, <em>let's talk.</em></h1>
-    <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn — residential and commercial, from contract to closing.</p>
+    <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn, residential and commercial, from contract to closing.</p>
     <hr class="brass-rule">
-    <p class="hero-phone-tag">Start with a call</p>
+    <p class="hero-phone-tag">Let's chat about your real estate transaction</p>
     <a href="tel:+13125729189" class="hero-phone-num">(312) 572-9189</a>
-    <p class="hero-phone-note">Calls returned same day · most conversations take about 15 minutes</p>
     <div class="about-sig">
       <span class="sig-mark" aria-hidden="true"></span>
       <div>
@@ -398,8 +520,8 @@
 <section id="teach" class="difference">
   <div class="container">
     <span class="eyebrow">The Difference</span>
-    <h2>An attorney who's <em>in your corner.</em></h2>
-    <p>Georgette stays close to every deal from the first call to the closing table — on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
+    <h2>A real estate attorney who's <em>in your corner.</em></h2>
+    <p>Georgette stays close to every deal from the first call to the closing table: on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
   </div>
 </section>
 
@@ -410,20 +532,20 @@
       <div>
         <span class="eyebrow">About</span>
         <h2 class="about-headline">Real estate counsel that's always <em>within reach.</em></h2>
-        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach — somewhere in the background, never entirely clear on what they were doing for you. Georgette Reynolds built her practice around something different.</p>
-        <p class="about-body">With a J.D./LLM in real estate law and more than 25 years of practice — including teaching the subject as an adjunct professor — she explains every document before you sign it, flags issues when she sees them, and gives you her direct number from day one: not a portal, not a receptionist. Above all, she's a problem solver, finding a workable path forward when a deal hits a snag.</p>
-        <p class="about-body">Georgette represents buyers, sellers, investors, and developers across residential and commercial transactions, and brings a genuinely constructive outlook to every file — in her experience, a positive attitude tends to lead to positive outcomes for everyone at the table.</p>
+        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach: somewhere in the background, never entirely clear on what they were doing for you. Georgette Reynolds built her practice around something different.</p>
+        <p class="about-body">With a J.D./LLM in real estate law and more than 25 years of practice (including teaching the subject as an adjunct professor), she explains every document before you sign it, flags issues when she sees them, and gives you her direct number from day one: not a portal, not a receptionist. Above all, she's a problem solver, finding a workable path forward when a deal hits a snag.</p>
+        <p class="about-body">Georgette represents buyers, sellers, investors, and developers across residential and commercial transactions, and brings a genuinely constructive outlook to every file. In her experience, a positive attitude tends to lead to positive outcomes for everyone at the table.</p>
       </div>
       <div class="about-side">
-        <div class="quote-card">
-          <div class="qbar"></div>
-          <p>"My clients should never have to wonder what is happening in their transaction — or feel uncertain about whether they can reach me."</p>
-        </div>
         <div class="stats">
           <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Years practicing real estate law</div></div>
           <div class="stat"><div class="stat-num">J.D./LLM</div><div class="stat-label">Advanced degree in real estate law</div></div>
           <div class="stat"><div class="stat-num">Adjunct</div><div class="stat-label">Professor of real estate law</div></div>
           <div class="stat"><div class="stat-num">Same day</div><div class="stat-label">Calls returned, always</div></div>
+        </div>
+        <div class="quote-card">
+          <div class="qbar"></div>
+          <p>"My clients should never have to wonder what is happening in their transaction — or feel uncertain about whether they can reach me."</p>
         </div>
       </div>
     </div>
@@ -434,15 +556,15 @@
   <div class="tmarquee" aria-label="What clients say">
     <div class="tmarquee-track">
       <blockquote class="tcard2"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
-      <blockquote class="tcard2"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>She was in my corner at every step, and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
       <blockquote class="tcard2"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
       <blockquote class="tcard2"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
-      <blockquote class="tcard2"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2"><p>Calm, responsive, and three steps ahead. Exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She picked up the night before closing and walked me through everything in ten minutes. I never felt alone in the process.</p><cite>Buyer · Bucktown <span>Pending approval</span></cite></blockquote>
-      <blockquote class="tcard2" aria-hidden="true"><p>She was in my corner at every step — and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>She was in my corner at every step, and caught two issues in my contract I would have missed.</p><cite>Repeat buyer · Gold Coast <span>Pending approval</span></cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>Same-day callbacks, every time. I always knew exactly where my deal stood.</p><cite>Seller · Hyde Park <span>Pending approval</span></cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She explained every document in plain language. I actually understood what I was signing.</p><cite>First-time buyer · Logan Square <span>Pending approval</span></cite></blockquote>
-      <blockquote class="tcard2" aria-hidden="true"><p>Calm, responsive, and three steps ahead — exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>Calm, responsive, and three steps ahead. Exactly who you want on a tricky closing.</p><cite>Investor · Pilsen <span>Pending approval</span></cite></blockquote>
     </div>
   </div>
 </section>
@@ -455,14 +577,14 @@
         <span class="eyebrow">How I Work</span>
         <h2>Four ways I move your deal <em>forward.</em></h2>
       </div>
-      <p class="sec-intro">Every transaction is different, but the work comes down to four roles — planning the path, keeping people moving, solving problems as they arise, and managing risk before it threatens the deal.</p>
+      <p class="sec-intro">Every transaction is different, but the work comes down to four roles: planning the path, keeping people moving, solving problems as they arise, and managing risk before it threatens the deal.</p>
     </div>
-    <div class="cards">
-      <div class="card"><div class="chair"></div><h3>Planning</h3><p>Getting clear on your goal from the start and charting the path that gets you to a successful close.</p></div>
-      <div class="card"><div class="chair"></div><h3>Facilitating</h3><p>Coordinating the agents, lenders, and other parties in your transaction so the deal keeps moving.</p></div>
-      <div class="card"><div class="chair"></div><h3>Advising &amp; Problem-Solving</h3><p>Thinking ahead and developing workable alternatives when Plan A stalls — always with a constructive, solutions-first outlook.</p></div>
-      <div class="card"><div class="chair"></div><h3>Managing Risk</h3><p>Identifying areas of risk and concern early, and putting effective methods in place to resolve them before they become problems.</p></div>
-    </div>
+    <ol class="steps">
+      <li class="step"><span class="step-num">01</span><h3>Planning</h3><p>Getting clear on your goal from the start and charting the path that gets you to a successful close.</p></li>
+      <li class="step"><span class="step-num">02</span><h3>Facilitating</h3><p>Coordinating the agents, lenders, and other parties in your transaction so the deal keeps moving.</p></li>
+      <li class="step"><span class="step-num">03</span><h3>Advising &amp; Problem-Solving</h3><p>Thinking ahead and developing workable alternatives when Plan A stalls, always with a constructive, solutions-first outlook.</p></li>
+      <li class="step"><span class="step-num">04</span><h3>Managing Risk</h3><p>Identifying areas of risk and concern early, and putting effective methods in place to resolve them before they become problems.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -474,13 +596,25 @@
         <span class="eyebrow">How I Can Help</span>
         <h2>Where I'm able to <em>help.</em></h2>
       </div>
-      <p class="sec-intro">Every matter is handled personally — for buyers, sellers, investors, and developers alike. You will always know where your transaction stands, and you will always be able to reach Georgette directly.</p>
+      <p class="sec-intro">Every matter is handled personally, for buyers, sellers, investors, and developers alike. You will always know where your transaction stands, and you will always be able to reach Georgette directly.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="chair"></div><h3>Residential Purchase &amp; Sale</h3><p>Full representation for buyers and sellers of single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs — from contract through closing.</p><div class="angle">Walked through every step, so nothing catches you off guard.</div></div>
-      <div class="card"><div class="chair"></div><h3>Commercial Transactions</h3><p>Acquisition, disposition, and refinance of commercial property — guiding owners and businesses through deals where the details carry real financial weight.</p><div class="angle">The detail and diligence that high-stakes deals demand.</div></div>
-      <div class="card"><div class="chair"></div><h3>Investors &amp; Developers</h3><p>Representation for investors, developers, and flippers — including multi-unit and portfolio transactions, with the due diligence these deals demand.</p><div class="angle">Move fast, clear the legal hurdles, keep building.</div></div>
-      <div class="card"><div class="chair"></div><h3>Contracts, Leases &amp; Closing</h3><p>Negotiation of purchase contracts and commercial leases, title and document review, and preparation for closing — so you reach the table with no surprises.</p><div class="angle">Every term explained before you ever sign it.</div></div>
+      <div class="card">
+        <div class="card-media"><img src="assets/svc-residential.jpg" alt="A classic brick home with a wide front porch and garden on a tree-lined residential street" loading="lazy" width="1100" height="733"></div>
+        <div class="card-body"><h3>Residential Purchase &amp; Sale</h3><p>Full representation for buyers and sellers of single-family homes, condominiums, townhomes, and multi-unit properties throughout Chicago and the suburbs, from contract through closing.</p><div class="angle">Walked through every step, so nothing catches you off guard.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-media"><img src="assets/svc-commercial.jpg" alt="A modern mixed-use commercial building in warm golden-hour light" loading="lazy" width="1100" height="733"></div>
+        <div class="card-body"><h3>Commercial Transactions</h3><p>Acquisition, disposition, and refinance of commercial property, guiding owners and businesses through deals where the details carry real financial weight.</p><div class="angle">The detail and diligence that high-stakes deals demand.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-media"><img src="assets/svc-development.jpg" alt="A multi-unit residential building under construction with timber framing" loading="lazy" width="1100" height="733"></div>
+        <div class="card-body"><h3>Investors &amp; Developers</h3><p>Representation for investors, developers, and flippers: multi-unit and portfolio transactions, with the due diligence these deals demand.</p><div class="angle">Move fast, clear the legal hurdles, keep building.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-media"><img src="assets/svc-closing.jpg" alt="A set of house keys resting on a dark wood table after closing" loading="lazy" width="1100" height="733"></div>
+        <div class="card-body"><h3>Contracts, Leases &amp; Closing</h3><p>Negotiation of purchase contracts and commercial leases, title and document review, and preparation for closing, so you reach the table with no surprises.</p><div class="angle">Every term explained before you ever sign it.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -493,7 +627,7 @@
         <span class="eyebrow">Common Questions</span>
         <h2>Good questions deserve <em>real answers.</em></h2>
       </div>
-      <p class="sec-intro">A few of the things buyers, sellers, and investors ask most often — with the clear, honest answers you should have before your transaction begins.</p>
+      <p class="sec-intro">A few of the things buyers, sellers, and investors ask most often, with the clear, honest answers you should have before your transaction begins.</p>
     </div>
     <div class="faq-list">
       <div class="faq-item open">
@@ -503,7 +637,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-1" role="region" aria-label="When should I get an attorney involved?">
-          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet — that's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. And if you're earlier in the process and just want to understand what to expect, please call — that conversation is always free.</p>
+          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet. That's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. And if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -513,7 +647,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-2" role="region" aria-label="What does a real estate attorney actually do?">
-          <p class="faq-body">A great deal that happens behind the scenes. I review and prepare the contract and closing documents, confirm the title is clear, make sure the numbers match what was agreed, and walk you through every page before you sign. My four jobs on every deal are to <strong>plan</strong> toward your goal, <strong>facilitate</strong> the other parties, <strong>advise</strong> when something needs a Plan B, and <strong>manage risk</strong> before it becomes a problem — so you reach the table with no surprises.</p>
+          <p class="faq-body">A great deal that happens behind the scenes. I review and prepare the contract and closing documents, confirm the title is clear, make sure the numbers match what was agreed, and walk you through every page before you sign. My four jobs on every deal are to <strong>plan</strong> toward your goal, <strong>facilitate</strong> the other parties, <strong>advise</strong> when something needs a Plan B, and <strong>manage risk</strong> before it becomes a problem, so you reach the table with no surprises.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -523,17 +657,17 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-3" role="region" aria-label="If Illinois requires an attorney anyway, does it matter who I choose?">
-          <p class="faq-body">It matters a great deal. <strong>Illinois is an attorney state for real estate closings</strong>, so you're already paying for legal representation — the question is whether that attorney is genuinely working for you or simply moving paperwork. I represent one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
+          <p class="faq-body">It matters a great deal. <strong>Illinois is an attorney state for real estate closings</strong>, so you're already paying for legal representation. The question is whether that attorney is genuinely working for you or simply moving paperwork. I represent one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4" onclick="toggleFaq(this)">
           <span class="faq-q-num">Q.4</span>
-          <span class="faq-q-text">Who owns the property — and are there liens or approvals to clear?</span>
+          <span class="faq-q-text">Who owns the property, and are there liens or approvals to clear?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-wrap" id="faq-4" role="region" aria-label="Who owns the property — and are there liens or approvals to clear?">
-          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity — and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
+        <div class="faq-wrap" id="faq-4" role="region" aria-label="Who owns the property, and are there liens or approvals to clear?">
+          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity, and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -543,7 +677,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-5" role="region" aria-label="What about tenants, improvements, or zoning?">
-          <p class="faq-body">If there are tenants, there are documents a buyer will need — I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
+          <p class="faq-body">If there are tenants, there are documents a buyer will need. I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -553,7 +687,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-6" role="region" aria-label="How do I reach you when something comes up?">
-          <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day — even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
+          <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day, even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
         </div>
       </div>
     </div>
@@ -565,17 +699,16 @@
   <div class="contact-left">
     <span class="eyebrow">Get in Touch</span>
     <h2 class="contact-headline">Every transaction starts with a <em>conversation.</em></h2>
-    <p class="contact-body">Tell me about your transaction and I'll tell you exactly how I can help. There's no commitment and no pressure — just a clear, honest conversation with someone who has been through this process many times and is glad to guide you through it.</p>
+    <p class="contact-body">Tell me about your transaction and I'll tell you exactly how I can help. There's no commitment and no pressure, just a clear, honest conversation with someone who has been through this process many times and is glad to guide you through it.</p>
     <p class="c-tag">Call directly</p>
     <a href="tel:+13125729189" class="c-phone">(312) 572-9189</a>
-    <p class="c-note">Calls returned same day · prefers phone to email</p>
     <div class="c-div"></div>
     <div class="c-block"><p class="c-tag">Email</p><p class="c-line"><a href="mailto:attyreynolds@gmail.com">attyreynolds@gmail.com</a></p></div>
     <div class="c-block"><p class="c-tag">Office</p><p class="c-line">1507 E. 53rd Street #609<br>Chicago, IL 60615</p></div>
   </div>
   <div class="contact-right">
     <h3 class="form-hed">Or send a message</h3>
-    <p class="form-sub">Prefer to write first? I'll follow up by phone — usually within a few hours.</p>
+    <p class="form-sub">Prefer to write first? I'll follow up by phone, usually within a few hours.</p>
     <div class="form-row">
       <div class="field"><label for="fn">First name</label><input id="fn" type="text" placeholder="First name"></div>
       <div class="field"><label for="ln">Last name</label><input id="ln" type="text" placeholder="Last name"></div>
@@ -590,30 +723,7 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="container">
-    <div class="footer-cta">
-      <p class="footer-cta-text">Ready to talk through your transaction?</p>
-      <a href="tel:+13125729189" class="footer-cta-phone">(312) 572-9189</a>
-    </div>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-wordmark" role="img" aria-label="Georgette Reynolds"></span>
-        <span class="footer-firm">Attorney at Law, LLC · Chicago Real Estate Law</span>
-        <span class="footer-tagline">Real estate law, made clear.</span>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#teach">Approach</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul class="footer-creds" aria-label="Credentials">
-        <li>Illinois Bar</li>
-        <li>25+ Years' Practice</li>
-        <li>J.D. · LLM, Real Estate Law</li>
-      </ul>
-      <div class="footer-legal">© 2026 Georgette Reynolds, Attorney at Law, LLC · Attorney Advertising</div>
-    </div>
+    <p class="footer-legal">© 2026 Georgette Reynolds, Attorney at Law, LLC · Chicago Real Estate Law · Attorney Advertising</p>
   </div>
 </footer>
 
@@ -645,10 +755,10 @@
   (function(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!('IntersectionObserver' in window)) return;
-    var sel = '#teach .container, #about .about-grid, .tmarquee, .sec-head, .card, .faq-item, .contact-left, .contact-right, .footer-cta, .footer-inner';
+    var sel = '#teach .container, #about .about-grid, .tmarquee, .sec-head, .card, .step, .faq-item, .contact-left, .contact-right, .footer-cta, .footer-inner';
     var els = Array.prototype.slice.call(document.querySelectorAll(sel));
     // stagger grouped children (cards, faq items) so they cascade in
-    document.querySelectorAll('.cards, .faq-list').forEach(function(group){
+    document.querySelectorAll('.cards, .steps, .faq-list').forEach(function(group){
       Array.prototype.slice.call(group.children).forEach(function(child, i){
         child.style.transitionDelay = Math.min(i * 80, 320) + 'ms';
       });
