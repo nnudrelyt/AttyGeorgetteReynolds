@@ -561,25 +561,39 @@
   .nav-logo-name{font-size:21px}
   @media (max-width:560px){.nav-logo-name{font-size:15px}}
 
-  /* taller hero on 1440+ (≈30–50% more vertical presence) */
-  @media (min-width:1440px){#hero{min-height:1340px}}
-  @media (min-width:1920px){#hero{min-height:1460px}}
+  /* hero height on 1440+ — modest bump over the content-natural ~1076 (1340 read way too tall) */
+  @media (min-width:1440px){#hero{min-height:1120px}}
 
   /* reverse colorway on + (closed) button rollover */
   .faq-trigger:hover .faq-icon{background:var(--forest);border-color:var(--forest);color:var(--cream)}
 
-  /* HERO entrance: staggered reveal timing (JS-gated → visible by default, reduced-motion safe) */
-  #hero .eyebrow.reveal{transition-delay:.05s}
-  #hero .hero-headline.reveal{transition-delay:.15s}
-  #hero .hero-sub.reveal{transition-delay:.3s}
-  #hero .hero-phone-tag.reveal{transition-delay:.42s}
-  #hero .hero-phone-num.reveal{transition-delay:.5s}
-  #hero .about-sig.reveal{transition-delay:.6s}
-  #hero .hero-r.reveal{transition-delay:.12s}
+  /* HERO entrance: transform-only staggered rise (content always visible — never gated on opacity) */
+  @keyframes heroIn{from{transform:translateY(24px)}to{transform:none}}
+  #hero .eyebrow,#hero .hero-headline,#hero .hero-sub,#hero .hero-phone-tag,#hero .hero-phone-num,#hero .about-sig{animation:heroIn .8s cubic-bezier(.2,.7,.2,1) backwards}
+  #hero .eyebrow{animation-delay:.05s}
+  #hero .hero-headline{animation-delay:.15s}
+  #hero .hero-sub{animation-delay:.3s}
+  #hero .hero-phone-tag{animation-delay:.42s}
+  #hero .hero-phone-num{animation-delay:.5s}
+  #hero .about-sig{animation-delay:.6s}
+  @media (prefers-reduced-motion:reduce){#hero .eyebrow,#hero .hero-headline,#hero .hero-sub,#hero .hero-phone-tag,#hero .hero-phone-num,#hero .about-sig{animation:none}}
   /* phone underline micro-interaction */
   #hero .hero-phone-num{position:relative;display:inline-block}
   #hero .hero-phone-num::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--brass-lt);transition:width .4s cubic-bezier(.2,.7,.2,1)}
   #hero .hero-phone-num:hover::after{width:100%}
+
+  /* ── Round-7 tweaks ── */
+  /* wordmark in all caps */
+  .nav-logo-name{text-transform:uppercase;font-size:17px;letter-spacing:.09em}
+  @media (max-width:560px){.nav-logo-name{font-size:12px;letter-spacing:.07em}}
+  /* tighter crop on Georgette */
+  .hero-photo{transform:scale(1.16);transform-origin:center 30%}
+  /* support copy → 18px */
+  .about-body,.sec-intro,.faq-body{font-size:18px}
+  /* FAQ tiles: sage-green outline + faint sage tint */
+  .faq-item{background:#eef1e7;border-color:var(--sage)}
+  .faq-trigger,.faq-item.open .faq-trigger,.faq-body{background:transparent}
+  .faq-icon{border-color:var(--sage)}
 </style>
 </head>
 <body>
@@ -648,7 +662,7 @@
       <div class="about-side">
         <div class="stats">
           <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Years practicing real estate law</div></div>
-          <div class="stat"><div class="stat-num">J.D./LLM</div><div class="stat-label">Advanced degree in real estate law</div></div>
+          <div class="stat"><div class="stat-num">J.D./LLM</div><div class="stat-label">Advanced credentialing in real estate law</div></div>
           <!-- PLACEHOLDER: confirm Georgette's total transactions/closings count -->
     <div class="stat"><div class="stat-num">[###]+</div><div class="stat-label">Transactions closed</div></div>
           <div class="stat"><div class="stat-num">1:1</div><div class="stat-label">Every matter handled personally</div></div>
@@ -864,7 +878,7 @@
   (function(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!('IntersectionObserver' in window)) return;
-    var sel = '#hero .hero-l > *, #hero .hero-r, #teach .container > *, #about .about-grid, .tmarquee, .sec-head, .card, .step, .faq-item, .contact-left, .contact-right';
+    var sel = '#teach .container > *, #about .about-grid, .tmarquee, .sec-head, .card, .step, .faq-item, .contact-left, .contact-right';
     var els = Array.prototype.slice.call(document.querySelectorAll(sel));
     // stagger grouped children (cards, faq items) so they cascade in
     document.querySelectorAll('#teach .container, .cards, .steps, .faq-list').forEach(function(group){
