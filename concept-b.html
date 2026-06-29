@@ -69,7 +69,7 @@
   .nav-cta:hover{background:var(--forest-d)}
 
   /* ── hero ── */
-  #hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;padding:76px 0 0}
+  #hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;padding:72px 0 0}
   .hero-l{padding:clamp(56px,7vw,104px) clamp(40px,4.5vw,64px);display:flex;flex-direction:column;justify-content:center}
   .hero-headline{font-size:clamp(54px,6.8vw,104px);font-weight:500;margin-bottom:34px}
   .hero-sub{font-size:clamp(18px,1.45vw,21px);line-height:1.7;color:var(--muted);max-width:500px;margin-bottom:46px}
@@ -562,7 +562,8 @@
   @media (max-width:560px){.nav-logo-name{font-size:15px}}
 
   /* hero height on 1440+ — modest bump over the content-natural ~1076 (1340 read way too tall) */
-  @media (min-width:1440px){#hero{min-height:860px}}
+  /* fill the viewport on large screens: show a sliver of the next (sage) panel, never its text */
+  @media (min-width:1440px){#hero{min-height:calc(100vh - 100px)}}
 
   /* reverse colorway on + (closed) button rollover */
   .faq-trigger:hover .faq-icon{background:var(--forest);border-color:var(--forest);color:var(--cream)}
