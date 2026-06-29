@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo treatment options — Georgette Reynolds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#282828;--muted:#5b5c57;--forest:#193525;--line:#dcdcd4}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#fafcfd;color:var(--ink);font-family:'Jost',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;padding:clamp(28px,5vw,64px)}
+  .wrap{max-width:1180px;margin:0 auto}
+  h1{font-family:'Spectral',serif;font-weight:500;font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;margin-bottom:12px}
+  .lede{color:var(--muted);font-size:18px;max-width:640px;margin-bottom:clamp(32px,5vw,52px)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,34px)}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .opt{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+  .frame{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--forest)}
+  .frame img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+  .tag{position:absolute;top:14px;left:14px;background:rgba(20,20,20,.82);color:#fff;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:6px}
+  .opt h2{font-family:'Spectral',serif;font-weight:500;font-size:23px;padding:20px 22px 4px}
+  .opt p{color:var(--muted);font-size:16px;padding:0 22px 22px;max-width:46ch}
+  .pick{display:inline-block;margin:0 22px 22px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
+  .a img{filter:saturate(.78) contrast(1.05) brightness(1.02) sepia(.06)}
+  .b img{filter:grayscale(1) sepia(.55) hue-rotate(58deg) saturate(.7) brightness(1.06) contrast(1.02)}
+  .c img{filter:saturate(.5) contrast(.93) brightness(1.08) sepia(.1)}
+  .d img{filter:sepia(.5) saturate(1.05) contrast(1.03) brightness(1.02)}
+  .foot{margin-top:clamp(32px,5vw,52px);color:var(--muted);font-size:16px;border-top:1px solid var(--line);padding-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Hero photo — treatment options</h1>
+  <p class="lede">Each tile is the same photo of Georgette with a different color treatment applied. Tell me which letter you'd like (A, B, C, or D), and whether it should be permanent or just until a real headshot is ready.</p>
+  <div class="grid">
+    <div class="opt a">
+      <div class="frame"><span class="tag">Option A</span><img src="assets/agr-headshot.webp" alt="Desaturated and warm treatment"></div>
+      <h2>Desaturated + warm</h2>
+      <p>Keeps her true coloring, just calms the busy reds. The most natural, "real headshot" look.</p>
+    </div>
+    <div class="opt b">
+      <div class="frame"><span class="tag">Option B</span><img src="assets/agr-headshot.webp" alt="Forest-green duotone treatment"></div>
+      <h2>Forest-green duotone</h2>
+      <p>A green monochrome that dissolves the busy background into the brand palette. Boldest and most editorial — my pick for this candid.</p>
+    </div>
+    <div class="opt c">
+      <div class="frame"><span class="tag">Option C</span><img src="assets/agr-headshot.webp" alt="Muted editorial treatment"></div>
+      <h2>Muted editorial</h2>
+      <p>Soft, faded, nearly tonal. Understated and quiet, though the background is still faintly visible.</p>
+    </div>
+    <div class="opt d">
+      <div class="frame"><span class="tag">Option D</span><img src="assets/agr-headshot.webp" alt="Warm film and sepia treatment"></div>
+      <h2>Warm film / sepia</h2>
+      <p>A golden, vintage-warm cast. Classic and a touch nostalgic — leans slightly dated for a contemporary brand.</p>
+    </div>
+  </div>
+  <p class="foot">This is a temporary comparison page (not linked anywhere on the site). I'll remove it once you've picked.</p>
+</div>
+</body>
+</html>
