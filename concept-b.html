@@ -590,10 +590,8 @@
   .hero-photo{transform:scale(1.16);transform-origin:center 30%}
   /* support copy → 18px */
   .about-body,.sec-intro,.faq-body{font-size:18px}
-  /* FAQ tiles: sage-green outline + faint sage tint */
-  .faq-item{background:#eef1e7;border-color:var(--sage)}
-  .faq-trigger,.faq-item.open .faq-trigger,.faq-body{background:transparent}
-  .faq-icon{border-color:var(--sage)}
+  /* FAQ tiles: sage-green stroke only (previous fill/icon styling restored) */
+  .faq-item{border-color:var(--sage)}
 </style>
 </head>
 <body>
@@ -602,7 +600,7 @@
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
   <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="nav-logo-name">Attorney Georgette Reynolds</span>
+    <span class="nav-logo-name">Atty Georgette Reynolds</span>
   </a>
   <ul class="nav-links">
     <li><a href="#teach">Approach</a></li>
@@ -652,7 +650,7 @@
 <section id="about">
   <div class="container">
     <div class="about-grid">
-      <div>
+      <div class="about-main">
         <span class="eyebrow">About</span>
         <h2 class="about-headline">Real estate counsel that's <em>here for you.</em></h2>
         <p class="about-body">For more than 25 years, Georgette Reynolds has guided Chicago buyers, sellers, investors, and developers through the legal side of real estate, and she does it personally. From the first call you have her direct number, not a portal or a receptionist, and a clear answer whenever a question comes up.</p>
@@ -878,10 +876,10 @@
   (function(){
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!('IntersectionObserver' in window)) return;
-    var sel = '#teach .container > *, #about .about-grid, .tmarquee, .sec-head, .card, .step, .faq-item, .contact-left, .contact-right';
+    var sel = '#teach .container > *, #about .about-main, #about .quote-card, #about .stat, .tmarquee, .sec-head, .card, .step, .faq-item, .contact-left, .contact-right';
     var els = Array.prototype.slice.call(document.querySelectorAll(sel));
     // stagger grouped children (cards, faq items) so they cascade in
-    document.querySelectorAll('#teach .container, .cards, .steps, .faq-list').forEach(function(group){
+    document.querySelectorAll('#teach .container, .stats, .cards, .steps, .faq-list').forEach(function(group){
       Array.prototype.slice.call(group.children).forEach(function(child, i){
         child.style.transitionDelay = Math.min(i * 80, 320) + 'ms';
       });
