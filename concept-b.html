@@ -470,6 +470,29 @@
   .contact-left{position:relative}
   .contact-left > *{position:relative;z-index:1}
   @media(max-width:980px){.nb-grid{grid-template-columns:1fr;gap:44px}.cmap{max-width:360px}.contact-map{display:none}}
+
+  /* ── Round-2 tweaks ── */
+  /* larger support copy (About matches Difference; boost the 16–18px copy) */
+  .about-body{font-size:clamp(19px,1.6vw,23px)}
+  .sec-intro{font-size:clamp(17px,1.4vw,20px)}
+  .card p{font-size:18px}
+  .faq-body{font-size:18px}
+  /* service cards: Forrest-green outline; drop the italic angle line */
+  #services .card{border-color:var(--forest)}
+  .card .angle{display:none}
+  /* Send Message button → sage with charcoal type */
+  .btn{background:var(--sage);color:#1c1c1c}
+  .btn:hover{background:var(--forest);color:var(--cream)}
+  /* hero portrait: center Georgette in frame */
+  .hero-photo{object-position:center 26%}
+  /* hero signature: larger mark, name, credentials */
+  .about-sig{gap:20px}
+  .sig-mark{width:58px;height:53px}
+  .sig-name{font-size:23px}
+  .sig-title{font-size:15px;margin-top:6px}
+  /* taller hero on wide monitors */
+  @media (min-width:1600px){#hero{min-height:840px}}
+  @media (min-width:1900px){#hero{min-height:900px}}
 </style>
 </head>
 <body>
@@ -520,7 +543,7 @@
 <section id="teach" class="difference">
   <div class="container">
     <span class="eyebrow">The Difference</span>
-    <h2>A real estate attorney who's <em>in your corner.</em></h2>
+    <h2>A real estate attorney <em>in your corner.</em></h2>
     <p>Georgette stays close to every deal from the first call to the closing table: on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
   </div>
 </section>
@@ -703,7 +726,6 @@
     <p class="c-tag">Call directly</p>
     <a href="tel:+13125729189" class="c-phone">(312) 572-9189</a>
     <div class="c-div"></div>
-    <div class="c-block"><p class="c-tag">Email</p><p class="c-line"><a href="mailto:attyreynolds@gmail.com">attyreynolds@gmail.com</a></p></div>
     <div class="c-block"><p class="c-tag">Office</p><p class="c-line">1507 E. 53rd Street #609<br>Chicago, IL 60615</p></div>
   </div>
   <div class="contact-right">
