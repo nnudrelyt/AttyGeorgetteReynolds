@@ -55,7 +55,7 @@
   section{padding:clamp(84px,10vw,140px) 0}
 
   /* ── nav ── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,241,231,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
   .nav-logo{color:var(--ink);text-decoration:none;display:inline-flex;flex-direction:column;gap:5px}
   .nav-logo-tag{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .logo-wordmark,.logo-gmark{display:block;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;-webkit-mask-size:contain;mask-size:contain}
@@ -307,7 +307,7 @@
 
   /* ── 2 · smart nav: condenses + gains shadow once scrolled ── */
   nav{transition:height .3s ease, background .3s ease, box-shadow .3s ease}
-  nav.scrolled{height:62px;background:rgba(246,241,231,.97);box-shadow:0 8px 28px rgba(40,30,15,.09)}
+  nav.scrolled{height:54px;background:rgba(255,255,255,.97);box-shadow:0 6px 24px rgba(40,30,15,.08)}
 
   /* ── 2 · animated brass underline on nav links ── */
   .nav-links a{position:relative}
@@ -583,15 +583,15 @@
   #hero .hero-phone-num:hover::after{width:100%}
 
   /* ── Round-7 tweaks ── */
-  /* wordmark in all caps */
-  .nav-logo-name{text-transform:uppercase;font-size:17px;letter-spacing:.09em}
-  @media (max-width:560px){.nav-logo-name{font-size:12px;letter-spacing:.07em}}
-  /* tighter crop on Georgette + high-contrast black & white treatment */
-  .hero-photo{transform:scale(1.16);transform-origin:center 30%;filter:grayscale(1) contrast(1.28) brightness(1.04)}
+  /* wordmark back to title case */
+  .nav-logo-name{text-transform:none;font-size:21px;letter-spacing:.01em}
+  @media (max-width:560px){.nav-logo-name{font-size:15px;letter-spacing:.01em}}
+  /* portrait: zoomed + optically centered + high-contrast black & white */
+  .hero-photo{object-position:80% 26%;transform:scale(1.32);transform-origin:66% 34%;filter:grayscale(1) contrast(1.28) brightness(1.04)}
   /* support copy → 18px */
   .about-body,.sec-intro,.faq-body{font-size:18px}
-  /* FAQ tiles: sage-green stroke only (previous fill/icon styling restored) */
-  .faq-item{border-color:var(--sage)}
+  /* FAQ tiles: brand cream stroke */
+  .faq-item{border-color:#f6f1e7}
 </style>
 </head>
 <body>
