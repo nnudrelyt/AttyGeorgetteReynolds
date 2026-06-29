@@ -521,6 +521,22 @@
   .nav-cta:active,.btn:active{transform:translateY(0) scale(.985)}
   /* contact: top-align both columns so the form lines up with the eyebrow */
   .contact-left,.contact-right{justify-content:flex-start}
+
+  /* ── Round-4 tweaks ── */
+  /* larger stat tiles */
+  .stat{padding:28px 26px}
+  .stat-num{font-size:clamp(34px,2.4vw,42px)}
+  .stat-label{font-size:15px}
+  /* FAQ numerals: better-centered +/- with hover rollover */
+  .faq-icon{width:32px;height:32px;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+  .faq-icon::after{line-height:1;font-size:21px;display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+  .faq-trigger:hover .faq-icon{background:var(--sage);border-color:var(--sage);color:#1c1c1c;transform:scale(1.1)}
+  .faq-trigger[aria-expanded="true"]:hover .faq-icon{background:var(--forest-d);border-color:var(--forest-d);color:var(--cream)}
+  /* contact headline: balanced, appropriate measure for the longer line */
+  .contact-headline{max-width:17ch;text-wrap:balance}
+  /* 18px minimum type on the contact form */
+  #contact .form-sub,#contact .field input,#contact .field textarea{font-size:18px}
+  #contact .field label{font-size:18px;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -547,7 +563,7 @@
   <div class="hero-l">
     <span class="eyebrow">Chicago Real Estate Attorney</span>
     <h1 class="hero-headline">Before you<br>close, <em>let's talk.</em></h1>
-    <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn, residential and commercial, from contract to closing.</p>
+    <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through real estate purchases from contract to close.</p>
     <hr class="brass-rule">
     <p class="hero-phone-tag">Let's discuss your deal</p>
     <a href="tel:+13125729189" class="hero-phone-num">(312) 572-9189</a>
@@ -572,7 +588,7 @@
 <section id="teach" class="difference">
   <div class="container">
     <span class="eyebrow">The Difference</span>
-    <h2>A real estate attorney <em>in your corner.</em></h2>
+    <h2>An attorney <em>in your corner.</em></h2>
     <p>Georgette stays close to every deal from the first call to the closing table: on call, deeply involved, and genuinely invested in getting you across the finish line. She explains what's happening at each step and what to watch for, so you're never left guessing. You're not handed off to a portal or a receptionist; you get her, the whole way through.</p>
   </div>
 </section>
@@ -583,7 +599,7 @@
     <div class="about-grid">
       <div>
         <span class="eyebrow">About</span>
-        <h2 class="about-headline">Real estate counsel that's always <em>within reach.</em></h2>
+        <h2 class="about-headline">Real estate counsel that's <em>here for you.</em></h2>
         <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach: somewhere in the background, never entirely clear on what they were doing for you. Georgette Reynolds built her practice around something different.</p>
         <p class="about-body">With a J.D./LLM in real estate law and more than 25 years of practice (including teaching the subject as an adjunct professor), she explains every document before you sign it, flags issues when she sees them, and gives you her direct number from day one: not a portal, not a receptionist. Above all, she's a problem solver, finding a workable path forward when a deal hits a snag.</p>
         <p class="about-body">Georgette represents buyers, sellers, investors, and developers across residential and commercial transactions, and brings a genuinely constructive outlook to every file. In her experience, a positive attitude tends to lead to positive outcomes for everyone at the table.</p>
@@ -592,7 +608,8 @@
         <div class="stats">
           <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Years practicing real estate law</div></div>
           <div class="stat"><div class="stat-num">J.D./LLM</div><div class="stat-label">Advanced degree in real estate law</div></div>
-          <div class="stat"><div class="stat-num">Adjunct</div><div class="stat-label">Professor of real estate law</div></div>
+          <!-- PLACEHOLDER: confirm Georgette's total transactions/closings count -->
+    <div class="stat"><div class="stat-num">[###]+</div><div class="stat-label">Transactions closed</div></div>
           <div class="stat"><div class="stat-num">Same day</div><div class="stat-label">Calls returned, always</div></div>
         </div>
         <div class="quote-card">
@@ -684,7 +701,7 @@
     <div class="faq-list">
       <div class="faq-item open">
         <button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-1" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.1</span>
+          <span class="faq-q-num">1.</span>
           <span class="faq-q-text">When should I get an attorney involved?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -694,7 +711,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-2" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.2</span>
+          <span class="faq-q-num">2.</span>
           <span class="faq-q-text">What does a real estate attorney actually do?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -704,7 +721,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-3" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.3</span>
+          <span class="faq-q-num">3.</span>
           <span class="faq-q-text">If Illinois requires an attorney anyway, does it matter who I choose?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -714,7 +731,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.4</span>
+          <span class="faq-q-num">4.</span>
           <span class="faq-q-text">Who owns the property, and are there liens or approvals to clear?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -724,7 +741,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-5" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.5</span>
+          <span class="faq-q-num">5.</span>
           <span class="faq-q-text">What about tenants, improvements, or zoning?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -734,7 +751,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-6" onclick="toggleFaq(this)">
-          <span class="faq-q-num">Q.6</span>
+          <span class="faq-q-num">6.</span>
           <span class="faq-q-text">How do I reach you when something comes up?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
@@ -750,7 +767,7 @@
 <section id="contact">
   <div class="contact-left">
     <span class="eyebrow">Get in Touch</span>
-    <h2 class="contact-headline">Every transaction starts with a <em>conversation.</em></h2>
+    <h2 class="contact-headline">Every real estate transaction begins with a <em>conversation.</em></h2>
     <p class="contact-body">Tell me about your transaction and I'll tell you exactly how I can help. There's no commitment and no pressure, just a clear, honest conversation with someone who has been through this process many times and is glad to guide you through it.</p>
     <p class="c-tag">Call directly</p>
     <a href="tel:+13125729189" class="c-phone">(312) 572-9189</a>
