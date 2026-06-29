@@ -537,6 +537,24 @@
   /* 18px minimum type on the contact form */
   #contact .form-sub,#contact .field input,#contact .field textarea{font-size:18px}
   #contact .field label{font-size:18px;letter-spacing:.04em}
+
+  /* ── Round-5 tweaks ── */
+  /* FAQ: larger answer copy + larger, editorial serif numerals */
+  .faq-body{font-size:20px}
+  .faq-trigger{grid-template-columns:54px 1fr 36px}
+  .faq-q-num{font-size:27px;font-weight:500;color:var(--brass-ink);padding-top:0;line-height:1}
+  /* FAQ +/- drawn as perfectly-centered lines that morph + → − (fixes low glyphs) */
+  .faq-icon{position:relative}
+  .faq-icon::before{content:'';position:absolute;top:50%;left:50%;width:13px;height:1.8px;background:currentColor;border-radius:2px;transform:translate(-50%,-50%)}
+  .faq-icon::after{content:'';position:absolute;top:50%;left:50%;width:1.8px;height:13px;background:currentColor;border-radius:2px;font-size:0;transform:translate(-50%,-50%);transition:transform .3s cubic-bezier(.2,.7,.2,1),opacity .2s ease}
+  .faq-trigger[aria-expanded="true"] .faq-icon::after{content:'';transform:translate(-50%,-50%) scaleY(0);opacity:0}
+  .faq-trigger:hover .faq-icon{background:var(--sage);border-color:var(--sage);color:#1c1c1c;transform:scale(1.12)}
+  .faq-trigger[aria-expanded="true"]:hover .faq-icon{background:var(--forest-d);border-color:var(--forest-d);color:var(--cream);transform:scale(1.12)}
+  /* form: smaller labels, larger headline */
+  #contact .field label{font-size:12.5px;letter-spacing:.12em}
+  .form-hed{font-size:clamp(28px,2.4vw,32px)}
+  /* contact-left: extend the support-copy measure under 'Get in Touch' */
+  .contact-body{max-width:500px}
 </style>
 </head>
 <body>
@@ -545,8 +563,6 @@
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
   <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="logo-gmark" aria-hidden="true"></span>
-    <span class="nav-logo-rule" aria-hidden="true"></span>
     <span class="nav-logo-name">Georgette Reynolds</span>
   </a>
   <ul class="nav-links">
@@ -600,9 +616,9 @@
       <div>
         <span class="eyebrow">About</span>
         <h2 class="about-headline">Real estate counsel that's <em>here for you.</em></h2>
-        <p class="about-body">Most buyers and sellers have worked with a real estate attorney who was difficult to reach: somewhere in the background, never entirely clear on what they were doing for you. Georgette Reynolds built her practice around something different.</p>
-        <p class="about-body">With a J.D./LLM in real estate law and more than 25 years of practice (including teaching the subject as an adjunct professor), she explains every document before you sign it, flags issues when she sees them, and gives you her direct number from day one: not a portal, not a receptionist. Above all, she's a problem solver, finding a workable path forward when a deal hits a snag.</p>
-        <p class="about-body">Georgette represents buyers, sellers, investors, and developers across residential and commercial transactions, and brings a genuinely constructive outlook to every file. In her experience, a positive attitude tends to lead to positive outcomes for everyone at the table.</p>
+        <p class="about-body">For more than 25 years, Georgette Reynolds has guided Chicago buyers, sellers, investors, and developers through the legal side of real estate, and she does it personally. From the first call you have her direct number, not a portal or a receptionist, and a clear answer whenever a question comes up.</p>
+        <p class="about-body">She reads every document before you sign it, flags issues the moment she sees them, and when a deal hits a snag she goes a step further, finding a workable path forward instead of simply naming the problem. Her clients never have to wonder what is happening in their transaction, or whether they can reach the person handling it.</p>
+        <p class="about-body">That care is backed by real expertise. Georgette holds an advanced degree in real estate law and has taught the subject for years, and she brings a steady, solutions-first outlook to every file, which tends to lead to better outcomes for everyone at the table.</p>
       </div>
       <div class="about-side">
         <div class="stats">
@@ -681,7 +697,7 @@
         <div class="card-body"><h3>Investors &amp; Developers</h3><p>Representation for investors, developers, and flippers: multi-unit and portfolio transactions, with the due diligence these deals demand.</p><div class="angle">Move fast, clear the legal hurdles, keep building.</div></div>
       </div>
       <div class="card">
-        <div class="card-media"><img src="assets/svc-closing.jpg" alt="A set of house keys resting on a dark wood table after closing" loading="lazy" width="1100" height="733"></div>
+        <div class="card-media"><img src="assets/svc-closing.jpg" alt="Hands signing closing documents with a pen at the closing table" loading="lazy" width="1100" height="440"></div>
         <div class="card-body"><h3>Contracts, Leases &amp; Closing</h3><p>Negotiation of purchase contracts and commercial leases, title and document review, and preparation for closing, so you reach the table with no surprises.</p><div class="angle">Every term explained before you ever sign it.</div></div>
       </div>
     </div>
