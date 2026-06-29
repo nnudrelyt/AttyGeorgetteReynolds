@@ -493,6 +493,34 @@
   /* taller hero on wide monitors */
   @media (min-width:1600px){#hero{min-height:840px}}
   @media (min-width:1900px){#hero{min-height:900px}}
+
+  /* ── Round-3 tweaks ── */
+  /* Services header on a single line (wraps only on small mobile) */
+  @media (min-width:561px){#services .sec-head h2{white-space:nowrap;max-width:none}}
+  /* About support copy → 20px; Approach support copy → 18px */
+  .about-body{font-size:20px}
+  #approach .sec-intro,#approach .step p{font-size:18px}
+  /* heavier nav links */
+  .nav-links a{font-weight:600}
+  /* nav logo: G-mark + vertical rule + name (drops 'Attorney at Law') */
+  .nav-logo{flex-direction:row;align-items:center;gap:14px}
+  .nav-logo .logo-wordmark,.nav-logo .nav-logo-tag{display:none}
+  .nav-logo .logo-gmark{display:block;width:34px;height:32px}
+  .nav-logo-rule{width:1px;height:30px;background:rgba(40,40,40,.28);flex-shrink:0}
+  .nav-logo-name{font-family:'Spectral',serif;font-weight:500;font-size:22px;color:var(--ink);letter-spacing:.01em;line-height:1;white-space:nowrap}
+  @media (max-width:560px){.nav-logo-name{font-size:18px}.nav-logo-rule{height:24px}.nav-logo .logo-gmark{width:30px;height:28px}}
+  /* full-card rollover on service cards (lift + shadow + accent outline + photo zoom) */
+  #services .card{transition:box-shadow .28s cubic-bezier(.2,.65,.2,1),transform .28s cubic-bezier(.2,.65,.2,1),border-color .28s}
+  #services .card:hover{transform:translateY(-6px);box-shadow:0 3px 10px rgba(10,22,15,.18),0 26px 52px rgba(10,22,15,.32);border-color:var(--brass-lt)}
+  /* FAQ hover depth */
+  .faq-item{transition:box-shadow .22s ease,transform .22s ease}
+  .faq-item:not(.open):hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
+  /* button micro-interactions (lift on hover, press on active) */
+  .nav-cta,.btn{transition:background .2s,box-shadow .2s,transform .14s ease}
+  .nav-cta:hover,.btn:hover{transform:translateY(-1px)}
+  .nav-cta:active,.btn:active{transform:translateY(0) scale(.985)}
+  /* contact: top-align both columns so the form lines up with the eyebrow */
+  .contact-left,.contact-right{justify-content:flex-start}
 </style>
 </head>
 <body>
@@ -501,8 +529,9 @@
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
   <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="logo-wordmark"></span>
-    <span class="logo-gmark"></span>
+    <span class="logo-gmark" aria-hidden="true"></span>
+    <span class="nav-logo-rule" aria-hidden="true"></span>
+    <span class="nav-logo-name">Georgette Reynolds</span>
   </a>
   <ul class="nav-links">
     <li><a href="#teach">Approach</a></li>
@@ -520,7 +549,7 @@
     <h1 class="hero-headline">Before you<br>close, <em>let's talk.</em></h1>
     <p class="hero-sub">Twenty-five years guiding buyers, sellers, investors, and developers through every legal turn, residential and commercial, from contract to closing.</p>
     <hr class="brass-rule">
-    <p class="hero-phone-tag">Let's chat about your real estate transaction</p>
+    <p class="hero-phone-tag">Let's discuss your deal</p>
     <a href="tel:+13125729189" class="hero-phone-num">(312) 572-9189</a>
     <div class="about-sig">
       <span class="sig-mark" aria-hidden="true"></span>
