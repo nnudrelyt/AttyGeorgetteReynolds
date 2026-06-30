@@ -627,6 +627,15 @@
   /* ── Round-10: stat cards take the My-Approach step colorway (light-gray ground, sage-deep number) ── */
   .stat{background:var(--stone);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:none}
   #about .stat.reveal{transition:opacity 1.3s cubic-bezier(.16,.84,.3,1),transform 1.3s cubic-bezier(.16,.84,.3,1)}
+
+  /* ── Mobile: indent How-I-Work content + Common-Questions heading group to the contact-panel left edge ── */
+  @media (max-width:980px){
+    #approach .container{padding-left:clamp(40px,4.5vw,72px)}
+    #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 28px)}
+  }
+  @media (max-width:560px){
+    #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 20px)}
+  }
 </style>
 </head>
 <body>
