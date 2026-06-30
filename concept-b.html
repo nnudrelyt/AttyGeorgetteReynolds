@@ -21,6 +21,7 @@
     --forest:#193525;     /* Forrest — deep green (Services, Contact, stats, footer) */
     --forest-d:#11231a;   /* deepest green */
     --cream:#fafcfd;      /* text on dark surfaces */
+    --cream-warm:#f6f1e7; /* warm cream — buttons, stat tiles */
     --sage:#80886c;       /* Sage — hero panel, testimonials bg, quote fill */
     --sage-deep:#525a40;  /* deep sage — text on light (AA) */
     --brass:#b49e73;      /* muted brass — the single subtle accent (eyebrow tick) */
@@ -65,8 +66,8 @@
   .nav-links{display:flex;gap:38px;list-style:none}
   .nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
-  .nav-cta{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:var(--sage);text-decoration:none;padding:12px 28px;border-radius:999px;transition:background .2s,color .2s}
-  .nav-cta:hover{background:var(--sage-deep);color:var(--cream)}
+  .nav-cta{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:var(--cream-warm);text-decoration:none;padding:12px 28px;border-radius:999px;transition:background .2s,color .2s}
+  .nav-cta:hover{background:var(--forest);color:var(--cream)}
 
   /* ── hero ── */
   #hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px;padding:72px 0 0}
@@ -395,8 +396,8 @@
   #teach::before,.contact-left::before{display:none}
 
   /* ── nav contact button → Sage with forrest text ── */
-  .nav-cta{background:var(--sage);color:var(--forest)}
-  .nav-cta:hover{background:var(--sage-deep);color:var(--cream)}
+  .nav-cta{background:var(--cream-warm);color:var(--forest)}
+  .nav-cta:hover{background:var(--forest);color:var(--cream)}
 
   /* ── HOW I WORK (open steps) → light-gray bg, ink text ── */
   #approach{background:var(--stone)}
@@ -480,8 +481,8 @@
   /* service cards: Forrest-green outline; drop the italic angle line */
   #services .card{border-color:var(--forest)}
   .card .angle{display:none}
-  /* Send Message button → sage with charcoal type */
-  .btn{background:var(--sage);color:#1c1c1c}
+  /* Send Message button → cream with forrest text (rollover unchanged: forrest + cream) */
+  .btn{background:var(--cream-warm);color:var(--forest)}
   .btn:hover{background:var(--forest);color:var(--cream)}
   /* hero portrait: center Georgette in frame */
   .hero-photo{object-position:center 26%}
@@ -511,7 +512,7 @@
   @media (max-width:560px){.nav-logo-name{font-size:18px}.nav-logo-rule{height:24px}.nav-logo .logo-gmark{width:30px;height:28px}}
   /* full-card rollover on service cards (lift + shadow + accent outline + photo zoom) */
   #services .card{transition:box-shadow .28s cubic-bezier(.2,.65,.2,1),transform .28s cubic-bezier(.2,.65,.2,1),border-color .28s}
-  #services .card:hover{transform:translateY(-6px);box-shadow:0 3px 10px rgba(10,22,15,.18),0 26px 52px rgba(10,22,15,.32);border-color:var(--brass-lt)}
+  #services .card:hover{transform:translateY(-6px);box-shadow:0 3px 10px rgba(10,22,15,.18),0 26px 52px rgba(10,22,15,.32);border-color:var(--forest)}
   /* FAQ hover depth */
   .faq-item{transition:box-shadow .22s ease,transform .22s ease}
   .faq-item:not(.open):hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
@@ -603,8 +604,8 @@
   /* FAQ question text larger */
   .faq-q-text{font-size:clamp(22px,2.2vw,28px)}
   /* larger nav wordmark; small-cap "Atty" */
-  .nav-logo-name{font-size:30px}
-  .wm-atty{text-transform:uppercase;font-size:.46em;letter-spacing:.14em;font-weight:600;vertical-align:.06em}
+  .nav-logo-name{font-size:30px;letter-spacing:-.015em}
+  .wm-atty{text-transform:uppercase;font-size:.46em;letter-spacing:.1em;font-weight:700;display:inline-block;border-bottom:2.5px solid currentColor;padding-bottom:3px;vertical-align:.3em;margin-right:.08em}
   @media (max-width:560px){.nav-logo-name{font-size:18px}}
   /* slower, refined stat-tile intro reveal (gentle scale settle + wider cascade) */
   #about .stat.reveal{transform:translateY(34px) scale(.95);transition:opacity 1.3s cubic-bezier(.16,.84,.3,1),transform 1.3s cubic-bezier(.16,.84,.3,1)}
@@ -615,7 +616,7 @@
 
   /* ── Round-9 tweaks ── */
   /* reverse stat-tile colorway: light tiles, forrest text */
-  .stat{background:var(--bg2)}
+  .stat{background:var(--cream-warm)}
   .stat-num{color:var(--forest)}
   .stat-label{color:var(--muted)}
   /* oversized faint G texture behind the "How I Can Help" cards (low contrast) */
