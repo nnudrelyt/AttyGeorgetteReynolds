@@ -65,7 +65,7 @@
   .nav-links{display:flex;gap:38px;list-style:none}
   .nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
-  .nav-cta{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:var(--forest);text-decoration:none;padding:12px 26px;border-radius:8px;transition:background .2s}
+  .nav-cta{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:var(--forest);text-decoration:none;padding:12px 28px;border-radius:999px;transition:background .2s}
   .nav-cta:hover{background:var(--forest-d)}
 
   /* ── hero ── */
@@ -599,6 +599,20 @@
   /* contact panel: G mark echoed beside the office stack */
   .c-office{display:flex;align-items:center;gap:18px}
   .c-gmark{width:50px;height:46px;flex-shrink:0;background-color:rgba(243,239,226,.85);-webkit-mask:url('assets/g-mark.svg') center/contain no-repeat;mask:url('assets/g-mark.svg') center/contain no-repeat}
+
+  /* ── Round-8 tweaks ── */
+  /* FAQ question text larger */
+  .faq-q-text{font-size:clamp(22px,2.2vw,28px)}
+  /* larger nav wordmark; small-cap "Atty" */
+  .nav-logo-name{font-size:25px}
+  .wm-atty{text-transform:uppercase;font-size:.72em;letter-spacing:.12em;font-weight:600}
+  @media (max-width:560px){.nav-logo-name{font-size:17px}}
+  /* slower, refined stat-tile intro reveal (gentle scale settle + wider cascade) */
+  #about .stat.reveal{transform:translateY(30px) scale(.96);transition:opacity .95s cubic-bezier(.16,.84,.3,1),transform .95s cubic-bezier(.16,.84,.3,1)}
+  #about .stat.reveal.is-visible{transform:none}
+  #about .stats .stat:nth-child(2){transition-delay:130ms!important}
+  #about .stats .stat:nth-child(3){transition-delay:260ms!important}
+  #about .stats .stat:nth-child(4){transition-delay:390ms!important}
 </style>
 </head>
 <body>
@@ -607,10 +621,10 @@
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
   <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="nav-logo-name">Atty Georgette Reynolds</span>
+    <span class="nav-logo-name"><span class="wm-atty">Atty</span> Georgette Reynolds</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#teach">Approach</a></li>
+    <li><a href="#teach">My Approach</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#process">FAQ</a></li>
@@ -674,7 +688,7 @@
         </div>
         <div class="quote-card">
           <div class="qbar"></div>
-          <p>"My clients should never have to wonder what is happening in their transaction, or feel uncertain about whether they can reach me."</p>
+          <p>My clients should never have to wonder what is happening in their transaction, or feel uncertain about whether they can reach me.</p>
         </div>
       </div>
     </div>
@@ -754,7 +768,7 @@
     <div class="sec-head">
       <div>
         <span class="eyebrow">Common Questions</span>
-        <h2>Good questions deserve <em>real answers.</em></h2>
+        <h2>Your questions deserve <em>informed answers.</em></h2>
       </div>
       <p class="sec-intro">A few of the things buyers, sellers, and investors ask most often, with the clear, honest answers you should have before your transaction begins.</p>
     </div>
