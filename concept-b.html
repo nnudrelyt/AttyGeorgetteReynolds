@@ -623,6 +623,11 @@
   #services{position:relative;overflow:hidden}
   #services::before{content:'';position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(820px,62vw);height:min(820px,62vw);background-color:rgba(243,239,226,.055);-webkit-mask:url('assets/g-mark.svg') center/contain no-repeat;mask:url('assets/g-mark.svg') center/contain no-repeat;pointer-events:none;z-index:0}
   #services .container{position:relative;z-index:1}
+
+  /* ── Round-10: stat cards match the FAQ card style (fill + hover effect) ── */
+  .stat{background:var(--bg2);border:1px solid var(--cream-warm);border-radius:var(--r-lg);box-shadow:none}
+  #about .stat.reveal{transition:opacity 1.3s cubic-bezier(.16,.84,.3,1),transform 1.3s cubic-bezier(.16,.84,.3,1),box-shadow .22s ease}
+  #about .stat.reveal.is-visible:hover{box-shadow:var(--shadow-card);transform:translateY(-2px);transition:box-shadow .22s ease}
 </style>
 </head>
 <body>
