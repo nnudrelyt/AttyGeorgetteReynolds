@@ -309,10 +309,10 @@
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
 
   /* ── 2 · smart nav: condenses + gains shadow once scrolled ── */
-  nav{transition:transform .35s ease, height .3s ease, background .3s ease, box-shadow .3s ease}
-  /* headroom: revealed (fixed) nav slides down from above on scroll-up */
-  nav.nav-fixed{position:fixed;transform:translateY(-100%);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08)}
-  nav.nav-fixed.nav-show{transform:translateY(0)}
+  nav{transition:transform .5s cubic-bezier(.2,.7,.2,1), opacity .45s ease, background .3s ease, box-shadow .3s ease}
+  /* headroom: revealed (fixed) nav fades in with a subtle downward settle on scroll-up */
+  nav.nav-fixed{position:fixed;opacity:0;transform:translateY(-12px);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08);pointer-events:none}
+  nav.nav-fixed.nav-show{opacity:1;transform:translateY(0);pointer-events:auto}
 
   /* ── 2 · animated brass underline on nav links ── */
   .nav-links a{position:relative}
