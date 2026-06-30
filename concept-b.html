@@ -634,6 +634,8 @@
     #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 28px)}
     /* form above the Get-in-Touch panel when stacked */
     .contact-right{order:-1}
+    /* solid nav on mobile: scrolled hero content must not bleed through (reads as an iOS status-bar smear) */
+    nav,nav.scrolled{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
   }
   @media (max-width:560px){
     #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 20px)}
