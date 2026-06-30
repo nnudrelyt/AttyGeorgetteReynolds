@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- iOS Safari: paint the status-bar / top chrome solid white (matches the nav) instead of frosting scrolled page content -->
 <meta name="theme-color" content="#ffffff">
 <title>Georgette Reynolds — Chicago Real Estate Attorney</title>
@@ -642,6 +642,12 @@
   @media (max-width:560px){
     #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 20px)}
   }
+
+  /* ── iOS notch / status-bar safe area: cover it solid white so page content never shows under the top chrome ── */
+  body::before{content:'';position:fixed;top:0;left:0;right:0;height:env(safe-area-inset-top,0px);background:#fff;z-index:200;pointer-events:none}
+  nav{top:env(safe-area-inset-top,0px)}
+  #hero{padding-top:calc(72px + env(safe-area-inset-top,0px))}
+  @media (max-width:980px){#hero{padding-top:calc(68px + env(safe-area-inset-top,0px))}}
 </style>
 </head>
 <body>
