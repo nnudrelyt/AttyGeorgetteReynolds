@@ -617,15 +617,15 @@
   /* ── Round-9 tweaks ── */
   /* reverse stat-tile colorway: light tiles, forrest text */
   .stat{background:var(--cream-warm)}
-  .stat-num{color:var(--forest)}
+  .stat-num{color:var(--sage-deep)}
   .stat-label{color:var(--muted)}
   /* oversized faint G texture behind the "How I Can Help" cards (low contrast) */
   #services{position:relative;overflow:hidden}
   #services::before{content:'';position:absolute;top:50%;left:14%;transform:translateY(-50%);width:min(1800px,112vw);height:min(1800px,112vw);background-color:rgba(243,239,226,.052);-webkit-mask:url('assets/g-mark.svg') center/contain no-repeat;mask:url('assets/g-mark.svg') center/contain no-repeat;pointer-events:none;z-index:0}
   #services .container{position:relative;z-index:1}
 
-  /* ── Round-10: stat cards = white fill + cream stroke + r-lg radius, no rollover ── */
-  .stat{background:var(--bg2);border:1px solid var(--cream-warm);border-radius:var(--r-lg);box-shadow:none}
+  /* ── Round-10: stat cards take the My-Approach step colorway (light-gray ground, sage-deep number) ── */
+  .stat{background:var(--stone);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:none}
   #about .stat.reveal{transition:opacity 1.3s cubic-bezier(.16,.84,.3,1),transform 1.3s cubic-bezier(.16,.84,.3,1)}
 </style>
 </head>
