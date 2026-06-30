@@ -58,7 +58,7 @@
   section{padding:clamp(84px,10vw,140px) 0}
 
   /* ── nav ── */
-  nav{position:absolute;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+  nav{position:absolute;top:0;left:0;right:0;z-index:100;background:#fff;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
   .nav-logo{color:var(--ink);text-decoration:none;display:inline-flex;flex-direction:column;gap:5px}
   .nav-logo-tag{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .logo-wordmark,.logo-gmark{display:block;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;-webkit-mask-size:contain;mask-size:contain}
@@ -311,7 +311,7 @@
   /* ── 2 · smart nav: condenses + gains shadow once scrolled ── */
   nav{transition:transform .35s ease, height .3s ease, background .3s ease, box-shadow .3s ease}
   /* headroom: revealed (fixed) nav slides down from above on scroll-up */
-  nav.nav-fixed{position:fixed;transform:translateY(-100%);background:rgba(255,255,255,.97);box-shadow:0 6px 24px rgba(40,30,15,.08)}
+  nav.nav-fixed{position:fixed;transform:translateY(-100%);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08)}
   nav.nav-fixed.nav-show{transform:translateY(0)}
 
   /* ── 2 · animated brass underline on nav links ── */
