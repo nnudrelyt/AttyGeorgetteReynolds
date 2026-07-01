@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- iOS Safari: paint the status-bar / top chrome solid white (matches the nav) instead of frosting scrolled page content -->
 <meta name="theme-color" content="#ffffff">
 <title>Georgette Reynolds — Chicago Real Estate Attorney</title>
@@ -37,7 +37,7 @@
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;position:relative;padding-top:env(safe-area-inset-top,0px)}
 
   /* ── a11y primitives ── */
   :focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:3px}
@@ -311,8 +311,10 @@
   /* ── 2 · smart nav: condenses + gains shadow once scrolled ── */
   nav{transition:transform .5s cubic-bezier(.2,.7,.2,1), opacity .45s ease, background .3s ease, box-shadow .3s ease}
   /* headroom: revealed (fixed) nav fades in with a subtle downward settle on scroll-up */
-  nav.nav-fixed{position:fixed;opacity:0;transform:translateY(-12px);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08);pointer-events:none}
+  nav.nav-fixed{position:fixed;top:env(safe-area-inset-top,0px);opacity:0;transform:translateY(-12px);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08);pointer-events:none}
   nav.nav-fixed.nav-show{opacity:1;transform:translateY(0);pointer-events:auto}
+  /* iOS: paint the status-bar / notch area solid white so it reads seamless with the (white) nav */
+  body::before{content:'';position:fixed;top:0;left:0;right:0;height:env(safe-area-inset-top,0px);background:#fff;z-index:9999;pointer-events:none}
 
   /* ── 2 · animated brass underline on nav links ── */
   .nav-links a{position:relative}
@@ -938,11 +940,10 @@
       }
       if (y <= navH){
         nav.classList.remove('nav-fixed','nav-show');
-      } else if (y < lastY - 2){            // scrolling up → reveal
-        if (!nav.classList.contains('nav-fixed')){ nav.classList.add('nav-fixed'); nav.getBoundingClientRect(); }
-        nav.classList.add('nav-show');
-      } else if (y > lastY + 2){            // scrolling down → hide
-        nav.classList.remove('nav-show');
+      } else {
+        nav.classList.add('nav-fixed');                          // fix + hide first (baseline for the transition)
+        if (y < lastY - 2) nav.classList.add('nav-show');         // scrolling up → fade in
+        else if (y > lastY + 2) nav.classList.remove('nav-show'); // scrolling down → fade out
       }
       lastY = y; ticking = false;
     }
