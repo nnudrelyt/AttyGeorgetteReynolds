@@ -309,10 +309,7 @@
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
 
   /* ── 2 · smart nav: condenses + gains shadow once scrolled ── */
-  nav{transition:transform .45s cubic-bezier(.16,.84,.3,1), background .3s ease, box-shadow .3s ease}
-  /* headroom: revealed (fixed) nav is fully opaque and slides down gently on scroll-up (no fade → no see-through) */
-  nav.nav-fixed{position:fixed;top:env(safe-area-inset-top,0px);transform:translateY(-100%);background:#fff;box-shadow:0 6px 24px rgba(40,30,15,.08);pointer-events:none}
-  nav.nav-fixed.nav-show{transform:translateY(0);pointer-events:auto}
+  /* nav sits at the top and scrolls away with the page (no sticky reveal) */
   /* iOS: paint the status-bar / notch area solid white so it reads seamless with the (white) nav */
   body::before{content:'';position:fixed;top:0;left:0;right:0;height:env(safe-area-inset-top,0px);background:#fff;z-index:9999;pointer-events:none}
 
@@ -641,7 +638,7 @@
     /* form above the Get-in-Touch panel when stacked */
     .contact-right{order:-1}
     /* solid nav on mobile: scrolled hero content must not bleed through (reads as an iOS status-bar smear) */
-    nav,nav.nav-fixed{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+    nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
   }
   @media (max-width:560px){
     #process .sec-head{padding-left:calc(clamp(40px,4.5vw,72px) - 20px)}
@@ -923,32 +920,7 @@
     }
   }
 
-  /* ── headroom nav: scrolls away with the page; reveals (fixed, slides down) on scroll-up ── */
-  (function(){
-    var nav = document.querySelector('nav');
-    if (!nav) return;
-    var navH = nav.offsetHeight || 72;
-    var lastY = window.pageYOffset;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var ticking = false;
-    function update(){
-      var y = window.pageYOffset;
-      if (reduce){
-        nav.classList.toggle('nav-fixed', y > navH);
-        nav.classList.toggle('nav-show', y > navH);
-        lastY = y; ticking = false; return;
-      }
-      if (y <= navH){
-        nav.classList.remove('nav-fixed','nav-show');
-      } else {
-        nav.classList.add('nav-fixed');                          // fix + hide first (baseline for the transition)
-        if (y < lastY - 2) nav.classList.add('nav-show');         // scrolling up → fade in
-        else if (y > lastY + 2) nav.classList.remove('nav-show'); // scrolling down → fade out
-      }
-      lastY = y; ticking = false;
-    }
-    window.addEventListener('scroll', function(){ if (!ticking){ window.requestAnimationFrame(update); ticking = true; } }, {passive:true});
-  })();
+  /* nav scrolls away naturally with the page — no sticky/reveal behavior */
 
   /* ── scroll reveals (added via JS so no-JS / reduced-motion still shows content) ── */
   (function(){
