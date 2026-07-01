@@ -166,7 +166,8 @@
   .faq-trigger[aria-expanded="true"] .faq-icon::after{content:'−'}
   .faq-wrap{display:grid;grid-template-rows:0fr;overflow:hidden;transition:grid-template-rows .38s ease}
   .faq-item.open .faq-wrap{grid-template-rows:1fr}
-  .faq-body{padding:4px 30px 30px calc(44px + 16px + 30px);font-size:17px;color:var(--muted);line-height:1.8;background:var(--bg2);min-height:0}
+  .faq-inner{overflow:hidden;min-height:0}
+  .faq-body{padding:4px 30px 30px calc(44px + 16px + 30px);font-size:17px;color:var(--muted);line-height:1.8;background:var(--bg2)}
   .faq-body strong{color:var(--ink);font-weight:500}
 
   /* ── testimonials ── */
@@ -814,7 +815,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-1" role="region" aria-label="When should I get an attorney involved?">
-          <p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet. That's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. And if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p>
+          <div class="faq-inner"><p class="faq-body">Before you sign anything, if possible. The best time to call is when you have an accepted offer but haven't signed the contract yet. That's when I can do the most for you. Illinois gives buyers and sellers a 5-business-day attorney modification period after signing, and I use every day of it. And if you're earlier in the process and just want to understand what to expect, please call. That conversation is always free.</p></div>
         </div>
       </div>
       <div class="faq-item">
@@ -824,7 +825,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-2" role="region" aria-label="What does a real estate attorney actually do?">
-          <p class="faq-body">A great deal that happens behind the scenes. I review and prepare the contract and closing documents, confirm the title is clear, make sure the numbers match what was agreed, and walk you through every page before you sign. My four jobs on every deal are to <strong>plan</strong> toward your goal, <strong>facilitate</strong> the other parties, <strong>advise</strong> when something needs a Plan B, and <strong>manage risk</strong> before it becomes a problem, so you reach the table with no surprises.</p>
+          <div class="faq-inner"><p class="faq-body">A great deal that happens behind the scenes. I review and prepare the contract and closing documents, confirm the title is clear, make sure the numbers match what was agreed, and walk you through every page before you sign. My four jobs on every deal are to <strong>plan</strong> toward your goal, <strong>facilitate</strong> the other parties, <strong>advise</strong> when something needs a Plan B, and <strong>manage risk</strong> before it becomes a problem, so you reach the table with no surprises.</p></div>
         </div>
       </div>
       <div class="faq-item">
@@ -834,7 +835,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-3" role="region" aria-label="If Illinois requires an attorney anyway, does it matter who I choose?">
-          <p class="faq-body">It matters a great deal. <strong>Illinois is an attorney state for real estate closings</strong>, so you're already paying for legal representation. The question is whether that attorney is genuinely working for you or simply moving paperwork. I represent one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p>
+          <div class="faq-inner"><p class="faq-body">It matters a great deal. <strong>Illinois is an attorney state for real estate closings</strong>, so you're already paying for legal representation. The question is whether that attorney is genuinely working for you or simply moving paperwork. I represent one party in a transaction, never both sides, so the advice you get is always squarely in your interest.</p></div>
         </div>
       </div>
       <div class="faq-item">
@@ -844,7 +845,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-4" role="region" aria-label="Who owns the property, and are there liens or approvals to clear?">
-          <p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity, and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p>
+          <div class="faq-inner"><p class="faq-body">It matters whether the owner is an individual, a trust, or a corporate entity, and whether they have the proper authority to sell. I confirm this up front. I also check early for any liens or encumbrances and how much lead time we'll need to clear them, and whether an <strong>association or village</strong> requires approvals or documentation before closing. These are the surprises I'd rather catch weeks ahead, not days.</p></div>
         </div>
       </div>
       <div class="faq-item">
@@ -854,7 +855,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-5" role="region" aria-label="What about tenants, improvements, or zoning?">
-          <p class="faq-body">If there are tenants, there are documents a buyer will need. I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p>
+          <div class="faq-inner"><p class="faq-body">If there are tenants, there are documents a buyer will need. I gather them. I look at whether recent improvements were done with the proper permits and lien waivers, whether there are any open code violations, and whether zoning supports the buyer's intended use. And if a deal involves a short sale, foreclosure, or bankruptcy, that's exactly the kind of problem I'm built to work through.</p></div>
         </div>
       </div>
       <div class="faq-item">
@@ -864,7 +865,7 @@
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
         <div class="faq-wrap" id="faq-6" role="region" aria-label="How do I reach you when something comes up?">
-          <p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day, even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p>
+          <div class="faq-inner"><p class="faq-body">You call me. That's it. You'll have my direct number from the start, and I return calls the same day, even when I'm in a closing. Real estate transactions move quickly and questions almost never arrive at convenient moments. You shouldn't have to wonder if your attorney got your message. With me, you won't have to.</p></div>
         </div>
       </div>
     </div>
