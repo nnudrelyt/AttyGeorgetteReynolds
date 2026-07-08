@@ -65,6 +65,9 @@
   .logo-wordmark{width:176px;height:36px;-webkit-mask-image:url('assets/wordmark.svg');mask-image:url('assets/wordmark.svg')}
   .logo-gmark{width:32px;height:30px;-webkit-mask-image:url('assets/g-mark.svg');mask-image:url('assets/g-mark.svg')}
   .nav-logo .logo-gmark{display:none}
+  /* stacked nav lockup (ATTORNEY / Georgette / Reynolds) — masked so it inherits --ink */
+  .nav-logo-stacked{display:block;width:120px;height:54px;background-color:currentColor;-webkit-mask:url('assets/wordmark-stacked.svg') left center/contain no-repeat;mask:url('assets/wordmark-stacked.svg') left center/contain no-repeat}
+  @media (max-width:560px){.nav-logo-stacked{width:100px;height:45px}}
   .nav-links{display:flex;gap:38px;list-style:none}
   .nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
@@ -655,8 +658,8 @@
 
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
-  <a href="#hero" class="nav-logo" aria-label="Georgette Reynolds — home">
-    <span class="nav-logo-name"><span class="wm-atty">Atty</span> Georgette Reynolds</span>
+  <a href="#hero" class="nav-logo" aria-label="Attorney Georgette Reynolds — home">
+    <span class="nav-logo-stacked" aria-hidden="true"></span>
   </a>
   <ul class="nav-links">
     <li><a href="#teach">My Approach</a></li>
