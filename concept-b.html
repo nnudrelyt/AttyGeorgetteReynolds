@@ -375,11 +375,14 @@
   .brass-rule,.qbar,.chair{display:none}
   .eyebrow{color:var(--brass-ink)}            /* eyebrow text on light = deep brass */
 
-  /* generous hero rhythm (kept from prior pass) */
+  /* hero rhythm — "tightened cluster" (A), headline gap left untouched */
   #hero{min-height:680px}
   #hero .hero-l{padding:clamp(40px,4.5vw,64px) clamp(46px,5vw,76px)}
+  #hero .eyebrow{margin-bottom:16px}
   #hero .hero-headline{margin-bottom:40px}
-  #hero .hero-sub{margin-bottom:50px}
+  #hero .hero-sub{margin-bottom:40px}
+  #hero .hero-l .brass-rule{margin-bottom:36px}
+  #hero .about-sig{margin-top:20px}
 
   /* ── HERO → Forrest panel (deep green), cream display ── */
   #hero .hero-l{background:var(--forest)}
