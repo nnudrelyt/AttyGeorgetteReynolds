@@ -654,6 +654,11 @@
     /* shift hero content left (tighter side padding) */
     #hero .hero-l{padding-left:28px;padding-right:28px}
   }
+  /* ── Hero portrait: Forty Photography Option C, black & white (Oct 2026) ──
+     cover + 1.144 zoom always fills the panel at any hero height; origin sits ~26% down so her head keeps ~the lightbox headroom.
+     Gentler Ken Burns than the old snapshot needed. Reduced-motion rule (#hero .hero-photo) still wins. */
+  .hero-photo{object-position:50% 0;transform:scale(1.144);transform-origin:50% 26%;filter:grayscale(1) contrast(1.28) brightness(1.04);animation:kenburnsC 24s ease-in-out infinite alternate}
+  @keyframes kenburnsC{from{transform:scale(1.144)}to{transform:scale(1.2)}}
 </style>
 </head>
 <body>
@@ -691,10 +696,10 @@
     </div>
   </div>
   <div class="hero-r">
-    <!-- PLACEHOLDER portrait — replace with Georgette's approved headshot before launch -->
+    <!-- Forty Photography, Option C (ivory suit), shown B&W via CSS. Currently the PROOF with AI-widened sides — swap in the full-size retouch when it arrives -->
     <picture>
-      <source srcset="assets/agr-headshot.webp" type="image/webp">
-      <img class="hero-photo" src="assets/agr-headshot.png" alt="Georgette Reynolds, Chicagoland real estate attorney" width="817" height="1008" loading="eager" fetchpriority="high" decoding="async">
+      <source srcset="assets/agr-hero-forty-c.webp" type="image/webp">
+      <img class="hero-photo" src="assets/agr-hero-forty-c.jpg" alt="Georgette Reynolds, Chicagoland real estate attorney" width="800" height="960" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </div>
 </section>
