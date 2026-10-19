@@ -664,6 +664,14 @@
   @keyframes kenburnsM{from{transform:scale(1)}to{transform:scale(1.05)}}
   /* nav: links sit left, right after the wordmark; Contact stays pinned right */
   .nav-links{margin-left:64px;margin-right:auto}
+  /* stacked hero (≤980px): photo panel grows with width (~3:4) so the frame runs hair → hand instead of cutting at the chin;
+     headline → intro → phone grouped with tighter, even gaps */
+  @media (max-width:980px){
+    .hero-r{min-height:clamp(520px,75vw,735px)}
+    .hero-photo{object-position:50% 18%}
+    #hero .hero-headline{margin-bottom:22px}
+    #hero .hero-sub{margin-bottom:30px}
+  }
 </style>
 </head>
 <body>
