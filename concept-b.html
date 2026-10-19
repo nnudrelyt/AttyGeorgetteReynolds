@@ -509,6 +509,9 @@
   /* ── Round-3 tweaks ── */
   /* Services header on a single line (wraps only on small mobile) */
   @media (min-width:561px){#services .sec-head h2{white-space:nowrap;max-width:none}}
+  /* one-line headline + 2-col grid squeezed the intro to ~100-300px; stack it under the headline instead */
+  #services .sec-head{grid-template-columns:1fr;gap:22px;align-items:start}
+  #services .sec-intro{max-width:620px}
   /* About support copy → 20px; Approach support copy → 18px */
   .about-body{font-size:20px}
   #approach .sec-intro,#approach .step p{font-size:18px}
