@@ -654,11 +654,14 @@
     /* shift hero content left (tighter side padding) */
     #hero .hero-l{padding-left:28px;padding-right:28px}
   }
-  /* ── Hero portrait: Forty Photography Option C, black & white (Oct 2026) ──
-     cover + 1.144 zoom always fills the panel at any hero height; origin sits ~26% down so her head keeps ~the lightbox headroom.
+  /* ── Hero portrait: Forty Photography Option B, black & white (Oct 2026) ──
+     cover + 1.144 zoom always fills the panel at any hero height; origin sits ~58% down so her head keeps ~the lightbox headroom.
      Gentler Ken Burns than the old snapshot needed. Reduced-motion rule (#hero .hero-photo) still wins. */
-  .hero-photo{object-position:50% 0;transform:scale(1.144);transform-origin:50% 26%;filter:grayscale(1) contrast(1.28) brightness(1.04);animation:kenburnsC 24s ease-in-out infinite alternate}
+  .hero-photo{object-position:50% 0;transform:scale(1.144);transform-origin:50% 58%;filter:grayscale(1) contrast(1.28) brightness(1.04);animation:kenburnsC 24s ease-in-out infinite alternate}
   @keyframes kenburnsC{from{transform:scale(1.144)}to{transform:scale(1.2)}}
+  /* stacked layouts: the panel is short and wide, so drop the desktop pull-back zoom and use a lighter drift */
+  @media (max-width:980px){.hero-photo{object-position:50% 15%;transform:none;transform-origin:50% 30%;animation-name:kenburnsM}}
+  @keyframes kenburnsM{from{transform:scale(1)}to{transform:scale(1.05)}}
 </style>
 </head>
 <body>
@@ -696,10 +699,10 @@
     </div>
   </div>
   <div class="hero-r">
-    <!-- Forty Photography, Option C (ivory suit), shown B&W via CSS. Currently the PROOF with AI-widened sides — swap in the full-size retouch when it arrives -->
+    <!-- Forty Photography, Option B (navy suit, hand at chin), shown B&W via CSS. Currently the PROOF with AI-widened sides — swap in the full-size retouch when it arrives -->
     <picture>
-      <source srcset="assets/agr-hero-forty-c.webp" type="image/webp">
-      <img class="hero-photo" src="assets/agr-hero-forty-c.jpg" alt="Georgette Reynolds, Chicagoland real estate attorney" width="800" height="960" loading="eager" fetchpriority="high" decoding="async">
+      <source srcset="assets/agr-hero-forty-b.webp" type="image/webp">
+      <img class="hero-photo" src="assets/agr-hero-forty-b.jpg" alt="Georgette Reynolds, Chicagoland real estate attorney" width="800" height="960" loading="eager" fetchpriority="high" decoding="async">
     </picture>
   </div>
 </section>
