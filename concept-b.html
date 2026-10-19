@@ -696,6 +696,11 @@
     #hero .hero-sub{margin-bottom:34px}
     #hero .about-sig{margin-top:26px;padding-top:20px}
   }
+  /* ── hero texture: GR monogram zoomed way in (2600px), ghosted like the services watermark ── */
+  #hero .hero-l{position:relative;overflow:hidden}
+  #hero .hero-l>*{position:relative;z-index:1}
+  #hero .hero-l::before{content:'';position:absolute;left:-1150px;top:-700px;width:2600px;height:2790px;pointer-events:none;z-index:0;
+    background:rgba(243,239,226,.05);-webkit-mask:url('assets/agr-monogram.svg') center/contain no-repeat;mask:url('assets/agr-monogram.svg') center/contain no-repeat}
 </style>
 </head>
 <body>
