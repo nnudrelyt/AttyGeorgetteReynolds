@@ -771,6 +771,8 @@
   /* nav: more open rhythm — wider gap after the lockup and between links (ATTY + name stay locked together) */
   .nav-links{--nav-gap:clamp(36px,calc(8.5vw - 40px),96px);margin-left:var(--nav-gap);gap:var(--nav-gap)}
   @media (min-width:981px) and (max-width:1080px){.nav-links{--nav-gap:30px}}
+  /* lockup sat a touch high in the bar (cap-heavy wordmark); nudge ATTY + name down together */
+  .nav-logo{position:relative;top:3px}
 </style>
 </head>
 <body>
