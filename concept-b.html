@@ -753,6 +753,14 @@
     transition:opacity .32s cubic-bezier(.2,.65,.2,1),transform .32s cubic-bezier(.2,.65,.2,1),max-height .32s cubic-bezier(.2,.65,.2,1),margin-top .32s cubic-bezier(.2,.65,.2,1)}
   .card:hover .card-cta,.card:focus-within .card-cta{max-height:28px;margin-top:20px}
   @media (hover:none){.card-cta{max-height:none;margin-top:20px}}
+  /* card hover: one shared ease/duration so the lift, growth and link reveal move together; room for the arrow nudge */
+  #services .card{transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1),border-color .5s}
+  .card-cta{padding-right:10px;transition:max-height .5s cubic-bezier(.22,1,.36,1),margin-top .5s cubic-bezier(.22,1,.36,1),opacity .4s ease .08s,transform .5s cubic-bezier(.22,1,.36,1)}
+  .card-cta span{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .card-media img{transition:transform .8s cubic-bezier(.22,1,.36,1)}
+  /* My Approach: matching rule under each step; equal-height steps put every bottom rule on one line */
+  #approach .steps{align-items:stretch}
+  #approach .step{padding-bottom:clamp(44px,4vw,64px);border-bottom:1px solid var(--line)}
 </style>
 </head>
 <body>
