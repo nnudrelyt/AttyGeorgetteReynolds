@@ -837,6 +837,46 @@
     .faq-q-text{font-size:20px;line-height:1.3}
     .faq-icon{width:30px;height:30px;margin-top:-2px}
   }
+  /* Mobile menu (≤980px): bigger wordmark, forest round menu button, full-height panel; matches the Katie / ALA pattern */
+  .nav-toggle,.nav-menu-cta{display:none}
+  html.menu-lock{overflow:hidden}
+  @media (max-width:980px){
+    nav .nav-cta{display:none}
+    .nav-toggle{display:flex;align-items:center;justify-content:center;width:39px;height:39px;padding:0;border:0;border-radius:50%;background:var(--forest);cursor:pointer;position:relative;z-index:2;flex-shrink:0;box-shadow:0 6px 16px -8px rgba(17,35,26,.55);-webkit-tap-highlight-color:transparent;transition:background .2s ease,transform .14s ease}
+    .nav-toggle:active{transform:scale(.94)}
+    .nav-toggle:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+    .nav-toggle.by-pointer:focus-visible{outline:none}
+    .nav-burger{display:block;width:15px}
+    .nav-burger i{display:block;height:1.75px;margin:3.5px 0;border-radius:2px;background:#fff;
+      transition:rotate .24s cubic-bezier(.4,0,.2,1),translate .2s cubic-bezier(.4,0,.2,1) .2s,opacity .15s ease .2s,scale .2s ease .2s}
+    nav.menu-open .nav-burger i{transition:translate .2s cubic-bezier(.4,0,.2,1),rotate .26s cubic-bezier(.2,.7,.2,1) .18s,opacity .12s ease,scale .2s ease}
+    nav.menu-open .nav-burger i:nth-child(1){translate:0 5.25px;rotate:45deg}
+    nav.menu-open .nav-burger i:nth-child(2){opacity:0;scale:.3 1}
+    nav.menu-open .nav-burger i:nth-child(3){translate:0 -5.25px;rotate:-45deg}
+    nav .nav-links{display:flex;position:fixed;inset:0;z-index:1;margin:0;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:1rem;
+      padding:104px 28px calc(72px + env(safe-area-inset-bottom,0px));background:#fff;overflow-y:auto;
+      opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+    nav.menu-open .nav-links{opacity:1;visibility:visible}
+    nav .nav-links li{opacity:0;transform:translateY(14px);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .45s cubic-bezier(.22,1,.36,1)}
+    nav.menu-open .nav-links li{opacity:1;transform:none}
+    nav.menu-open .nav-links li:nth-child(2){transition-delay:.05s}
+    nav.menu-open .nav-links li:nth-child(3){transition-delay:.1s}
+    nav.menu-open .nav-links li:nth-child(4){transition-delay:.15s}
+    nav .nav-links a{font-family:'Spectral',serif;font-size:1.9rem;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);padding:4px 0;display:inline-block}
+    nav .nav-links a::after{display:none}
+    nav .nav-menu-cta{display:block;margin-top:auto;width:100%;padding-top:1.2rem}
+    nav.menu-open .nav-links li.nav-menu-cta{transition-delay:.3s}
+    nav .nav-menu-cta a{display:flex;align-items:center;justify-content:center;width:100%;padding:18px 24px;border-radius:999px;background:var(--forest);color:var(--cream);
+      font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+    nav .nav-menu-cta a:active{background:var(--forest-d)}
+    nav .nav-logo{position:relative;z-index:2}
+  }
+  @media (max-width:560px){
+    nav .nav-links{padding:96px 20px calc(72px + env(safe-area-inset-bottom,0px))}
+    .nav-wm{width:210px;height:32.3px}
+    .nav-atty{font-size:10.3px;--atty-mt:11.7px}
+  }
+  @media (max-width:980px) and (prefers-reduced-motion:reduce){nav .nav-links li,.nav-burger i{transition:none!important}}
 </style>
 </head>
 <body>
@@ -847,13 +887,17 @@
   <a href="#hero" class="nav-logo" aria-label="Attorney Georgette Reynolds — home">
     <span class="nav-atty" aria-hidden="true">Atty.</span><span class="nav-wm" aria-hidden="true"></span>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="nav-menu">
     <li><a href="#teach">My Approach</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#process">FAQ</a></li>
+    <li class="nav-menu-cta"><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact</a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+    <span class="nav-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -1164,6 +1208,7 @@
   var last=window.scrollY, ticking=false, H=nav.offsetHeight;
   function update(){
     ticking=false;
+    if(nav.classList.contains('menu-open')) return;
     var y=window.scrollY, d=y-last;
     if(y<=H){ nav.classList.remove('nav-hidden'); }
     else if(d>4){ nav.classList.add('nav-hidden'); }
@@ -1189,6 +1234,24 @@
   var t; window.addEventListener('resize',function(){ clearTimeout(t); t=setTimeout(lock,120); });
   g.addEventListener('mouseleave',function(){ setTimeout(lock,600); });
   lock();
+})();
+</script>
+<script>
+/* Mobile menu: forest round button toggles the full-height link panel */
+(function(){
+  var nav=document.querySelector('nav'), t=nav&&nav.querySelector('.nav-toggle'); if(!t) return;
+  function setOpen(o){
+    nav.classList.toggle('menu-open',o); nav.classList.remove('nav-hidden');
+    t.setAttribute('aria-expanded',o?'true':'false'); t.setAttribute('aria-label',o?'Close menu':'Menu');
+    document.documentElement.classList.toggle('menu-lock',o);
+  }
+  t.addEventListener('click',function(){ setOpen(!nav.classList.contains('menu-open')); });
+  t.addEventListener('pointerdown',function(){ t.classList.add('by-pointer'); });
+  t.addEventListener('keydown',function(){ t.classList.remove('by-pointer'); });
+  t.addEventListener('blur',function(){ t.classList.remove('by-pointer'); });
+  nav.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click',function(){ setOpen(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&nav.classList.contains('menu-open')){ setOpen(false); t.focus(); } });
+  window.addEventListener('resize',function(){ if(window.innerWidth>980&&nav.classList.contains('menu-open')) setOpen(false); });
 })();
 </script>
 </body>
