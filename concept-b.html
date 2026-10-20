@@ -717,9 +717,15 @@
   @media (max-width:980px){.form-legal{left:28px;bottom:28px}}
   @media (max-width:560px){.form-legal{left:20px}}
   /* match the Get in Touch panel: lighter green top-left easing into forest */
-  #services{background:linear-gradient(155deg, #254733 0%, var(--forest) 62%)}
-  /* hero + Get in Touch: same lift, but coming in from the bottom right */
-  #hero,#contact .contact-left{background:linear-gradient(335deg, #254733 0%, var(--forest) 62%)}
+  /* hero, services + Get in Touch: same lift, coming in from the bottom right */
+  #hero,#services,#contact .contact-left{background:linear-gradient(335deg, #254733 0%, var(--forest) 62%)}
+  /* form: quieter placeholder, more vertical air */
+  .field input::placeholder,.field textarea::placeholder{color:rgba(91,92,87,.5)}
+  #contact .form-sub{margin-bottom:44px}
+  #contact .field{margin-bottom:30px}
+  #contact .field label{margin-bottom:10px}
+  #contact .contact-right .btn{margin-top:14px}
+  #services::before{transform:translate3d(0,calc(-50% + var(--py,0px)),0);will-change:transform}
 </style>
 </head>
 <body>
@@ -967,12 +973,12 @@
     <h3 class="form-hed">Send a message</h3>
     <p class="form-sub">Prefer to write first? I'll follow up by phone, usually within a few hours.</p>
     <div class="form-row">
-      <div class="field"><label for="fn">First name</label><input id="fn" type="text" placeholder="First name"></div>
-      <div class="field"><label for="ln">Last name</label><input id="ln" type="text" placeholder="Last name"></div>
+      <div class="field"><label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name"></div>
+      <div class="field"><label for="ln">Last name</label><input id="ln" type="text" autocomplete="family-name"></div>
     </div>
-    <div class="field"><label for="ph">Best phone number</label><input id="ph" type="tel" placeholder="I'll call you back here"></div>
-    <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="your@email.com"></div>
-    <div class="field"><label for="msg">Tell me about your transaction</label><textarea id="msg" placeholder="Buying, selling, or just have a question? A sentence or two is plenty."></textarea></div>
+    <div class="field"><label for="ph">Best phone number</label><input id="ph" type="tel" autocomplete="tel"></div>
+    <div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="email"></div>
+    <div class="field"><label for="msg">Tell me about your transaction</label><textarea id="msg" placeholder="A sentence or two is plenty."></textarea></div>
     <button class="btn" type="button">Send message</button>
   </div>
   <p class="form-legal">© 2026 Georgette Reynolds, Attorney at Law, LLC</p>
@@ -1018,11 +1024,11 @@
   })();
 </script>
 <script>
-/* Texture parallax: hero texture is at its approved crop at page top; the Get in Touch texture is at
-   its approved crop when the panel is centered on screen. Off for reduced motion. */
+/* Texture parallax: hero texture is at its approved crop at page top; the services and Get in Touch
+   textures are at their approved crops when each section is centered on screen. Off for reduced motion. */
 (function(){
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var hero=document.getElementById('hero'), ct=document.querySelector('#contact .contact-left');
+  var hero=document.getElementById('hero'), ct=document.querySelector('#contact .contact-left'), sv=document.getElementById('services');
   if(!hero||!ct) return;
   var RATE=0.18, ticking=false;
   function update(){
@@ -1030,6 +1036,7 @@
     var vh=window.innerHeight, h=hero.getBoundingClientRect(), c=ct.getBoundingClientRect();
     if(h.bottom>0) hero.style.setProperty('--py', Math.round(-h.top*RATE)+'px');
     if(c.bottom>0 && c.top<vh){ var off=(c.top+c.height/2)-vh/2; ct.style.setProperty('--py', Math.round(off*-RATE)+'px'); }
+    if(sv){ var v=sv.getBoundingClientRect(); if(v.bottom>0 && v.top<vh){ var o2=(v.top+v.height/2)-vh/2; sv.style.setProperty('--py', Math.round(o2*-RATE)+'px'); } }
   }
   function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
   window.addEventListener('scroll',onScroll,{passive:true});
