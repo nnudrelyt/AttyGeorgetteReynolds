@@ -786,8 +786,9 @@
   .card:hover .card-cta,.card-cta:focus-visible{background-size:calc(100% - 10px) 1.5px;transition:opacity .4s ease .08s,transform .5s cubic-bezier(.22,1,.36,1),max-height .5s cubic-bezier(.22,1,.36,1),margin-top .5s cubic-bezier(.22,1,.36,1),background-size .5s cubic-bezier(.22,1,.36,1) .12s}
   .card:hover .card-cta{max-height:32px}
   /* phone numbers on green: warm to brass and open slightly */
-  #hero .hero-phone-num,.c-phone{transition:color .35s cubic-bezier(.22,1,.36,1),letter-spacing .45s cubic-bezier(.22,1,.36,1)}
-  #hero .hero-phone-num:hover,.c-phone:hover{color:var(--brass-lt);letter-spacing:.01em}
+  /* phone numbers: simple underline that draws in left→right on hover/focus (text color unchanged) */
+  #hero .hero-phone-num,.c-phone{display:inline-block;align-self:flex-start;width:max-content;padding-bottom:6px;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1.5px no-repeat;transition:background-size .45s cubic-bezier(.22,1,.36,1)}
+  #hero .hero-phone-num:hover,.c-phone:hover,#hero .hero-phone-num:focus-visible,.c-phone:focus-visible{background-size:100% 1.5px;color:var(--cream)}
   /* Get in Touch office monogram in white */
   #contact .c-gmark{background-color:#fff}
   /* nav links: hover line becomes an underline (drawn left→right), plus keyboard focus */
