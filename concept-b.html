@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Warm Ivory system + sage / warm-gray hints */
@@ -37,7 +37,7 @@
 
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--ivory);color:var(--ink);font-family:'Jost',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;position:relative;padding-top:env(safe-area-inset-top,0px)}
+  body{background:var(--ivory);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;position:relative;padding-top:env(safe-area-inset-top,0px)}
 
   /* ── a11y primitives ── */
   :focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:3px}
@@ -71,7 +71,7 @@
   .nav-links{display:flex;gap:38px;list-style:none}
   .nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
   .nav-links a:hover{color:var(--forest)}
-  .nav-cta{font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:var(--cream-warm);text-decoration:none;padding:12px 28px;border-radius:999px;transition:background .2s,color .2s}
+  .nav-cta{font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:var(--cream-warm);text-decoration:none;padding:12px 28px;border-radius:999px;transition:background .2s,color .2s}
   .nav-cta:hover{background:var(--forest);color:var(--cream)}
 
   /* ── hero ── */
@@ -214,11 +214,11 @@
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .field{margin-bottom:20px}
   .field label{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-  .field input,.field textarea{display:block;width:100%;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:'Jost',sans-serif;font-size:16px;font-weight:400;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+  .field input,.field textarea{display:block;width:100%;background:var(--ivory);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:400;color:var(--ink);transition:border-color .2s,box-shadow .2s}
   .field input::placeholder,.field textarea::placeholder{color:#665b44}
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(32,64,45,.13)}
   .field textarea{resize:none;min-height:108px}
-  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 34px;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
+  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--forest);color:var(--cream);border:none;border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:17px 34px;cursor:pointer;text-decoration:none;transition:background .2s,box-shadow .2s}
   .btn:hover{background:var(--forest-d);box-shadow:var(--shadow-card)}
   .btn::after{content:'→';font-size:15px}
 
@@ -764,8 +764,8 @@
   /* nav lockup: small sage ATTY tight to the left of the name, sitting on the wordmark's baseline (name-only wordmark, baseline at 62% of its height) */
   .nav-logo{flex-direction:row;align-items:flex-start;gap:3px}
   .nav-wm{display:block;width:230px;height:35.4px;background-color:var(--forest);-webkit-mask:url('assets/wordmark-name.svg') left top/contain no-repeat;mask:url('assets/wordmark-name.svg') left top/contain no-repeat}
-  .nav-atty{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;line-height:1;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);margin-top:var(--atty-mt,13.85px);margin-right:-.24em}
-  @media (max-width:560px){.nav-wm{width:160px;height:24.6px}.nav-atty{font-size:9px;letter-spacing:.2em;--atty-mt:8.85px}.nav-logo{gap:2px}}
+  .nav-atty{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:500;line-height:1;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);margin-top:var(--atty-mt,12.35px);margin-right:-.24em}
+  @media (max-width:560px){.nav-wm{width:160px;height:24.6px}.nav-atty{font-size:9px;letter-spacing:.2em;--atty-mt:7.8px}.nav-logo{gap:2px}}
   /* align "Send a message" with the "Every real estate…" headline on the left (desktop, side-by-side) */
   @media (min-width:981px){#contact .form-hed{margin-top:var(--form-drop,45px)}}
   /* nav: more open rhythm — wider gap after the lockup and between links (ATTY + name stay locked together) */
