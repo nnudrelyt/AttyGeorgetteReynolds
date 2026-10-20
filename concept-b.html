@@ -829,6 +829,14 @@
   /* stats stay 2x2 on tablet + phone (were stacking to one column) */
   @media (max-width:980px){#about .stats{grid-template-columns:1fr 1fr;gap:12px}}
   @media (max-width:560px){#about .stat{padding:20px 18px}#about .stat-num{font-size:30px}#about .stat-label{font-size:14px}}
+  /* FAQ questions on phones: slimmer number column, smaller question, top-aligned */
+  @media (max-width:560px){
+    .faq-trigger{grid-template-columns:28px 1fr 30px;gap:12px;align-items:start;padding:22px 20px 22px 24px}
+    .faq-item.open .faq-trigger{padding-bottom:10px}
+    .faq-q-num{font-size:21px;padding-top:4px}
+    .faq-q-text{font-size:20px;line-height:1.3}
+    .faq-icon{width:30px;height:30px;margin-top:-2px}
+  }
 </style>
 </head>
 <body>
