@@ -879,7 +879,14 @@
   @media (max-width:980px) and (prefers-reduced-motion:reduce){nav .nav-links li,.nav-burger i{transition:none!important}}
   /* stacked hero: cap the photo by the visible phone height so eyebrow + headline land above the fold
      (68px nav + ~237px for padding, eyebrow, headline); never shorter than 320px */
-  @media (max-width:980px){#hero .hero-r{min-height:0;height:clamp(320px,calc(100svh - 305px),clamp(520px,75vw,735px))}}
+  @media (max-width:980px){#hero{--hero-ph:clamp(320px,calc(100svh - 305px),clamp(520px,75vw,735px))}#hero .hero-r{min-height:0;height:var(--hero-ph)}}
+  /* eyebrow line break only when stacked */
+  .br-m{display:none}
+  @media (max-width:980px){.br-m{display:inline}}
+  /* hero texture, stacked layouts: re-cropped so the GR sweeps frame the copy (arc top-right, loop out bottom-left) */
+  /* anchored to the photo's bottom edge so the crop holds whatever height the photo lands at */
+  @media (max-width:980px){#hero::before{left:-24vw;top:calc(68px + var(--hero-ph) - 613px);width:200vw;height:214.6vw}}
+  @media (max-width:560px){#hero::before{left:-260px;top:calc(68px + var(--hero-ph) - 387px);width:1400px;height:1502px}}
 </style>
 </head>
 <body>
@@ -906,7 +913,7 @@
 <!-- ── HERO ── -->
 <section id="hero" tabindex="-1">
   <div class="hero-l">
-    <span class="eyebrow">Chicagoland Real Estate Attorney</span>
+    <span class="eyebrow">Chicagoland <br class="br-m">Real Estate Law</span>
     <h1 class="hero-headline">Close with <em>confidence.</em></h1>
     <p class="hero-sub">I've spent twenty five years guiding buyers, sellers, investors, and developers through their real estate purchases, from contract through closing.</p>
     <hr class="brass-rule">
