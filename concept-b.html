@@ -826,6 +826,9 @@
   @media (max-width:560px){.quote-card p{font-size:21px}}
   /* the card grid is locked to its resting height (JS), so hover growth spills into the section padding and never moves the section edge */
   #services .cards{align-content:start}
+  /* stats stay 2x2 on tablet + phone (were stacking to one column) */
+  @media (max-width:980px){#about .stats{grid-template-columns:1fr 1fr;gap:12px}}
+  @media (max-width:560px){#about .stat{padding:20px 18px}#about .stat-num{font-size:30px}#about .stat-label{font-size:14px}}
 </style>
 </head>
 <body>
