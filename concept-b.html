@@ -877,6 +877,9 @@
     .nav-atty{font-size:10.3px;--atty-mt:11.7px}
   }
   @media (max-width:980px) and (prefers-reduced-motion:reduce){nav .nav-links li,.nav-burger i{transition:none!important}}
+  /* stacked hero: cap the photo by the visible phone height so eyebrow + headline land above the fold
+     (68px nav + ~237px for padding, eyebrow, headline); never shorter than 320px */
+  @media (max-width:980px){#hero .hero-r{min-height:0;height:clamp(320px,calc(100svh - 305px),clamp(520px,75vw,735px))}}
 </style>
 </head>
 <body>
