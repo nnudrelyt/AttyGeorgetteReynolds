@@ -769,7 +769,8 @@
   /* align "Send a message" with the "Every real estate…" headline on the left (desktop, side-by-side) */
   @media (min-width:981px){#contact .form-hed{margin-top:var(--form-drop,45px)}}
   /* nav: more open rhythm — wider gap after the lockup and between links (ATTY + name stay locked together) */
-  .nav-links{margin-left:clamp(56px,6.5vw,104px);gap:clamp(36px,3.6vw,56px)}
+  .nav-links{--nav-gap:clamp(36px,calc(8.5vw - 40px),96px);margin-left:var(--nav-gap);gap:var(--nav-gap)}
+  @media (min-width:981px) and (max-width:1080px){.nav-links{--nav-gap:30px}}
 </style>
 </head>
 <body>
