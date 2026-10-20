@@ -824,6 +824,14 @@
   /* About quote card: Spectral 24px medium (21px on phones) */
   .quote-card p{font-family:'Spectral',serif;font-size:24px;font-weight:500;line-height:1.45}
   @media (max-width:560px){.quote-card p{font-size:21px}}
+  /* card hover grows a card by 42px; give that space back from the section's bottom padding (same timing) so the section edge never moves */
+  @media (hover:hover){
+    #services{transition:padding-bottom .5s cubic-bezier(.22,1,.36,1)}
+    #services:has(.card:hover,.card:focus-within){padding-bottom:calc(clamp(84px,10vw,140px) - 42px)}
+  }
+  @media (hover:hover) and (min-width:1600px){
+    #services:has(.card:hover,.card:focus-within){padding-bottom:calc(clamp(124px,8vw,188px) - 42px)}
+  }
 </style>
 </head>
 <body>
