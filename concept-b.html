@@ -891,6 +891,8 @@
   /* hero eyebrow removed; headline leads, and the phone label picks up the eyebrow tan */
   #hero .hero-headline{animation-delay:.08s}
   #hero .hero-phone-tag{color:var(--brass-lt)}
+  /* hero divider: a touch longer than the signature (was capped by its width) */
+  #hero .about-sig::before{width:min(420px,calc(100vw - 56px))}
 </style>
 </head>
 <body>
