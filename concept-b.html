@@ -478,7 +478,7 @@
 
   /* ── Footer → slim dark bar, copyright only ── */
   footer{background:#1c1c1c;padding:26px 0}
-  footer .footer-legal{margin:0;width:auto;font-size:13px;color:rgba(250,252,253,.56);text-align:center;letter-spacing:.03em;line-height:1.5}
+  footer .footer-legal{margin:0;width:auto;font-size:13px;color:rgba(250,252,253,.56);text-align:left;letter-spacing:.03em;line-height:1.5}
   .contact-left{position:relative}
   .contact-left > *{position:relative;z-index:1}
   @media(max-width:980px){.nb-grid{grid-template-columns:1fr;gap:44px}.cmap{max-width:360px}.contact-map{display:none}}
@@ -709,6 +709,8 @@
     background:rgba(243,239,226,.035);-webkit-mask:url('assets/agr-monogram.svg') center/contain no-repeat;mask:url('assets/agr-monogram.svg') center/contain no-repeat}
   /* ── texture parallax: the ghosted GR drifts slower than the copy (driven by --py, set in JS) ── */
   #hero::before,#contact .contact-left::before{transform:translate3d(0,var(--py,0px),0);will-change:transform}
+  /* footer copyright: left-aligned on the Get in Touch text edge */
+  footer .container{max-width:none;margin:0;padding-left:clamp(40px,4.5vw,72px);padding-right:clamp(40px,4.5vw,72px)}
 </style>
 </head>
 <body>
