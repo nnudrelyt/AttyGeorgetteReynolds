@@ -709,14 +709,13 @@
     background:rgba(243,239,226,.035);-webkit-mask:url('assets/agr-monogram.svg') center/contain no-repeat;mask:url('assets/agr-monogram.svg') center/contain no-repeat}
   /* ── texture parallax: the ghosted GR drifts slower than the copy (driven by --py, set in JS) ── */
   #hero::before,#contact .contact-left::before{transform:translate3d(0,var(--py,0px),0);will-change:transform}
-  /* copyright now lives in the bottom-left corner of the form panel (footer row removed);
-     a direct child of #contact so the panels' reveal transforms don't capture it */
+  /* copyright: bottom-left of the page (in the Get in Touch panel), on the nav logo's left edge.
+     Direct child of #contact so the panels' reveal transforms don't capture it. */
   #contact{position:relative}
-  .form-legal{position:absolute;left:calc(50% + clamp(40px,4.5vw,72px));bottom:clamp(28px,3vw,40px);z-index:2;margin:0;font-size:13px;letter-spacing:.03em;line-height:1.5;color:var(--muted)}
-  @media (max-width:980px){
-    .contact-left{padding-bottom:calc(clamp(64px,7vw,120px) + 36px)}
-    .form-legal{left:clamp(40px,4.5vw,72px);bottom:28px;color:rgba(243,239,226,.6)}
-  }
+  .contact-left{padding-bottom:calc(clamp(64px,7vw,120px) + 36px)}
+  .form-legal{position:absolute;left:64px;bottom:clamp(28px,3vw,40px);z-index:2;margin:0;font-size:13px;letter-spacing:.03em;line-height:1.5;color:rgba(243,239,226,.6)}
+  @media (max-width:980px){.form-legal{left:28px;bottom:28px}}
+  @media (max-width:560px){.form-legal{left:20px}}
   /* match the Get in Touch panel: lighter green top-left easing into forest */
   #services{background:linear-gradient(155deg, #254733 0%, var(--forest) 62%)}
   /* hero + Get in Touch: same lift, but coming in from the bottom right */
