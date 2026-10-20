@@ -787,7 +787,7 @@
   .card:hover .card-cta{max-height:32px}
   /* phone numbers on green: warm to brass and open slightly */
   /* phone numbers: simple underline that draws in left→right on hover/focus (text color unchanged) */
-  #hero .hero-phone-num,.c-phone{display:inline-block;align-self:flex-start;width:max-content;padding-bottom:6px;background:linear-gradient(currentColor,currentColor) 0 100%/0% 1.5px no-repeat;transition:background-size .45s cubic-bezier(.22,1,.36,1)}
+  #hero .hero-phone-num,.c-phone{display:inline-block;align-self:flex-start;width:max-content;padding-bottom:6px;background:linear-gradient(var(--cream-warm),var(--cream-warm)) 0 100%/0% 1.5px no-repeat;transition:background-size .45s cubic-bezier(.22,1,.36,1)}
   #hero .hero-phone-num:hover,.c-phone:hover,#hero .hero-phone-num:focus-visible,.c-phone:focus-visible{background-size:100% 1.5px;color:var(--cream)}
   /* Get in Touch office monogram in white */
   #contact .c-gmark{background-color:#fff}
@@ -808,6 +808,11 @@
   .nav-links a{color:var(--ink)}
   .nav-cta{color:var(--ink)}
   .nav-cta:hover{color:var(--cream)}
+  /* hero signature, a size up: name 26px, credentials 16.5px, monogram 76x82 */
+  #hero .sig-name{font-size:26px}
+  #hero .sig-title{font-size:clamp(14px,1.15vw,16.5px)}
+  #hero .sig-mark{width:76px;height:82px}
+  @media (max-width:560px){#hero .sig-name{font-size:21px}#hero .sig-title{font-size:14px}#hero .sig-mark{width:64px;height:69px}}
 </style>
 </head>
 <body>
