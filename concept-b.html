@@ -725,7 +725,8 @@
   #contact .field{margin-bottom:30px}
   #contact .field label{margin-bottom:10px}
   #contact .contact-right .btn{margin-top:14px}
-  #services::before{transform:translate3d(0,calc(-50% + var(--py,0px)),0);will-change:transform}
+  /* services texture: hero-scale GR (2600px) at 3.5%, "crop 2"; parallax via --py */
+  #services::before{left:-330px;top:-84px;width:2600px;height:2790px;background-color:rgba(243,239,226,.035);transform:translate3d(0,var(--py,0px),0);will-change:transform}
 </style>
 </head>
 <body>
