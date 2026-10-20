@@ -824,14 +824,8 @@
   /* About quote card: Spectral 24px medium (21px on phones) */
   .quote-card p{font-family:'Spectral',serif;font-size:24px;font-weight:500;line-height:1.45}
   @media (max-width:560px){.quote-card p{font-size:21px}}
-  /* card hover grows a card by 42px; give that space back from the section's bottom padding (same timing) so the section edge never moves */
-  @media (hover:hover){
-    #services{transition:padding-bottom .5s cubic-bezier(.22,1,.36,1)}
-    #services:has(.card:hover,.card:focus-within){padding-bottom:calc(clamp(84px,10vw,140px) - 42px)}
-  }
-  @media (hover:hover) and (min-width:1600px){
-    #services:has(.card:hover,.card:focus-within){padding-bottom:calc(clamp(124px,8vw,188px) - 42px)}
-  }
+  /* the card grid is locked to its resting height (JS), so hover growth spills into the section padding and never moves the section edge */
+  #services .cards{align-content:start}
 </style>
 </head>
 <body>
@@ -1169,6 +1163,21 @@
   window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
   nav.addEventListener('focusin',function(){ nav.classList.remove('nav-hidden'); });
   update();
+})();
+</script>
+<script>
+/* Lock the services card grid to its resting height so card hover growth can't change the section height. */
+(function(){
+  var g=document.querySelector('#services .cards'); if(!g) return;
+  function lock(){
+    if(g.querySelector('.card:hover,.card:focus-within')) return;
+    g.style.height=''; g.style.height=g.offsetHeight+'px';
+  }
+  window.addEventListener('load',lock);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(lock);
+  var t; window.addEventListener('resize',function(){ clearTimeout(t); t=setTimeout(lock,120); });
+  g.addEventListener('mouseleave',function(){ setTimeout(lock,600); });
+  lock();
 })();
 </script>
 </body>
