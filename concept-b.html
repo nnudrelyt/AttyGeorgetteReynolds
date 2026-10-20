@@ -727,10 +727,11 @@
   #contact .contact-right .btn{margin-top:14px}
   /* services texture: hero-scale GR (2600px) at 3.5%, "crop 2"; parallax via --py */
   #services::before{left:-330px;top:-84px;width:2600px;height:2790px;background-color:rgba(243,239,226,.035);transform:translate3d(0,var(--py,0px),0);will-change:transform}
-  /* testimonials: forest-green quote icon instead of the font glyph */
-  .tcard2::before{content:'';width:30px;height:24px;top:22px;left:24px;opacity:.9;font-size:0;background:var(--forest);
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M0 24V13.5C0 6.2 3.9 1.7 11 0l1.3 2.6C8.5 4 6.6 6.6 6.4 10.5H12V24H0zm17.6 0V13.5C17.6 6.2 21.5 1.7 28.6 0l1.4 2.6c-3.8 1.4-5.7 4-5.9 7.9h5.6V24H17.6z'/%3E%3C/svg%3E") center/contain no-repeat;
-    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 24'%3E%3Cpath d='M0 24V13.5C0 6.2 3.9 1.7 11 0l1.3 2.6C8.5 4 6.6 6.6 6.4 10.5H12V24H0zm17.6 0V13.5C17.6 6.2 21.5 1.7 28.6 0l1.4 2.6c-3.8 1.4-5.7 4-5.9 7.9h5.6V24H17.6z'/%3E%3C/svg%3E") center/contain no-repeat}
+  /* testimonials: small editorial curly quote in forest (Spectral's own quotes are wedge-shaped) */
+  .tcard2{padding:28px 30px 30px}
+  .tcard2::before{content:'\201C';position:static;display:block;width:auto;height:auto;background:none;-webkit-mask:none;mask:none;
+    font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:34px;line-height:1;color:var(--forest);opacity:.85;margin:0 0 2px -1px}
+  .tcard2 p{margin:6px 0 16px;padding-top:0}
   /* service cards: "Get started →" animates in on hover / keyboard focus; always shown on touch */
   .card-cta{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);text-decoration:none;
     opacity:0;transform:translateY(8px);transition:opacity .32s cubic-bezier(.2,.65,.2,1),transform .32s cubic-bezier(.2,.65,.2,1)}
@@ -742,6 +743,11 @@
   /* FAQ answers: larger, and the measure stops short of the +/− button column */
   .faq-body{font-size:20px;padding:6px calc(30px + 36px + 16px) 34px calc(30px + 54px + 16px)}
   @media (max-width:560px){.faq-body{font-size:18px;padding:4px 24px 28px 24px}}
+  /* My Approach as a process: tighter measures + subtle chevrons between steps */
+  #approach .step p{max-width:22ch}
+  #approach .step:not(:last-child)::after{content:'';position:absolute;top:calc(26px + clamp(17px,1.5vw,23px) - 6px);right:calc(clamp(26px,2.6vw,44px) / -2 - 5px);
+    width:10px;height:10px;border-top:1.5px solid var(--sage-deep);border-right:1.5px solid var(--sage-deep);transform:rotate(45deg);opacity:.55}
+  @media (max-width:980px){#approach .step::after{display:none}}
 </style>
 </head>
 <body>
@@ -827,18 +833,18 @@
   <!-- CLIENT TESTIMONIAL MARQUEE — full-bleed auto-scroll (client-supplied testimonials, Oct 16 2026; excerpts = whole sentences, no rewording) -->
   <div class="tmarquee" aria-label="What clients say">
     <div class="tmarquee-track">
-      <blockquote class="tcard2"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future.</p><cite>Dr. Andrea Brown-Thirston <span>Optimal Learning Solutions</span></cite></blockquote>
+      <blockquote class="tcard2"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2"><p>Her professionalism and dedication really stand out.</p><cite>Anaya Foster</cite></blockquote>
-      <blockquote class="tcard2"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill <span>Repeat client</span></cite></blockquote>
+      <blockquote class="tcard2"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
       <blockquote class="tcard2"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand.</p><cite>Anaya Foster</cite></blockquote>
-      <blockquote class="tcard2"><p>I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston <span>Optimal Learning Solutions</span></cite></blockquote>
+      <blockquote class="tcard2"><p>I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2"><p>She makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
       <!-- duplicate set for the seamless loop -->
-      <blockquote class="tcard2" aria-hidden="true"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future.</p><cite>Dr. Andrea Brown-Thirston <span>Optimal Learning Solutions</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>Her professionalism and dedication really stand out.</p><cite>Anaya Foster</cite></blockquote>
-      <blockquote class="tcard2" aria-hidden="true"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill <span>Repeat client</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand.</p><cite>Anaya Foster</cite></blockquote>
-      <blockquote class="tcard2" aria-hidden="true"><p>I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston <span>Optimal Learning Solutions</span></cite></blockquote>
+      <blockquote class="tcard2" aria-hidden="true"><p>I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
     </div>
   </div>
@@ -857,7 +863,7 @@
     <ol class="steps">
       <li class="step"><span class="step-num">01</span><h3>Planning</h3><p>Getting clear on your goal from the start and charting the path that gets you to a successful close.</p></li>
       <li class="step"><span class="step-num">02</span><h3>Facilitating</h3><p>Coordinating the agents, lenders, and other parties in your transaction so the deal keeps moving.</p></li>
-      <li class="step"><span class="step-num">03</span><h3>Advising &amp; Problem-Solving</h3><p>Thinking ahead and developing workable alternatives when Plan A stalls, always with a constructive, solutions-first outlook.</p></li>
+      <li class="step"><span class="step-num">03</span><h3>Advising &amp; Problem&#8209;Solving</h3><p>Thinking ahead and developing workable alternatives when Plan A stalls, always with a constructive, solutions-first outlook.</p></li>
       <li class="step"><span class="step-num">04</span><h3>Managing Risk</h3><p>Identifying areas of risk and concern early, and putting effective methods in place to resolve them before they become problems.</p></li>
     </ol>
   </div>
