@@ -773,6 +773,21 @@
   @media (min-width:981px) and (max-width:1080px){.nav-links{--nav-gap:30px}}
   /* lockup sat a touch high in the bar (cap-heavy wordmark); nudge ATTY + name down together */
   .nav-logo{position:relative;top:3px}
+  /* ── Buttons · direction 2: forest outline at rest, instant forest fill on hover; arrows + text links keep their motion ── */
+  .nav-cta,#contact .contact-right .btn{background:transparent;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--forest);border-radius:999px;transform:none;
+    transition:transform .45s cubic-bezier(.22,1,.36,1)}
+  .nav-cta:hover,#contact .contact-right .btn:hover{background:var(--forest);color:var(--cream);box-shadow:inset 0 0 0 1.5px var(--forest);transform:none}
+  .nav-cta:active,#contact .contact-right .btn:active{transform:scale(.985)}
+  #contact .contact-right .btn{display:flex;width:100%;justify-content:space-between;padding:17px 26px 17px 28px}
+  .btn::after{transition:transform .45s cubic-bezier(.22,1,.36,1)}
+  .btn:hover::after{transform:translateX(4px)}
+  /* Get started: underline draws in under the label, arrow nudges */
+  .card-cta{background:linear-gradient(var(--forest),var(--forest)) 0 100%/0% 1.5px no-repeat;padding-bottom:4px}
+  .card:hover .card-cta,.card-cta:focus-visible{background-size:calc(100% - 10px) 1.5px;transition:opacity .4s ease .08s,transform .5s cubic-bezier(.22,1,.36,1),max-height .5s cubic-bezier(.22,1,.36,1),margin-top .5s cubic-bezier(.22,1,.36,1),background-size .5s cubic-bezier(.22,1,.36,1) .12s}
+  .card:hover .card-cta{max-height:32px}
+  /* phone numbers on green: warm to brass and open slightly */
+  #hero .hero-phone-num,.c-phone{transition:color .35s cubic-bezier(.22,1,.36,1),letter-spacing .45s cubic-bezier(.22,1,.36,1)}
+  #hero .hero-phone-num:hover,.c-phone:hover{color:var(--brass-lt);letter-spacing:.01em}
 </style>
 </head>
 <body>
