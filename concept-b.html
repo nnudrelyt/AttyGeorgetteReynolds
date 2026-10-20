@@ -790,6 +790,9 @@
   #hero .hero-phone-num:hover,.c-phone:hover{color:var(--brass-lt);letter-spacing:.01em}
   /* Get in Touch office monogram in white */
   #contact .c-gmark{background-color:#fff}
+  /* nav links: hover line becomes an underline (drawn left→right), plus keyboard focus */
+  .nav-links a::after{top:auto;bottom:-6px;height:1.5px;transition:right .45s cubic-bezier(.22,1,.36,1)}
+  .nav-links a:focus-visible::after{right:0}
 </style>
 </head>
 <body>
