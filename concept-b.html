@@ -707,6 +707,8 @@
   #contact .contact-left{position:relative;overflow:hidden}
   #contact .contact-left::before{display:block;content:'';position:absolute;left:-633px;top:-130px;right:auto;bottom:auto;width:2600px;height:2790px;opacity:1;pointer-events:none;z-index:0;
     background:rgba(243,239,226,.035);-webkit-mask:url('assets/agr-monogram.svg') center/contain no-repeat;mask:url('assets/agr-monogram.svg') center/contain no-repeat}
+  /* ── texture parallax: the ghosted GR drifts slower than the copy (driven by --py, set in JS) ── */
+  #hero::before,#contact .contact-left::before{transform:translate3d(0,var(--py,0px),0);will-change:transform}
 </style>
 </head>
 <body>
@@ -1009,6 +1011,26 @@
     }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
     els.forEach(function(el){ io.observe(el); });
   })();
+</script>
+<script>
+/* Texture parallax: hero texture is at its approved crop at page top; the Get in Touch texture is at
+   its approved crop when the panel is centered on screen. Off for reduced motion. */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var hero=document.getElementById('hero'), ct=document.querySelector('#contact .contact-left');
+  if(!hero||!ct) return;
+  var RATE=0.18, ticking=false;
+  function update(){
+    ticking=false;
+    var vh=window.innerHeight, h=hero.getBoundingClientRect(), c=ct.getBoundingClientRect();
+    if(h.bottom>0) hero.style.setProperty('--py', Math.round(-h.top*RATE)+'px');
+    if(c.bottom>0 && c.top<vh){ var off=(c.top+c.height/2)-vh/2; ct.style.setProperty('--py', Math.round(off*-RATE)+'px'); }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+})();
 </script>
 </body>
 </html>
