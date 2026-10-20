@@ -880,9 +880,6 @@
   /* stacked hero: cap the photo by the visible phone height so eyebrow + headline land above the fold
      (68px nav + ~237px for padding, eyebrow, headline); never shorter than 320px */
   @media (max-width:980px){#hero{--hero-ph:clamp(320px,calc(100svh - 305px),clamp(520px,75vw,735px))}#hero .hero-r{min-height:0;height:var(--hero-ph)}}
-  /* eyebrow line break only when stacked */
-  .br-m{display:none}
-  @media (max-width:980px){.br-m{display:inline}}
   /* hero texture, stacked layouts: re-cropped so the GR sweeps frame the copy (arc top-right, loop out bottom-left) */
   /* anchored to the photo's bottom edge so the crop holds whatever height the photo lands at */
   @media (max-width:980px){#hero::before{left:-24vw;top:calc(68px + var(--hero-ph) - 613px);width:200vw;height:214.6vw}}
@@ -913,7 +910,7 @@
 <!-- ── HERO ── -->
 <section id="hero" tabindex="-1">
   <div class="hero-l">
-    <span class="eyebrow">Chicagoland <br class="br-m">Real Estate Law</span>
+    <span class="eyebrow">Chicagoland Real Estate Attorney</span>
     <h1 class="hero-headline">Close with <em>confidence.</em></h1>
     <p class="hero-sub">I've spent twenty five years guiding buyers, sellers, investors, and developers through their real estate purchases, from contract through closing.</p>
     <hr class="brass-rule">
@@ -922,8 +919,8 @@
     <div class="about-sig">
       <span class="sig-mark" aria-hidden="true"></span>
       <div>
-        <div class="sig-name">Georgette Reynolds, J.D./LLM</div>
-        <div class="sig-title">Illinois Bar · Chicagoland Real Estate Law · 25+ Years</div>
+        <div class="sig-name">Georgette Reynolds</div>
+        <div class="sig-title">J.D./LLM</div>
       </div>
     </div>
   </div>
