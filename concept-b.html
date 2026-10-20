@@ -741,7 +741,10 @@
   @media (hover:none){.card-cta{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){.card-cta,.card-cta span{transition:none}}
   /* FAQ answers: larger, and the measure stops short of the +/− button column */
-  .faq-body{font-size:20px;padding:6px calc(30px + 36px + 16px) 34px calc(30px + 54px + 16px)}
+  .faq-body{font-size:20px;padding:0 calc(30px + 36px + 16px) 34px calc(30px + 54px + 16px)}
+  /* tighter question → answer gap when open */
+  .faq-trigger{transition:padding-bottom .3s ease}
+  .faq-item.open .faq-trigger{padding-bottom:12px}
   @media (max-width:560px){.faq-body{font-size:18px;padding:4px 24px 28px 24px}}
   /* My Approach as a process: tighter measures + subtle chevrons between steps */
   #approach .step p{max-width:22ch}
