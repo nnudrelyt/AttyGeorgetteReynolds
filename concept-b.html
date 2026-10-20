@@ -888,6 +888,12 @@
   #hero .sig-name{font-size:28.5px}
   #hero .sig-title{font-size:17.75px;margin-top:4px}
   @media (max-width:560px){#hero .sig-name{font-size:23px}#hero .sig-title{font-size:15.25px}}
+  /* eyebrow now sits under the headline: tight to the headline, intro spacing moves below it */
+  #hero .hero-headline{margin-bottom:16px}
+  #hero .eyebrow{display:block;margin-bottom:28px}
+  #hero .hero-headline{animation-delay:.08s}
+  #hero .eyebrow{animation-delay:.2s}
+  @media (max-width:980px){#hero .hero-headline{margin-bottom:12px}#hero .eyebrow{margin-bottom:22px}}
 </style>
 </head>
 <body>
@@ -914,8 +920,8 @@
 <!-- ── HERO ── -->
 <section id="hero" tabindex="-1">
   <div class="hero-l">
-    <span class="eyebrow">Chicagoland Real Estate Attorney</span>
     <h1 class="hero-headline">Close with <em>confidence.</em></h1>
+    <span class="eyebrow">Chicagoland Real Estate Attorney</span>
     <p class="hero-sub">I've spent twenty five years guiding buyers, sellers, investors, and developers through their real estate purchases, from contract through closing.</p>
     <hr class="brass-rule">
     <p class="hero-phone-tag">Let's discuss your deal</p>
