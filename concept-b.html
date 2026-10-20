@@ -758,6 +758,11 @@
   .card-cta{padding-right:10px;transition:max-height .5s cubic-bezier(.22,1,.36,1),margin-top .5s cubic-bezier(.22,1,.36,1),opacity .4s ease .08s,transform .5s cubic-bezier(.22,1,.36,1)}
   .card-cta span{transition:transform .5s cubic-bezier(.22,1,.36,1)}
   .card-media img{transition:transform .8s cubic-bezier(.22,1,.36,1)}
+  /* nav lockup: small sage ATTY tight to the left of the name, sitting on the wordmark's baseline (name-only wordmark, baseline at 62% of its height) */
+  .nav-logo{flex-direction:row;align-items:flex-start;gap:7px}
+  .nav-wm{display:block;width:285px;height:43.9px;background-color:var(--forest);-webkit-mask:url('assets/wordmark-name.svg') left top/contain no-repeat;mask:url('assets/wordmark-name.svg') left top/contain no-repeat}
+  .nav-atty{font-family:'Jost',sans-serif;font-size:11px;font-weight:500;line-height:1;letter-spacing:.24em;text-transform:uppercase;color:var(--sage);margin-top:var(--atty-mt,19px);margin-right:-.24em}
+  @media (max-width:560px){.nav-wm{width:198px;height:30.5px}.nav-atty{font-size:9px;letter-spacing:.2em;--atty-mt:12.5px}.nav-logo{gap:5px}}
 </style>
 </head>
 <body>
@@ -766,7 +771,7 @@
 <!-- ── NAV ── -->
 <nav aria-label="Primary">
   <a href="#hero" class="nav-logo" aria-label="Attorney Georgette Reynolds — home">
-    <span class="nav-logo-stacked" aria-hidden="true"></span>
+    <span class="nav-atty" aria-hidden="true">Atty</span><span class="nav-wm" aria-hidden="true"></span>
   </a>
   <ul class="nav-links">
     <li><a href="#teach">My Approach</a></li>
