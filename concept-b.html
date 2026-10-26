@@ -797,8 +797,8 @@
   /* testimonials: attributions share one baseline (cards are equal height; cite pinned to the bottom) */
   .tcard2{display:flex;flex-direction:column}
   .tcard2 cite{margin-top:auto}
-  /* nav: fixed; slides away when scrolling down, slides back when scrolling up */
-  nav{position:fixed;top:env(safe-area-inset-top,0px);transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+  /* nav: fixed and always visible (no hide-on-scroll) */
+  nav{position:fixed;top:env(safe-area-inset-top,0px);transition:box-shadow .3s ease}
   nav.nav-hidden{transform:translateY(-110%)}
   nav.nav-raised{box-shadow:0 6px 24px rgba(17,35,26,.08)}
   @media (prefers-reduced-motion:reduce){nav{transition:none}}
@@ -1222,22 +1222,15 @@
 })();
 </script>
 <script>
-/* Nav headroom: hide on scroll down, reveal on scroll up; shadow once off the top. Keyboard focus inside the nav always reveals it. */
+/* Nav stays pinned (hide-on-scroll headroom disabled Oct 26); shadow once off the top. */
 (function(){
   var nav=document.querySelector('nav'); if(!nav) return;
-  var last=window.scrollY, ticking=false, H=nav.offsetHeight;
+  var ticking=false;
   function update(){
     ticking=false;
-    if(nav.classList.contains('menu-open')) return;
-    var y=window.scrollY, d=y-last;
-    if(y<=H){ nav.classList.remove('nav-hidden'); }
-    else if(d>4){ nav.classList.add('nav-hidden'); }
-    else if(d<-4){ nav.classList.remove('nav-hidden'); }
-    nav.classList.toggle('nav-raised', y>4);
-    if(Math.abs(d)>4) last=y;
+    nav.classList.toggle('nav-raised', window.scrollY>4);
   }
   window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
-  nav.addEventListener('focusin',function(){ nav.classList.remove('nav-hidden'); });
   update();
 })();
 </script>
