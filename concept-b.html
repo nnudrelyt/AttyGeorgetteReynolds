@@ -802,6 +802,8 @@
   nav.nav-hidden{transform:translateY(-110%)}
   nav.nav-raised{box-shadow:0 6px 24px rgba(17,35,26,.08)}
   @media (prefers-reduced-motion:reduce){nav{transition:none}}
+  /* mobile nav (≤980px, the menu-button layout) scrolls away with the page instead of staying pinned */
+  @media (max-width:980px){nav{position:absolute}}
   /* nav in Slate ink (#282828): wordmark, ATTY., links, Contact label (hover states unchanged) */
   .nav-wm{background-color:var(--ink)}
   .nav-atty{color:var(--ink)}
