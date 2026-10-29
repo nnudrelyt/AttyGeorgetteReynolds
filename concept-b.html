@@ -515,6 +515,16 @@
   /* one-line headline + 2-col grid squeezed the intro to ~100-300px; stack it under the headline instead */
   #services .sec-head{grid-template-columns:1fr;gap:22px;align-items:start}
   #services .sec-intro{max-width:620px}
+  /* FAQ head (desktop): headline held to two lines; eyebrow spans the row so the intro top-aligns with the headline */
+  .br-desk{display:none}
+  @media (min-width:981px){
+    #process .sec-head{grid-template-columns:max-content minmax(0,1fr);align-items:start;row-gap:0}
+    #process .sec-head > div{display:contents}
+    #process .sec-head .eyebrow{grid-column:1/-1}
+    #process .sec-head h2{max-width:none;white-space:nowrap}
+    #process .sec-head .sec-intro{margin-top:.55em;justify-self:end}
+    #process .br-desk{display:inline}
+  }
   /* About support copy → 20px; Approach support copy → 18px */
   .about-body{font-size:20px}
   #approach .sec-intro,#approach .step p{font-size:18px}
@@ -1065,7 +1075,7 @@
     <div class="sec-head">
       <div>
         <span class="eyebrow">Common Questions</span>
-        <h2>The answers you deserve <em>before signing.</em></h2>
+        <h2>The answers you deserve <br class="br-desk"><em>before signing.</em></h2>
       </div>
       <p class="sec-intro">A few of the things buyers, sellers, and investors ask most often, with the clear, honest answers you should have before your transaction begins.</p>
     </div>
