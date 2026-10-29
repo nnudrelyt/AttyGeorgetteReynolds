@@ -124,6 +124,8 @@
   .tcard2::before{content:'\201C';font-family:'Spectral',serif;font-weight:600;font-size:46px;color:var(--brass);opacity:.5;position:absolute;top:14px;left:18px;line-height:1}
   .tcard2 p{font-family:'Spectral',serif;font-size:18px;font-weight:500;color:var(--ink);line-height:1.5;margin:16px 0;padding-top:14px}
   .tcard2 cite{font-style:normal;font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--muted);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  /* the long (full four-sentence) quote gets a 1.5x-wide card so its height stays close to the others */
+  .tcard2--wide{flex-basis:min(calc(1.5 * clamp(290px,26vw,380px)),86vw)}
   .tcard2 cite span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
   @media (prefers-reduced-motion:reduce){.tmarquee{overflow-x:auto}.tmarquee-track{animation:none}}
 
@@ -276,6 +278,7 @@
     .faq-body{font-size:18px}
     .contact-body{font-size:18px}
     .tcard2{flex-basis:clamp(360px,24vw,440px)}
+    .tcard2--wide{flex-basis:min(calc(1.5 * clamp(360px,24vw,440px)),86vw)}
   }
 
   /* ════════════════════════════════════════════════════════════
@@ -988,18 +991,18 @@
   <!-- CLIENT TESTIMONIAL MARQUEE — full-bleed auto-scroll (client-supplied testimonials, Oct 16 2026; excerpts = whole sentences, no rewording) -->
   <div class="tmarquee" aria-label="What clients say">
     <div class="tmarquee-track">
-      <blockquote class="tcard2"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
+      <blockquote class="tcard2 tcard2--wide"><p>Georgette Reynolds is an exceptional real estate attorney who is detail-oriented, persistent, and fiercely committed to her clients. She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. Creating a trust for my home was just one example of the thoughtful guidance she provided. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand. Her professionalism and dedication really stand out, and she makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
       <blockquote class="tcard2"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
       <!-- with only three testimonials, the set repeats once inside each half so a half always outspans wide screens -->
-      <blockquote class="tcard2" aria-hidden="true"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
+      <blockquote class="tcard2 tcard2--wide" aria-hidden="true"><p>Georgette Reynolds is an exceptional real estate attorney who is detail-oriented, persistent, and fiercely committed to her clients. She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. Creating a trust for my home was just one example of the thoughtful guidance she provided. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand. Her professionalism and dedication really stand out, and she makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
       <!-- duplicate half for the seamless loop -->
-      <blockquote class="tcard2" aria-hidden="true"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
+      <blockquote class="tcard2 tcard2--wide" aria-hidden="true"><p>Georgette Reynolds is an exceptional real estate attorney who is detail-oriented, persistent, and fiercely committed to her clients. She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. Creating a trust for my home was just one example of the thoughtful guidance she provided. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand. Her professionalism and dedication really stand out, and she makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
-      <blockquote class="tcard2" aria-hidden="true"><p>She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
+      <blockquote class="tcard2 tcard2--wide" aria-hidden="true"><p>Georgette Reynolds is an exceptional real estate attorney who is detail-oriented, persistent, and fiercely committed to her clients. She goes beyond simply closing the deal. She anticipates what you don't know and ensures you're protected for the future. Creating a trust for my home was just one example of the thoughtful guidance she provided. I highly recommend her to anyone looking for an attorney who truly goes to bat for her clients.</p><cite>Dr. Andrea Brown-Thirston</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>She communicates clearly, is responsive, and makes sure everything is explained in a way that's easy to understand. Her professionalism and dedication really stand out, and she makes the real estate process feel much less overwhelming.</p><cite>Anaya Foster</cite></blockquote>
       <blockquote class="tcard2" aria-hidden="true"><p>Your dedication, patience and professionalism has meant the world to me, knowing I had an Attorney that actually cared.</p><cite>Kytrena Hill</cite></blockquote>
     </div>
